@@ -80,3 +80,21 @@
 //        Bu JS dagi hatolarni kursatadi va ushanga qarab odamning yuzi uzgarib boradi Juda qiziqarli extension
 // 20. CodeSnap
 //        Bu blan kodimizni kerakli qismini chroyli rasm holatida olsak buladi
+
+
+// #_#_#_#_#_#_#
+
+
+// -=-=-=-=-=-=-=- JavaScript kirish 
+
+// -=-=-=- JS File yaratish
+// js file ham qolgan file lardik yaratiladi Boshida mavzuga oid suz va oxiri . js blan tugashi shart 
+// misol: index.js, style.js, main.js va hokozo ..... 
+
+// JS File ni HTML ga ulash 
+// Js fileni ulashni 2 ta eng samarali yuli mavjud
+// 1. Bu usul js kodimiz kamroq bulsa kam kod yozilsa qullasak buladi / HTML file ning uzida JS yoziladi
+//  HTML kodning pastidan (bodyning ichida) <script> ... </script> shu tag yoziladi va shuning ichiga JS code yozib boriladi
+
+// 2. Bu usul kode kub bulganda ishlatiladi / addelne JS file ni HTML ga ulash / bu usul boshqalariga qaraganda kuproq ishlatiladi 
+// Js file ulash uchun HTML kodning eng pastki qismidan <script src='fili manzini'></script>  yozilgan holda ulanadi
