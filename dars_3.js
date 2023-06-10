@@ -152,7 +152,7 @@ console.log("salom 2");
 
 // #_#_#_#_#_#_#_#_#_#_#_#_#
 
-// -=-=-=-=-=-=-=- DATA TYPE -=-=-=-=-=-=-=-=-
+// -=-=-=-=-=-=-=- JavaScript da nechta DATA TYPE mavjud -=-=-=-=-=-=-=-=-
 
 // _!_!_!_!_ JS da data types 8 ta  _!_!_!_!_!
 // _!_!_!_!_ There are 8 data types in JS  _!_!_!_!_!
@@ -202,8 +202,8 @@ console.log(9007199254740992n + 2n); // value: 9007199254740994n - quwiw amali i
 // string oddiy text hisoblanadi, string yozishni 3 xil yuli mavjud
 
 // 1. '...' - bittalik qushtirnoq ichiga yozish
-console.log('salom'); // type string
-console.log('123'); // type string
+console.log("salom"); // type string
+console.log("123"); // type string
 // stringning bu turiham keng qullaniladi lekn menus (-) tomonlariham mavjud
 // '' ning menus tomonlari
 /* O'zbek tili boy til hisoblanib unda o',g',tutuq belgisi (') mazjud bularning qoshchsi
@@ -219,7 +219,7 @@ console.log('salom "bolalar"'); // value: salom "bolalar"
 // 2. "..." - ikkitalik quwtirnoq ichiga yozish
 /* bu usulham huddi tepadagi blan bir hil faqat bunda o',g',' larda xatolik bulmaydi chunke bularning qoshi blan string ikkixil
  stringda " 2 talik quwtirnoq bulsa bularda (o') bittalik shuning uchun adashib ketmaydi */
-console.log("bog'")
+console.log("bog'");
 // buning menus (-) tomoni buni ichida qushtirnoqqa olib bulmaydi
 // misol:
 //  console.log("salom "bolalar"") // bu usul xato buladi
@@ -255,7 +255,7 @@ console.log(typeof `${n} John ${m}`); // string
 console.log(typeof num); // number
 console.log(typeof 1); // number
 console.log(typeof salom); // undefined
-console.log(typeof 1n) // bigint
+console.log(typeof 1n); // bigint
 
 // _!_!_!_!_!_!
 
@@ -308,24 +308,106 @@ console.log(un + 1); // bu NaN chiqadi chunke bunda qiymatham mavjud emas
 let t = Symbol("text");
 let v = Symbol("text");
 
-console.log(t,v) // value: Symbol(text) Symbol(text)
+console.log(t, v); // value: Symbol(text) Symbol(text)
 
-console.log(t === v) // value: false
-console.log(t == v) // value: false
-// 2 ta bir hil narsani tenglashtirdsakham 2 xil javob chiqyapdi huddi NO PRIMITIVE dek lekn bu NO PRIMITIVE emas 
+console.log(t === v); // value: false
+console.log(t == v); // value: false
+// 2 ta bir hil narsani tenglashtirdsakham 2 xil javob chiqyapdi huddi NO PRIMITIVE dek lekn bu NO PRIMITIVE emas
 // BU PRIMITIVE ga kiradi
 
 // NO PRIMITIVE data types
 
-// DATA TYPE 8 
+// DATA TYPE 8
 // 8. Objects NO PRIMITIVE turi ga kiradigan data type
 // object uz ichiga - array, obj, function larni oladi hammasining data type pi object
 // uzi JavaScript Object ustiga qurilgan JS dagi hamma narsa pashte objeck
 
+// array
+// index      0     1     2             3
+let arr = ["John", 18, [1, 2, 3], function name() {}]; // array indexga qarab chaqiriladi
+// arr ichiga hohlagan data type ni yozishimiz mumkun
+console.log(arr); // value: [ 'John', 18, [ 1, 2, 3 ], [Function: name] ]
+// biz ichidan faqat bitta uzimizga keraklisini olmoqchi bulsak indexsiga qarab chaqirishimiz kerak index 0 dan boshlanadi
+// index array nomi[index] yoziladi
+console.log(arr[0]);
+
+// obj
+let obj = { name: "John", age: 18, Merriad: false }; // obj keyga qarab chaqiriladi
+// bu yozilishidaham birinchi key: value , yoziladi
+console.log(obj); // value: { name: 'John', age: 18, Merriad: false }
+// uzimizga keraklisini olish uchun key nomi . blan yoziladi
+console.log(obj.name); // value: John
+
+// Function
+function func() {
+  // buyirga yozilgan hamma narsa functionga tegishli hisoblanadi buyirdagi narsalar function chaqirilmasa  ishlamaydi
+  console.log(arr[2]);
+  console.log(obj.age);
+  // bu consollar function chaqirilmasa ishlamaydi
+}
+// function ishlashi uchun uni chaqirishimiz kerak chaqirishda function nomi() blan chaqiriladi
+func(); // functionnni chaqirish / ishlatish
+
 // -=-=-=-=-=- PRIMITIVE va NO PRIMITIVE farqi
 // PRIMITIVE
-console.log(a === a); // true chunke ikkalasi birhil narsa
-// NO PRIMITIVE
-console.log({ a } === { a }); // false chunke ikkalasi birhil bulsaham linki harhil
+// console.log(a === a); // true chunke ikkalasi birhil narsa
+// // NO PRIMITIVE
+// console.log({ a } === { a }); // false chunke ikkalasi birhil bulsaham linki harhil
 
 // 1 ta narsani uziga uzini === qilib tekshirganimizda true chiqqan narsalar PRIMITIVE hisoblanadi
+
+// #_#_#_#_#_#_#_#_#_#_#_#_#
+
+// Homework
+
+// 1 - Sitring
+
+let c = "John";
+
+console.log(`Hello ${1}`); // ?
+
+console.log(`hello ${"c"}`); // ?
+
+console.log(`hello ${c}}`); // ?
+
+// 2 - DATA TYPE ?
+
+console.log(1, 2, 3); // type ?
+
+console.log("1n,2n,3n"); // type ?
+
+console.log(9007199254740992n); // type ?
+
+console.log("1,2,3"); // type ?
+
+console.log(1n, 2n, 3n); // type ?
+
+// 3 - number
+
+console.log(9007199254740992 + 1); // ?
+
+console.log(9007199254740992n + 3n); // ?
+
+//  4 - null vs undefined
+
+//  ikkalasining farqi nmada ?
+
+//  5 - null vs undefined
+
+console.log(null == undefined); // ?
+console.log(null === undefined); // ?
+
+console.log(null + 1); // ?
+console.log(undefined + 1); // ?
+
+// 6 - data type
+
+console.log({}); // type ?
+
+console.log(undefined); // type ?
+
+console.log([]); // type ?
+
+console.log(null); // type ?
+
+console.log(function name() {}); // type ?
