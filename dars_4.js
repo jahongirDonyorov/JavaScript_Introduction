@@ -69,5 +69,26 @@
 // #_#_#_#_#_#_#_#_#_#_#_#_#_#
 
 
+// //  variables > boolean
 
- 
+// // true = 1, false = 0
+
+
+// // true = !0, !null, !undefined - larga teng emas
+// // false = !1 - ga teng emas 
+
+// console.log(Boolean(1)) // true 
+// console.log(Boolean(0)) // false
+
+// console.log(true == 1) // true 
+// console.log(false == 0) // true 
+// // true false urniga 1 va 0 dan foydalansakham buladi. 0 va 1 qaytishiga qarab code tug'ri notug'ri ekanligini bilishimiz mumkun
+
+// console.log(true == '1') // true chiqadi chunke stringdan number holatga utganda bu 1 qiymatni qaytaradi
+// console.log(true == '3') // false
+
+
+// console.log(false == null) // false
+// console.log(false == undefined) // false
+// console.log(undefined == null) // true 
+
