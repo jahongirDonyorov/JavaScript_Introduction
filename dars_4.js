@@ -15,8 +15,8 @@
 // // String > Number
 
 // // Number
-// let a = 12,
-//   b = 13;
+let a = 12,
+  b = 13;
 
 // console.log(a + b); // 25
 // // Numberlar ustida arifmetik amallar bajarilganda hamma narsa tug'ri ishlaydi
@@ -25,7 +25,22 @@
 // let c = "12"; // bu string son yozilgan bulsaham u '' ichida bulganligi uchun string hisoblanadi
 // console.log(a + c); // 1212 buladi javob chunke JS number blan stringni qushganda faqatgina bir birini yoziga obkeb birlashtirib quyadi
 // // bunaqa hatolikni tug'irlash uchun  string uzgaruvchi oldiga arifmitik amal quwiwimiz kerak
-// console.log(a * +c); // 24
+// console.log(a + +c); // 144
+
+
+// /*** !_!_!_!
+
+// Eslatma: Number + String 
+
+// Faqat gina + amalida shunqa xatolik buladi yani 2 ta quwiluvchini bir biriga yopishtirib quyadi
+// qolgan amallar (-,*,/) da misollar tug'ri ishlaydi string oldidan + quyish kerak emas
+
+// !_!_!_! ***/
+
+
+// console.log(9 - '2') // 7
+// console.log(9 / '2') // 4.5
+// console.log(9 * '2') // 18
 
 // console.log(typeof(c)) // string
 // console.log(typeof(-c)) // number
@@ -256,80 +271,166 @@
 // let inc = 1;
 // console.log(--inc); // value: 0
 
-
 // #_#_#_#_#_#_#_#_#_#_#_#_#_#
 
+// // -=-=-=-=-=-=-=-=-=- Comparision
+// // <,>, ==, ===, <=, >=,!, malumotlarni compare qilish doim true yoki false qiymat qaytaradi
 
-// -=-=-=-=-=-=-=-=-=- Comparision 
-// <,>, ==, ===, <=, >=,!, malumotlarni compare qilish doim true yoki false qiymat qaytaradi
+// // 1. < > - Katta kichik belgisi, elementlarni taqqoslashda ishlatamiz
 
-// 1. < > - Katta kichik belgisi, elementlarni taqqoslashda ishlatamiz
+// let a = 10,
+// b = 13,
+// c = 10;
 
-let a = 10,
-b = 13,
-c = 10;
+// console.log(a > b) // false, chunke buyirda a katta b dan deyapdi lekn a, b dan kichik
+// console.log(a < b) // true, chunke a , b dan kichik
+// // tug'ri bulsa true notug'ri bulsa false chiqadi
+// console.log(c < b) // false
+// // 2. =, ==, ===
 
-console.log(a > b) // false, chunke buyirda a katta b dan deyapdi lekn a, b dan kichik 
-console.log(a < b) // true, chunke a , b dan kichik 
-// tug'ri bulsa true notug'ri bulsa false chiqadi 
-console.log(c < b) // false 
-// 2. =, ==, ===
+// // 2.1 - = verablega yangi qiymat tenglashtirish uchun ishlatiladi
+// let f = '11'; // f ga '11' qiymat tenglashtirildi
 
-// 2.1 - = verablega yangi qiymat tenglashtirish uchun ishlatiladi
-let f = '11'; // f ga '11' qiymat tenglashtirildi 
+// // 2.2 - == taqqoslash 2 ta narsani bir biriga taqqoslaydi
+// // faqat qiymatni uzini tekshiradi
+// console.log(c == f) // true
 
-// 2.2 - == taqqoslash 2 ta narsani bir biriga taqqoslaydi
-// faqat qiymatni uzini tekshiradi
-console.log(c == f) // true
+// // 2.3 - === Qattiy tenglik
+// // data type niham tekshiradi
+// console.log(c === f) // false
 
-// 2.3 - === Qattiy tenglik
-// data type niham tekshiradi 
-console.log(c === f) // false
+// // 3. <=, >= - Katta yoke teng , kichik yoke teng.
+// // >< belgilar bu holatda har doim = ni chap tomonida bulishi kerak =<, >= - bu holatlar notug'ri
+// // <=, >= - true
 
-// 3. <=, >= - Katta yoke teng , kichik yoke teng.
-// >< belgilar bu holatda har doim = ni chap tomonida bulishi kerak =<, >= - bu holatlar notug'ri 
-// <=, >= - true
+// // ikkalasidan bittasi tug'ri kelsa true chiqaradi
+// console.log(c <= a) // true  -  katta
+// console.log(c <= b) // true  -  teng
 
-// ikkalasidan bittasi tug'ri kelsa true chiqaradi
-console.log(c <= a) // true  -  katta 
-console.log(c <= b) // true  -  teng 
+// console.log(c >= a) // true - teng
+// console.log(c >= b) // false - kichkina
 
-console.log(c >= a) // true - teng
-console.log(c >= b) // false - kichkina 
+// // --=--=--=-- ASCII TABLE
+// // har bir harf, belgilarning raqami. tartib raqamiga qarab katta kichigligini aniqlasak buladi. raqam qancha katta bulsa darajasi oshadi
+// // A 65, a 97 = bu a bundan A katta
+// console.log('A' > 'a') // false. ASCII TABLE buyicha kichik a birinchi keladi
+// console.log('a' > 'A') // true.
 
-// --=--=--=-- ASCII TABLE
-// har bir harf, belgilarning raqami. tartib raqamiga qarab katta kichigligini aniqlasak buladi. raqam qancha katta bulsa darajasi oshadi
-// A 65, a 97 = bu a bundan A katta
-console.log('A' > 'a') // false. ASCII TABLE buyicha kichik a birinchi keladi 
-console.log('a' > 'A') // true.  
+// console.log('abcb' > 'abca') // true har bir harfni bitta bitta tekshirib boradi
 
-console.log('abcb' > 'abca') // true har bir harfni bitta bitta tekshirib boradi 
+// // boshidan hisoblaydi boshidagi bittasi kichik bulib qolsa qolgan hammasi kichik hisoblanadi undan kiyin nechchi qancha kelishidan qatte nazar
+// console.log('567' < '299999') // false chunke boshida 5 dan 2 kichkina qolganini ahamiyatga olmay ketadi boshida bittasi kichik bulsa
 
-// boshidan hisoblaydi boshidagi bittasi kichik bulib qolsa qolgan hammasi kichik hisoblanadi undan kiyin nechchi qancha kelishidan qatte nazar
-console.log('567' < '299999') // false chunke boshida 5 dan 2 kichkina qolganini ahamiyatga olmay ketadi boshida bittasi kichik bulsa 
+// // 4. !=, !== - Teng emas
+// // bularniham taqqoslashda ishlatamiz faqat bular teng emasligini taqqoslaydi
+// // teng bulmasa true teng bulsa false chiqadi
+// // qolgan belgilar blanham ishlatsak buladi kattamas kichikmas >! <!
+// // 4.1 - !=  Teng emas
+// // bu faqat qiymatni tekshiradi
 
-// 4. !=, !== - Teng emas
-// bularniham taqqoslashda ishlatamiz faqat bular teng emasligini taqqoslaydi
-// teng bulmasa true teng bulsa false chiqadi 
+// console.log(1 != '1') // false chunke 1 blan 1 teng
+// console.log(1 != 2) // true chunke bu ikkalasi bir biriga teng emas
 
-// 4.1 - !=  Teng emas
-// bu faqat qiymatni tekshiradi
+// // 4.2 - !==  Qattiy teng emas
+// // bu data type lariniham tekshiradi
 
-console.log(1 != '1') // false chunke 1 blan 1 teng
-console.log(1 != 2) // true chunke bu ikkalasi bir biriga teng emas 
+// console.log(1 !== '1') // true chunke 2 xil data typeda ikkalasi bu data type niham tekshirar edi ikkalasi bir biriga teng emas
+// console.log(1 !== 1) // false ikkalasi bir biriga teng
 
-// 4.2 - !==  Qattiy teng emas
-// bu data type lariniham tekshiradi 
+// // 5. !NOT - inkor, hamma narsani teskarisi faqat true false ga nisbatan
+// // true va false oldiga ! quysak usha narsani teskarisini chiqaradi
+// console.log(!true) // false teskarisini chiqardi
+// console.log(!false) // true teskarisini chiqardi
 
-console.log(1 !== '1') // true chunke 2 xil data typeda ikkalasi bu data type niham tekshirar edi ikkalasi bir biriga teng emas 
-console.log(1 !== 1) // false ikkalasi bir biriga teng 
+// console.log(!1) // false 1 true bulganligi uchun uni teskarisini chiqarayapdi
+// console.log(!'1') // bundaham shunday
 
-// 5. !... - teskarisini chiqaradi 
-// true va false oldiga ! quysak usha narsani teskarisini chiqaradi 
-console.log(!true) // false teskarisini chiqardi
-console.log(!false) // true teskarisini chiqardi
+// console.log(!0) // true 0 false bulganligi uchun uni teskarisi (true) ni chiqarayapdi
 
-console.log(!1) // false 1 true bulganligi uchun uni teskarisini chiqarayapdi
-console.log(!'1') // bundaham shunday 
+// // -=-=-=-=-=-=-=- Logical Operations
+// // 1. || OR
 
-console.log(!0) // true 0 false bulganligi uchun uni teskarisi (true) ni chiqarayapdi  
+// console.log(true || true) // true
+// console.log(false || true) // true
+// console.log(true || false) // true
+// console.log(false || false) // true
+
+// // ikkala qiymatdan biri yoke ikkalasiham true bulsa true chiqaradi
+// // false chiqishi uchun ikkalasiham false bulishi kerak
+
+// // Misol: Uquv markazi ceo, admen bulsa yoke ikkalasidan biri bulsa ochiq buladi . uquv markazi ochiq yoke yopiqligini bil
+// // || bu bizga ikkalasidan biri bulsaham true chiqaradi
+
+// let ceo = true;
+// let admin = false;
+
+// console.log(ceo || admin) // true - markaz ochiq chunke admen bulmasaham ceo shuyirda
+// // ikkalasidan bittasi true bulsaham true chiqaradi
+// // qachonke ikkalasiham false bulsa false chiqadi
+// console.log(false  || false ) // false
+
+// // 2. && AND
+// // Qattiy ikkalasiham true bulishi kerak agar ikkalasidan bittasi false bulsa unda javob false chiqari
+
+// console.log(true && true) // true
+// console.log(false && true) // false
+// console.log(true && false) // false
+// console.log(false && false) // false
+
+// /* msalan: Siz ishga topshirmoqchisiz ishga kirish uchun 1. O'g'il va 2. 18 yoshdan dan katta bulishingiz kerak
+// agar ikkalasidan bittasi bulmasa siz ishga qabul qilinmaysiz */
+
+// let JNS = true,
+//   age = false;
+
+//   console.log(JNS && age) // false
+// // chunke age false
+// // agar or || bulganda ikkalasidan biri bulsaham true chiqardi
+
+// =-=-=-=-=-= Homework
+
+// // 1. Prefix and Postfix
+// let a = 1,
+//   b = 1;
+// let c = ++a; // ?
+// let d = b++; // ?
+
+// // 2. Assinment result
+// let a = 2;
+// let x = 1 + (a *= 2);// ?
+
+// 3. Type Conversion
+"" + 1 + 0
+"" - 1 + 0
+true + false
+6 / "3"
+"2" * "3"
+4 + 5 + "px"
+"$" + 4 + 5
+"4" - 2
+"4px" - 2
+"  -9  " + 5
+"  -9  " - 5
+null + 1
+undefined + 1
+" \t \n" - 2
+
+
+/*** !_!_!_!
+
+// Eslatma: Number + String 
+
+// Faqat gina + amalida shunqa xatolik buladi yani 2 ta quwiluvchini bir biriga yopishtirib quyadi
+// qolgan amallar (-,*,/) da misollar tug'ri ishlaydi string oldidan + quyish kerak emas
+
+!_!_!_! ***/
+
+// 4. Comparision
+
+5 > 4 // ?
+'apple' > 'pineapple' // ?
+'2' > '12' // ?
+undefined == null // ?
+undefined === null // ?
+null == '\n0\n' // ?
+null === +'\n0\n' // ?
