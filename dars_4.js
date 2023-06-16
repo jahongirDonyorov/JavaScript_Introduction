@@ -425,10 +425,13 @@ undefined + 1 // NaN
 !_!_!_! ***/
 
 // 4. Comparision
-5 > 4 // ?
-'apple' > 'pineapple' // ?
-'2' > '12' // ?
-undefined == null // ?
-undefined === null // ?
-null == '\n0\n' // ?
-null === +'\n0\n' // ?
+5 > 4 // true
+'apple' > 'pineapple' // false
+'2' > '12' // true - boshidagi tekshiradi 2 1 dan katta 
+undefined == null // true - chunke ikkalasiniham qiymati mavjud emas
+undefined === null // false - type harhil
+null == '\n0\n' // false
+null === +'\n0\n' // false
+
+console.log(null === '\n0\n')
+
