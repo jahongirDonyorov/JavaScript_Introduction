@@ -15,8 +15,8 @@
 // // String > Number
 
 // // Number
-let a = 12,
-  b = 13;
+// let a = 12,
+//   b = 13;
 
 // console.log(a + b); // 25
 // // Numberlar ustida arifmetik amallar bajarilganda hamma narsa tug'ri ishlaydi
@@ -285,11 +285,12 @@ let a = 12,
 // console.log(a > b) // false, chunke buyirda a katta b dan deyapdi lekn a, b dan kichik
 // console.log(a < b) // true, chunke a , b dan kichik
 // // tug'ri bulsa true notug'ri bulsa false chiqadi
-// console.log(c < b) // false
+// console.log(c < b) // true 
+
 // // 2. =, ==, ===
 
 // // 2.1 - = verablega yangi qiymat tenglashtirish uchun ishlatiladi
-// let f = '11'; // f ga '11' qiymat tenglashtirildi
+// let f = '10'; // f ga '10' qiymat tenglashtirildi
 
 // // 2.2 - == taqqoslash 2 ta narsani bir biriga taqqoslaydi
 // // faqat qiymatni uzini tekshiradi
@@ -300,12 +301,12 @@ let a = 12,
 // console.log(c === f) // false
 
 // // 3. <=, >= - Katta yoke teng , kichik yoke teng.
-// // >< belgilar bu holatda har doim = ni chap tomonida bulishi kerak =<, >= - bu holatlar notug'ri
+// // >< belgilar bu holatda har doim = ni chap tomonida bulishi kerak =<, => - bu holatlar notug'ri
 // // <=, >= - true
 
 // // ikkalasidan bittasi tug'ri kelsa true chiqaradi
-// console.log(c <= a) // true  -  katta
-// console.log(c <= b) // true  -  teng
+// console.log(c <= b) // true  -  katta
+// console.log(c <= a) // true  -  teng
 
 // console.log(c >= a) // true - teng
 // console.log(c >= b) // false - kichkina
@@ -313,7 +314,7 @@ let a = 12,
 // // --=--=--=-- ASCII TABLE
 // // har bir harf, belgilarning raqami. tartib raqamiga qarab katta kichigligini aniqlasak buladi. raqam qancha katta bulsa darajasi oshadi
 // // A 65, a 97 = bu a bundan A katta
-// console.log('A' > 'a') // false. ASCII TABLE buyicha kichik a birinchi keladi
+// console.log('A' > 'a') // false. ASCII TABLE buyicha kichik 'a' tartib raqami katta 'A' dan katta
 // console.log('a' > 'A') // true.
 
 // console.log('abcb' > 'abca') // true har bir harfni bitta bitta tekshirib boradi
@@ -337,7 +338,7 @@ let a = 12,
 // console.log(1 !== '1') // true chunke 2 xil data typeda ikkalasi bu data type niham tekshirar edi ikkalasi bir biriga teng emas
 // console.log(1 !== 1) // false ikkalasi bir biriga teng
 
-// // 5. !NOT - inkor, hamma narsani teskarisi faqat true false ga nisbatan
+// // 5. !... - inkor, hamma narsani teskarisi. faqat true false ga nisbatan
 // // true va false oldiga ! quysak usha narsani teskarisini chiqaradi
 // console.log(!true) // false teskarisini chiqardi
 // console.log(!false) // true teskarisini chiqardi
@@ -347,74 +348,75 @@ let a = 12,
 
 // console.log(!0) // true 0 false bulganligi uchun uni teskarisi (true) ni chiqarayapdi
 
-// // -=-=-=-=-=-=-=- Logical Operations
-// // 1. || OR
+// -=-=-=-=-=-=-=- Logical Operations
+// 1. || OR
 
-// console.log(true || true) // true
-// console.log(false || true) // true
-// console.log(true || false) // true
-// console.log(false || false) // true
+// || ikki tomonidagi qiymatdan biri yoke ikkalasiham true bulsa true chiqaradi
+// false chiqishi uchun ikkalasiham false bulishi kerak
 
-// // ikkala qiymatdan biri yoke ikkalasiham true bulsa true chiqaradi
-// // false chiqishi uchun ikkalasiham false bulishi kerak
+console.log(true || true) // true
+console.log(false || true) // true
+console.log(true || false) // true
+console.log(false || false) // false
 
-// // Misol: Uquv markazi ceo, admen bulsa yoke ikkalasidan biri bulsa ochiq buladi . uquv markazi ochiq yoke yopiqligini bil
-// // || bu bizga ikkalasidan biri bulsaham true chiqaradi
 
-// let ceo = true;
-// let admin = false;
+// Misol: Uquv markazi ceo, admen bulsa yoke ikkalasidan biri bulsa ochiq buladi . uquv markazi ochiq yoke yopiqligini bil
+// || bu bizga ikkalasidan biri bulsaham true chiqaradi
 
-// console.log(ceo || admin) // true - markaz ochiq chunke admen bulmasaham ceo shuyirda
-// // ikkalasidan bittasi true bulsaham true chiqaradi
-// // qachonke ikkalasiham false bulsa false chiqadi
-// console.log(false  || false ) // false
+let ceo = true;
+let admin = false;
 
-// // 2. && AND
-// // Qattiy ikkalasiham true bulishi kerak agar ikkalasidan bittasi false bulsa unda javob false chiqari
+console.log(ceo || admin) // true - markaz ochiq chunke admen bulmasaham ceo shuyirda
+// ikkalasidan bittasi true bulsaham true chiqaradi
+// qachonke ikkalasiham false bulsa false chiqadi
+console.log(false  || false ) // false
 
-// console.log(true && true) // true
-// console.log(false && true) // false
-// console.log(true && false) // false
-// console.log(false && false) // false
+// 2. && AND
+// Qattiy ikkalasiham true bulishi kerak agar ikkalasidan bittasi false bulsa unda javob false chiqari
 
-// /* msalan: Siz ishga topshirmoqchisiz ishga kirish uchun 1. O'g'il va 2. 18 yoshdan dan katta bulishingiz kerak
-// agar ikkalasidan bittasi bulmasa siz ishga qabul qilinmaysiz */
+console.log(true && true) // true
+console.log(false && true) // false
+console.log(true && false) // false
+console.log(false && false) // false
 
-// let JNS = true,
-//   age = false;
+/* msalan: Siz ishga topshirmoqchisiz ishga kirish uchun 1. Erkak va 2. 18 yoshdan dan katta bulishingiz kerak
+agar ikkalasidan bittasi bulmasa siz ishga qabul qilinmaysiz */
 
-//   console.log(JNS && age) // false
-// // chunke age false
-// // agar or || bulganda ikkalasidan biri bulsaham true chiqardi
+let JNS = true,
+  age = false;
+
+  console.log(JNS && age) // false
+// chunke age false
+// agar or || bulganda ikkalasidan biri bulsaham true chiqardi
 
 // =-=-=-=-=-= Homework
 
-// // 1. Prefix and Postfix
+// 1. Prefix and Postfix
 // let a = 1,
 //   b = 1;
-// let c = ++a; // ?
-// let d = b++; // ?
+// let c = ++a; // 2
+// let d = b++; // 1
 
-// // 2. Assinment result
+// 2. Assinment result
 // let a = 2;
-// let x = 1 + (a *= 2);// ?
+// let x = 1 + (a *= 2);// 5
 
 // 3. Type Conversion
-"" + 1 + 0
-"" - 1 + 0
+"" + 1 + 0 // 10
+"" - 1 + 0 // -1
 true + false
-6 / "3"
-"2" * "3"
-4 + 5 + "px"
-"$" + 4 + 5
-"4" - 2
-"4px" - 2
-"  -9  " + 5
-"  -9  " - 5
-null + 1
-undefined + 1
-" \t \n" - 2
-
+true + false + true
+6 / "3" // 2
+"2" * "3" // 6
+4 + 5 + "px" // 9px
+"$" + 4 + 5 // $45
+"4" - 2 // 2
+"4px" - 2 // NaN
+"  -9  " + 5 //   -9  5
+"  -9  " - 5 // -14
+null + 1 // 1
+undefined + 1 // NaN
+" \t \n" - 2 // -2
 
 /*** !_!_!_!
 // Eslatma: Number + String 
