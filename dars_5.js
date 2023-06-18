@@ -81,36 +81,42 @@ let age = 33;
 // bunday hatolik bulmasligi uchun if kalit suzi oldiga else quyiladi: else if(){}
 // Misol: tepadagidek bulsin faqat 30 yoshdan kattalarga sizning yoshingiz kattalik qiladi desin 
 
-// if(age > 18 && age < 30){ // and operatordan foydalanib 2 ta shart quydik age 18 dan katta va 30 dan kichik bulsa shu qiymat chiqadi 
+if(age > 18 && age < 30){ // and operatordan foydalanib 2 ta shart quydik age 18 dan katta va 30 dan kichik bulsa shu qiymat chiqadi 
+  console.log('Qabul qilindingz')
+}else if(age >= 30){
+  console.log('Yoshingiz kattalik qiladi')
+}else{
+  console.log('yoshingiz yetarli emas')
+}
+// 1 notug'ri bulsa 2 ni uham notug'ri bulsa 3 ni chiqaradi 1 ta tugrini kurganda ushayirda tuxtaydi qolganlarini uqibham utirmaydi
+// if(true){
 //   console.log('Qabul qilindingz')
-// }else if(age >= 30){
+// } if(true){
 //   console.log('Yoshingiz kattalik qiladi')
+// } if(true){
+//   console.log('urta yosh')
 // }else{
 //   console.log('yoshingiz yetarli emas')
 // }
-// 1 notug'ri bulsa 2 ni uham notug'ri bulsa 3 ni chiqaradi 1 ta tugrini kurganda ushayirda tuxtaydi qolganlarini uqibham utirmaydi
-if(true){
-  console.log('Qabul qilindingz')
-} if(true){
-  console.log('Yoshingiz kattalik qiladi')
-} if(true){
-  console.log('urta yosh')
-}else{
-  console.log('yoshingiz yetarli emas')
-}
+
 // agar bu holatda yozsak bizga uchala ifdagi qiymatniham chiqaradi
-// if blan boshlangan har biri yangi code hisoblanadi 
-// agar else if qilib yozsak f
-if(true){
-  console.log('Qabul qilindingz')
-}else if(true){
-  console.log('Yoshingiz kattalik qiladi')
-}else if(true){
-  console.log('urta yosh')
-}else{
-  console.log('yoshingiz yetarli emas')
-}
+// if ni uzi kelsa yangi gruh bub ketadi else if kelsa ushaning davomi 
+// agar else if qilib yozsak 
+
+// if(true){
+//   console.log('Qabul qilindingz')
+// }else if(true){
+//   console.log('Yoshingiz kattalik qiladi')
+// }else if(true){
+//   console.log('urta yosh')
+// }else{
+//   console.log('yoshingiz yetarli emas')
+// }
+
 // bu holat tug'ri holat 1-if ga qaraydi true va shuni chiqaradi qolganini uqib ham utirmaydi
+
+// -=-=-=-=- if larning joyashishiham juda katta rul uynaydi
+// havo gradusiga qarab maslahat bersin 
 
 
 // Misol: BMI (Body Mass Index) - USA da foydalaniladi BMI ga qarab semiz yoke arriq ekanligingizni kursatadi
