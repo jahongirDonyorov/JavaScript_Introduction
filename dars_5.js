@@ -97,6 +97,9 @@ let age = 33;
 //   console.log('yoshingiz yetarli emas')
 // }
 
+// bu tekshirish mount sritga kiradi 
+// chunke bu bir vahtning ichida 2 ta shartni tekshiradi.
+
 // if(true){
 //   console.log('Qabul qilindingz')
 // } if(true){
@@ -191,6 +194,8 @@ if (temp < 0) {
   console.log("havo isiiq");
 } else if (temp <= 10 && temp > 0) {
   console.log("havo sovuq");
+} else {
+  console.log("not found");
 }
 // value: havo sovuq
 // bu holatda yuqoridagidek xatoliklar bulmaydi
@@ -208,14 +213,92 @@ if ("condition") {
 // agar code shu holatdagidek bitta qaroga siqsa qavussiz {} ham yozishimiz mumkun
 
 if ("condition") "code";
-else if ("condition") console.log('code');
+else if ("condition") console.log("code");
 else "code";
 
-// bu hlotha tug'ri hisoblanadi agar code bir necha qator bulib ketsa qavus bulishi shart 
+// bu hlotha tug'ri hisoblanadi agar code bir necha qator bulib ketsa qavus bulishi shart
 
-// faqat bitta holatda bir qator bulsaham qavis {} quyishimiz kerak obj yozganimizda chunke objdaham  qavis {} bor 
+// faqat bitta holatda bir qator bulsaham qavis {} quyishimiz kerak obj yozganimizda chunke objdaham  qavis {} bor
 
-if (1) {{temp}}
-// yozmoqchi bulsak bittalik qavusda
-if(1) {temp} // ulib qoladi obj qavisini uzini if uziniki deb hisoblaydi
+// if (1) 'obj';
+// obj yozmoqchi bulsak bittalik qavusda
+// if (1) {temp;} // bulib qoladi obj qavisini uzini if uziniki deb hisoblaydi
+// buni tug;ri yozish
+// if (1) {
+//   return { temp };
+// }
 
+// _#_#_#_#_#_#_#_#_#_#_#_#_
+
+// -=-=-=-=- Conditional operator | question mark operator | Ternary operator ? :
+
+// 3 ta holatdaham aytiladi kuproq Ternary operator deyiladi
+
+// bu if else da 2 ta holatni tekshirishni soddalashtirilgani
+
+// ?,: ikkalasi bizga if else ni ifodalab beradi
+// ? - if
+// : - else
+// bunda else : yozilishi majburiy else : qolib ketsa error beradi
+
+// condition ? code : code === if (condition){code}else{code}
+let code = 2;
+if (code < 0) {
+  console.log("havo jida sovuq");
+} else {
+  console.log("not found");
+}
+
+// ternary operator da bu holatda buladi.
+//     1   2            3                   4             5
+code < 0 ? console.log("havo juda sovuq") : console.log("not fount");
+
+// 1 - condition
+// 2 - if
+// 3 - code. 1 condition true bulsa 3 code ishlaydi
+// 4 - else.
+// 5 - else code. 1 condition false bulsa 5 code ishlaydi
+
+// faqat shu holatda 1 ta if else ni tekshirish maslahat beriladi.
+// 2 ta 3 ta if bulsa uzi dashib ketamz
+
+//  else if qilganimiz bunda bu :? holatda bulmaydi : dan kiyin birdan shart yozib ketiladi
+
+// if else
+// if(condition){code} else if(condition){code} else{code}
+
+// ternary
+// condition ? code : condition ? code : code
+
+// misol:
+
+// if else
+if (temp < 0) {
+  console.log("Havo juda sovuq");
+} else if (temp < 10) {
+  console.log('havo sovuq');
+} else if (temp < 15){
+  console.log('havo issiq')
+}else{
+  console.log('havo juda issiq')
+}
+
+// ternaryda bu holatda buladi
+temp < 0
+  ? console.log('havo juda sovuq')
+  : temp < 10
+  ? console.log('havo sovuq')
+  : temp < 15
+  ? console.log('havo issiq')
+  :console.log('havo juda issiq')
+
+// ? dan oldingisi true bulsa ? dan kiyingisi ishlaydi
+// sal chalkashib ketishimiz mumkun ternaryni bu holatda yozsak
+
+// qisqartirilgan varianti mount srit 
+temp <= 10 && temp > 0 // bunday tekshirish moun sritga kirishining sababi bi vahtning ichida 2 ta shartni tekshiradi
+  ? console.log("havo juda sovuq")
+  : console.log("not found");
+
+
+// _#_#_#_#_#_#_#_#_#_#_#_#_
