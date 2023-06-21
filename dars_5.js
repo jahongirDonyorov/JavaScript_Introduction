@@ -97,7 +97,7 @@ let age = 33;
 //   console.log('yoshingiz yetarli emas')
 // }
 
-// bu tekshirish mount sritga kiradi 
+// bu tekshirish mount sritga kiradi
 // chunke bu bir vahtning ichida 2 ta shartni tekshiradi.
 
 // if(true){
@@ -276,29 +276,76 @@ code < 0 ? console.log("havo juda sovuq") : console.log("not fount");
 if (temp < 0) {
   console.log("Havo juda sovuq");
 } else if (temp < 10) {
-  console.log('havo sovuq');
-} else if (temp < 15){
-  console.log('havo issiq')
-}else{
-  console.log('havo juda issiq')
+  console.log("havo sovuq");
+} else if (temp < 15) {
+  console.log("havo issiq");
+} else {
+  console.log("havo juda issiq");
 }
 
 // ternaryda bu holatda buladi
 temp < 0
-  ? console.log('havo juda sovuq')
+  ? console.log("havo juda sovuq")
   : temp < 10
-  ? console.log('havo sovuq')
+  ? console.log("havo sovuq")
   : temp < 15
-  ? console.log('havo issiq')
-  :console.log('havo juda issiq')
+  ? console.log("havo issiq")
+  : console.log("havo juda issiq");
 
 // ? dan oldingisi true bulsa ? dan kiyingisi ishlaydi
 // sal chalkashib ketishimiz mumkun ternaryni bu holatda yozsak
 
-// qisqartirilgan varianti mount srit 
+// qisqartirilgan varianti mount srit
 temp <= 10 && temp > 0 // bunday tekshirish moun sritga kirishining sababi bi vahtning ichida 2 ta shartni tekshiradi
   ? console.log("havo juda sovuq")
   : console.log("not found");
 
-
 // _#_#_#_#_#_#_#_#_#_#_#_#_
+
+// -=-=-=-=-=-=- Nullish ?? -> null, undefined
+
+// OR || -> false === null, undefined, 0, false, NaN
+// Nullish ?? -> false === null, undefined
+
+// huqqi or || dek ishlaydi faqat bunda 2 ta false qiymat mavjud -> null, undefined
+
+// bu faqat null va undefined ni false db oladi qolgan hamma qiymatni true hisoblaydi xatto false ni uziham
+// false === undefined, null
+
+// faqat shu ikkalasini notug'ri qiymat db oladi va or kabi 1 ta true bulsa ushani chiqaradi
+
+//            0      1
+console.log(false || 1); // 1 - chunke 1 true
+
+//            1      1
+console.log(false ?? 'Hi'); // false -  chunke bu false niham true qiymat db hisoblayapdi ?? ni 2 tomonidaham true bulganligi uchun 1-trueni(false) chiqaradi
+// huddi or || kabi ikkala qiymatham false bulsagina false qaytaradi
+
+//           1     1
+console.log(NaN || 1) // 1 
+//           1     1
+console.log(NaN ?? 1) // NaN
+console.log(1 ?? NaN) // 1
+// 2 tomonidaham true bulib qolsa ?? dan chap tomondagini chiqaradi (1-true ni)
+
+//          0    1
+console.log(0 || 1) // 1
+//          1    1
+console.log(0 ?? 1) // 0
+
+//           0      1
+console.log(null || 1); // 1
+//           0      1
+console.log(null ?? 1);// 1
+
+//              0           1 
+console.log(undefined || 'salom'); // salom
+//              0        1
+console.log(undefined ?? 3); // 3
+//              0             0
+console.log(undefined ?? undefined); // undefined
+
+/* ishlashimizda bizga bir qiymat kelyotgan bulsa usha qiymat faqatgina null va undefined bulsa 2-qiymatni 
+chiqarsin agar unday bulmasa usha kelyotgan qiymatni uzini chiqarsh da ishlatsak buladi */
+/* misol: bizga title degan qiymat kelyapdi u qiymat faqatgina null yoke undefined bulsa bizga b qiymatni chiqarsin 
+ulardan boshqa hamma qiymat kelsa ularni true hisoblab chiqaraversin */
