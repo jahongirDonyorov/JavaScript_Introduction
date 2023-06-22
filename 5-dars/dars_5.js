@@ -348,5 +348,3 @@ console.log(undefined || "salom"); // salom
 console.log(undefined ?? 3); // 3
 //              0             0
 console.log(undefined ?? undefined); // undefined
-
-// Homework 
