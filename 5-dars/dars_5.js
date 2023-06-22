@@ -154,7 +154,7 @@ let age = 33;
 // -=-=-=-=- if larning joyashishiham juda katta rul uynaydi
 // havo gradusiga qarab maslahat bersin
 
-let temp = 7; // temp > 0 && temp < 10, temp > 10 && temp < 15, temp > 15, temp > 15 && temp < 25
+let temp = 7; // temp > 0 && temp < 10, temp > 10 && temp < 15, temp > 15, temp > 25
 if (temp < 0) {
   console.log("Havo juda sovuq");
 } else if (temp < 10) {
@@ -163,19 +163,22 @@ if (temp < 0) {
   console.log("havo isiiq");
 } else if (temp < 25) {
   console.log("havo juda issiq");
+} else {
+  console.log("not fount");
 }
 
 // bu tig'ri yozilgan holati agar biz buni kelsh joylarini uzgartirib quysak 25 15 10 qilsak
 
-if (temp < 0) {
-  console.log("Havo juda sovuq");
-} else if (temp < 25) {
-  console.log("havo juda issiq");
-} else if (temp < 15) {
-  console.log("havo isiiq");
-} else if (temp < 10) {
-  console.log("havo sovuq");
-}
+// if (temp < 0) {
+//   console.log("Havo juda sovuq");
+// } else if (temp < 25) {
+//   console.log("havo juda issiq");
+// } else if (temp < 15) {
+//   console.log("havo isiiq");
+// } else if (temp < 10) {
+//   console.log("havo sovuq");
+// }
+
 // bu holatda birinchi temp 25 dan kichkinami shuni tekshiryapdi true bulganligi uchun usha yerda qolyapdi qolganini tekshirmayapdiham
 // 7 25dan kichik tug'ri lekn bizda 10 va 15 danham kichik 25 birinchi kelganligi uchun uni tekshirib qolganini tekshirmayapdi
 // 0 dan 25 gacha kiritgan hamma sonimizda faqat shu javob chiqadi
@@ -212,9 +215,9 @@ if ("condition") {
 
 // agar code shu holatdagidek bitta qaroga siqsa qavussiz {} ham yozishimiz mumkun
 
-if ("condition") "code";
-else if ("condition") console.log("code");
-else "code";
+// if ("condition") code;
+// else if ("condition") console.log("code");
+// else "code";
 
 // bu hlotha tug'ri hisoblanadi agar code bir necha qator bulib ketsa qavus bulishi shart
 
@@ -242,15 +245,17 @@ else "code";
 // bunda else : yozilishi majburiy else : qolib ketsa error beradi
 
 // condition ? code : code === if (condition){code}else{code}
+
 let code = 2;
+
 if (code < 0) {
-  console.log("havo jida sovuq");
+  console.log("havo juda sovuq");
 } else {
   console.log("not found");
 }
 
 // ternary operator da bu holatda buladi.
-//     1   2            3                   4             5
+//   1   2            3                   4             5
 code < 0 ? console.log("havo juda sovuq") : console.log("not fount");
 
 // 1 - condition
@@ -303,7 +308,6 @@ temp <= 10 && temp > 0 // bunday tekshirish moun sritga kirishining sababi bi va
 // _#_#_#_#_#_#_#_#_#_#_#_#_
 
 // -=-=-=-=-=-=- Nullish ?? -> null, undefined
-
 // OR || -> false === null, undefined, 0, false, NaN
 // Nullish ?? -> false === null, undefined
 
@@ -317,35 +321,32 @@ temp <= 10 && temp > 0 // bunday tekshirish moun sritga kirishining sababi bi va
 //            0      1
 console.log(false || 1); // 1 - chunke 1 true
 
-//            1      1
-console.log(false ?? 'Hi'); // false -  chunke bu false niham true qiymat db hisoblayapdi ?? ni 2 tomonidaham true bulganligi uchun 1-trueni(false) chiqaradi
+//            1       1
+console.log(false ?? "Hi"); // false -  chunke bu false niham true qiymat db hisoblayapdi ?? ni 2 tomonidaham true bulganligi uchun 1-trueni(false) chiqaradi
 // huddi or || kabi ikkala qiymatham false bulsagina false qaytaradi
 
+//           0     1
+console.log(NaN || 1); // 0
 //           1     1
-console.log(NaN || 1) // 1 
-//           1     1
-console.log(NaN ?? 1) // NaN
-console.log(1 ?? NaN) // 1
+console.log(NaN ?? 1); // NaN
+console.log(1 ?? NaN); // 1
 // 2 tomonidaham true bulib qolsa ?? dan chap tomondagini chiqaradi (1-true ni)
 
 //          0    1
-console.log(0 || 1) // 1
+console.log(0 || 1); // 1
 //          1    1
-console.log(0 ?? 1) // 0
+console.log(0 ?? 1); // 0
 
 //           0      1
 console.log(null || 1); // 1
 //           0      1
-console.log(null ?? 1);// 1
+console.log(null ?? 1); // 1
 
-//              0           1 
-console.log(undefined || 'salom'); // salom
+//              0           1
+console.log(undefined || "salom"); // salom
 //              0        1
 console.log(undefined ?? 3); // 3
 //              0             0
 console.log(undefined ?? undefined); // undefined
 
-/* ishlashimizda bizga bir qiymat kelyotgan bulsa usha qiymat faqatgina null va undefined bulsa 2-qiymatni 
-chiqarsin agar unday bulmasa usha kelyotgan qiymatni uzini chiqarsh da ishlatsak buladi */
-/* misol: bizga title degan qiymat kelyapdi u qiymat faqatgina null yoke undefined bulsa bizga b qiymatni chiqarsin 
-ulardan boshqa hamma qiymat kelsa ularni true hisoblab chiqaraversin */
+// Homework 
