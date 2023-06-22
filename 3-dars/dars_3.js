@@ -128,8 +128,8 @@ console.log(text, 4);
 // sangle strit - bir vahni ichida faqat bitta ishni bajaradi
 // Masalan JavaScript tepadan pastga bitta bitta uqib keladi hammasini birdan uqimaydi
 // misol:
-console.log("salom 1");
-console.log("salom 2");
+// console.log("salom 1");
+// console.log("salom 2");
 // value :
 // 1 - salom 1
 // 2 - salom 2
@@ -141,8 +141,8 @@ console.log("salom 2");
 // ayrim tillar borke bir vahning ichida birdan  2 3 ta amalni bajaradi bular mount sirit hisoblanadi
 
 // misol:
-console.log("salom 1");
-console.log("salom 2");
+// console.log("salom 1");
+// console.log("salom 2");
 // value :
 // 1 - salom 1
 // 1 - salom 2
