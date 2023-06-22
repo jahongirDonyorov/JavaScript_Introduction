@@ -402,36 +402,36 @@ let JNS = true,
 // let x = 1 + (a *= 2);// 5
 
 // 3. Type Conversion
-"" + 1 + 0 // 10
-"" - 1 + 0 // -1
-true + false
-true + false + true
-6 / "3" // 2
-"2" * "3" // 6
-4 + 5 + "px" // 9px
-"$" + 4 + 5 // $45
-"4" - 2 // 2
-"4px" - 2 // NaN
-"  -9  " + 5 //   -9  5
-"  -9  " - 5 // -14
-null + 1 // 1
-undefined + 1 // NaN
-" \t \n" - 2 // -2
+// "" + 1 + 0 // 10
+// "" - 1 + 0 // -1
+// true + false
+// true + false + true
+// 6 / "3" // 2
+// "2" * "3" // 6
+// 4 + 5 + "px" // 9px
+// "$" + 4 + 5 // $45
+// "4" - 2 // 2
+// "4px" - 2 // NaN
+// "  -9  " + 5 //   -9  5
+// "  -9  " - 5 // -14
+// null + 1 // 1
+// undefined + 1 // NaN
+// " \t \n" - 2 // -2
 
-/*** !_!_!_!
-// Eslatma: Number + String 
-// Faqat gina + amalida shunqa xatolik buladi yani 2 ta quwiluvchini bir biriga yopishtirib quyadi
-// qolgan amallar (-,*,/) da misollar tug'ri ishlaydi string oldidan + quyish kerak emas
-!_!_!_! ***/
+// /*** !_!_!_!
+// // Eslatma: Number + String 
+// // Faqat gina + amalida shunqa xatolik buladi yani 2 ta quwiluvchini bir biriga yopishtirib quyadi
+// // qolgan amallar (-,*,/) da misollar tug'ri ishlaydi string oldidan + quyish kerak emas
+// !_!_!_! ***/
 
-// 4. Comparision
-5 > 4 // true
-'apple' > 'pineapple' // false
-'2' > '12' // true - boshidagi tekshiradi 2 1 dan katta 
-undefined == null // true - chunke ikkalasiniham qiymati mavjud emas
-undefined === null // false - type harhil
-null == '\n0\n' // false
-null === +'\n0\n' // false
+// // 4. Comparision
+// 5 > 4 // true
+// 'apple' > 'pineapple' // false
+// '2' > '12' // true - boshidagi tekshiradi 2 1 dan katta 
+// undefined == null // true - chunke ikkalasiniham qiymati mavjud emas
+// undefined === null // false - type harhil
+// null == '\n0\n' // false
+// null === +'\n0\n' // false
 
-console.log(null === '\n0\n')
+// console.log(null === '\n0\n')
 
