@@ -38,6 +38,7 @@
 // -=-=-=-=-=-=-=-=- extensions -=-=-=-=-=-=-=-=-=-=-
 // Vesual studio code da codlarni osonroq yozish uchin extension dan foydalanamiz
 
+
 // 1. All Autocomplete
 //        Bu bizga codimizni tuldirib beradi, yani bror codening birinchi harfini yozsak qolganini uzi chiqarib beradi
 // 2. Auto Close Tag
