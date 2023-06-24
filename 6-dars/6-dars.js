@@ -1,64 +1,67 @@
-// if else da order nma va unga qanchalik ahamiyat berishimiz kerak ?
+// // =-=-=-=-=-=-=-=-=-=-= Switch statement
 
-// Order - Joylashi hisoblanadi. 
-// Joylashish ketma ketligi if else da katta ahamiyatga ega. 
+// // Same as if - if nma vazifa bajarsa Switch ham huddi shunday
+// // bu faqat har doim qatiy bitta narsani tekshiradi
 
-let x = 8;
+// // Switch -> ===
+// // if -> ==, ===, =>, <=, <, > ==!, =!
 
-if(x < 10){
-  console.log('x < 10')
-}else if(x < 20){
-  console.log('x < 20')
-}else{
-  console.log('x > 20')
-}
-// value : x < 10
+// // uziga bitta verable qabul qiladi va ushani qiymatini kutadi
 
-if(x < 20){
-  console.log('x < 20')
-}else if(x < 10){
-  console.log('x < 10')
-}else{
-  console.log('x > 20')
-}
+// // if(condition){code}else{}
 
-if(x < 10 && x > 0){
-  console.log('x < 10')
-}else if (x < 20 && x > 10){
-  console.log('x < 20')
-}else{
-  console.log('x > 20')
-}
+// //    1       2       3        4       5    6      7
+// // switch (verable) {case condition: code break default : code}
 
-if( x < 20 && x > 10){
-  console.log('x < 20')
-}else if (x < 10 && x > 0){
-  console.log('x < 10')
-}else{
-  console.log('x > 20')
-}
+// // 1. kalit suzi
+// // 2. verable. - tekshirmoqchi bulgan verable faqat bitta vireable yoziladi
+// // 3. condition uchun kalit suz. - case kiyingi qiymat 4 verable ga tengligini tekshiradi
+// // 4. qiymat. - 4 dagi qiymat 2 verable ga === teng bulsa
+// // 5. code. - 2 blan 4 teng bulsa 5 ishlaydi
+// // 6. break code ni yuxtatadi
+// /*
+//  break bu shart (case) oxirini bildiradi bu har doim bulishi kerak bu bulmasa codimiz olgan case larniham javobini chiqaradi 
+//  huddi else if emas if if qilib ketgandek buladi 
+// */
+// // 7. default - garda yuqoridagilarning brortasiham tug'ri bulmasa default chiqadi huddi else dek
 
+// let a = 119;
 
-let a = 1;
-let v = a < 10;
-switch (a) {
-  case v:
-    console.log("salom");
-    break;
-  case 10 && 20:
-    console.log('hello')
-    break
-  default:
-    console.log("aliki");
-}
+// if (a === 13) {
+//   console.log("a === 13");
+// } else if (a === 14) {
+//   console.log("a === 14");
+// } else {
+//   console.log("default");
+// }
 
-for(let i = 0; i <= 10; i++){
-  console.log(`salom ${i}`)
-}
+// // switch dagi holati
 
-let g = 9;
+// switch (
+//   a // a verableni olib olamiz
+// ) {
+//   case 13: // bu usha olgan 'verablemizga' (a) 'qiymat' (13) tengmi tengmasmi tekshiradi
+//     console.log("a === 13"); // a ga case dan kiyingi qiymat teng bulsa bu ishlaydi
+//     break; // shartni tugatadi
+//   case 14: // 2 - shart a 14 ga teng tengmasligini tekshiradi
+//     console.log("a === 14"); // agar : dan oldingi case (shart) tug'ri bulsa bu ishlaydi
+//     break; // har bir case (shart) oxirida break bulishi kerak
+//   default:
+//     console.log("default");
+// }
+// // value : default chiqadi agar default larni olib tashlasak hammasini javobi valuega chiqadi
 
-while(g <= 10, g++){
-  console.log(`salom ${g}`)
-  
-}
+// // switch da case => 9 qilib bulmaydi buning uzi har doim === blan tekshiradi
+
+// let b = 1;
+// switch (b) {
+//   case "1":
+//     console.log("teng");
+//   default:
+//     console.log("teng emas");
+// }
+// // value : teng emas chiqadi chunke switch === blan tekshiradi
+
+// // !_!_! break ni olib tashlab yozsak xatolik kursatmaydi lekn hamma case larni uqib hammasini javobini chiqaradi
+
+// _#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#
