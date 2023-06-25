@@ -20,8 +20,8 @@
 // // 5. code. - 2 blan 4 teng bulsa 5 ishlaydi
 // // 6. break code ni yuxtatadi
 // /*
-//  break bu shart (case) oxirini bildiradi bu har doim bulishi kerak bu bulmasa codimiz olgan case larniham javobini chiqaradi 
-//  huddi else if emas if if qilib ketgandek buladi 
+//  break bu shart (case) oxirini bildiradi bu har doim bulishi kerak bu bulmasa codimiz olgan case larniham javobini chiqaradi
+//  huddi else if emas if if qilib ketgandek buladi
 // */
 // // 7. default - garda yuqoridagilarning brortasiham tug'ri bulmasa default chiqadi huddi else dek
 
@@ -65,7 +65,6 @@
 // // !_!_! break ni olib tashlab yozsak xatolik kursatmaydi lekn hamma case larni uqib hammasini javobini chiqaradi
 
 // _#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#
-
 
 // // =-=-=-=-=-=-=-=-=-=-= For Loops Basics
 
@@ -132,8 +131,8 @@
 // for(; i < 12; i++){
 //   console.log(i)
 // }
-// // bu holatda birinchi qiymatni olib quysakham ishlayveradi 
-// // lekn i++ ni olsak shart hechqachon false qiymatga utmaydi va davomiy cheksiz ishlayveradi 
+// // bu holatda birinchi qiymatni olib quysakham ishlayveradi
+// // lekn i++ ni olsak shart hechqachon false qiymatga utmaydi va davomiy cheksiz ishlayveradi
 
 // for(i=1 ;i < 12; ){
 //   console.log(i)
@@ -146,20 +145,105 @@
 //   i++
 // }
 
+// -=-=-=-=-= break
 
-// -=-=-=-=-=-=- var vs let
-// shu yirda var blan let ni farqini yaxshiroq tushinib olsak buladi
+// break - bizga codimizni nechchigadur kelganda tuxtatish uchu foydalanamz
 
-for(let i = 1; i <= 12; i++){
-  console.log(i) // value chiqadi
+// var sum = 0;
+// for (i = 1; i < 12; i++) {
+
+//   // misol: 1
+//   console.log((sum += i)); // sum = sum + i; value: 1,3,6,10;
+//   // if (sum === 10) break; // code shuyirda tuxtaydi 12 ga utmaydi
+
+//   // misol: 2
+//   if (i === 2) break; // code 2 ga teng bulganda tuxtaydi 2 ni uzi chiqmaydi
+//   console.log(i)
+// }
+
+// -=-=-=-=-=-= continue
+
+// for (i = 1; i < 12; i++) {
+//   // if(i === 3)continue; { // 3 ni chiqarmasdan ketadi
+//   //   console.log(i)
+//   // }
+//   if (i % 2 === 1) continue;
+//   {
+//     // i 2 ga bulinganda qoldiq qolgan sonlarni chiqarmay ketadi
+//     console.log(i);
+//   }
+// }
+// continue bizga usha sonni chiqarmasdan qolganiga utib ketadi
+
+// 1.1 test answer
+
+for (i = 1; i <= 12; i++) {
+  console.log(i) // value: 1,3,7
+  // i = 1;
+  // i = i (1) + i (1) = i (2) + i++ dagi 1 = 3;
+  // i = i (3) + i (3) = i (6) + i++ dagi 1 = 7;
+
+  i += i;
+
+  console.log(i) // value: 2, 6, 14
+  // i = i(1) + i(1) = i(2);
+  // i = i(2) + i++ dagi 1 = i(3) + i(3) = i(6);
+  // i = i(6) + i++ dagi 1 = i(7) + i(7) = i(14)
 }
-console.log(i)// i is not defide chiqadi yani i degan uzgaruvchi yuq deydi 
-// chunke let local uzgaruvchi edi u faqat for ichida ishlaydi fordan tashqarida ishlamaydi 
 
-// ==============
+// // -=-=-=-=-=-=- var vs let
+// // shu yirda var blan let ni farqini yaxshiroq tushinib olsak buladi
 
-for(var i=1; i <= 12; i++){
-  // console.log(i)
+// for(let i = 1; i <= 12; i++){
+//   console.log(i) // value chiqadi
+// }
+// console.log(i)// i is not defide chiqadi yani i degan uzgaruvchi yuq deydi
+// // chunke let local uzgaruvchi edi u faqat for ichida ishlaydi fordan tashqarida ishlamaydi
+
+// // ==============
+
+// for(var i=1; i <= 12; i++){
+//   console.log(i)
+// }
+// console.log(i)// bu yirda i ni valuesini chiqaradi
+// // chunke var global uzgaruvchi edi u uzi turgan functiondaham ishlay veradi
+
+// -=-=-=-=-=-=-=-=-= For ichida yana bitta for ishlatsak buladi
+// birinchi for bir martta yurganda ichidagi tuliq tugaydi
+
+for (i = 1; i <= 4; i++) {
+  console.log(`for one ${i}`);
+  for (c = 1; c <= 5; c++) {
+    // console.log(`for twoo ${c}`)
+    console.log(i); // i ning har bir qiymati 4 marttadan
+  }
 }
-console.log(i)// bu yirda i ni valuesini chiqaradi 
-// chunke var global uzgaruvchi edi u uzi turgan functiondaham ishlay veradi
+// bu holatda birinchi for har yurganda ichidagi ichidagi tuliq 5 marttadan yuradi
+
+// =-=-=-=-=-=-=-= for lable
+// bu bizga forlarni bir birini ichida ishlatishimiz uchun kerak
+
+outer: for (i = 1; i <= 5; i++) {
+  inner: for (c = 1; c <= 5; c++) {
+    // if (i <= 2) break; // bu holada faqat kichik for c break buladi kattasi break bulmaydi
+    // valueda 2  martta i boshida chiqadi. i 2dan kichik bulganligi uchun c break buladi i 2 dan qiymati oshgandan kiyin break tuxtaydi 
+
+    if (i === 2) break outer ;// desak bu holda leble yozganimiz uchun ikkkalasigaham break tasir qiladi 
+    // lable nomi blan kattasini kichigi ichida chaqirsa buladi lekn kichigini uzidan tashqarida kattasining ichida chaqirib bulmaydi
+    console.log(c + 'c')
+  }
+  console.log(i + 'i');
+}
+
+
+// Karra jadvalini yasash
+
+// 2 karra
+// 2 * 2 = 4
+// 2 * 3 = 6
+
+// 3 karra 
+// 3 * 2 = 6
+// 3 * 3 = 9
+// shu holatda davom etishi kerak 
+
