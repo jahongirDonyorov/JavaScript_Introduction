@@ -235,6 +235,9 @@ outer: for (i = 1; i <= 5; i++) {
   console.log(i + 'i');
 }
 
+// Homework
+
+// -=-=-=-=- 1
 
 // Karra jadvalini yasash
 
@@ -246,4 +249,55 @@ outer: for (i = 1; i <= 5; i++) {
 // 3 * 2 = 6
 // 3 * 3 = 9
 // shu holatda davom etishi kerak 
+
+// -=-=-=-=-=- 2
+
+let browser = 'Chrome';
+
+ switch (browser) {
+  case 'Edge' :
+    console.log('You have got the Edge!')
+    break
+    case 'Chrome':
+    case 'Firefox':
+    case 'Safari':
+    case 'Opera':
+      console.log('Okay we support these browsers too');
+      break
+    default:
+      console.log('We hape that this page looks ak!')
+ }
+ // valueda nim chiqadi 
+
+
+ // -=-=-=-=-=- 3
+
+//  let a = +prompt('a?', '') // a? ning urniga son yozim kuring va value qandayligini yozing
+
+ // prompt dan har doim string data type keladi oldidagi + uni number qilib beradi
+ // , '' bu prompt har doim bush turishi uchun '' bush string qiyiladi 
+
+//  if (a == 0) {
+//   console.log(0)
+//  }
+//  if (a == 1) {
+//   console.log(1)
+//  }
+//  if(a == 2 || a == 3) {
+//   console.log('2,3')
+//  }
+
+ // =-=-=-=-=- 4
+
+ // output prime numbers ???
+
+ // entirnetdan olingan manba
+ let inputValue= 4;
+ let isprime=inputValue==1? false:true;  //bcoz 1 is not prime
+ 
+ for(i=2;i<inputValue;i++){
+   inputValue%i==0? isprime*=false :isprime*=true;
+ };
+ 
+ console.log(`${inputValue} is ${isprime? 'prime':'not prime'} number`);
 
