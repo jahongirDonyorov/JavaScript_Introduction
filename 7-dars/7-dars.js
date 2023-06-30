@@ -183,7 +183,9 @@ use("Dilshod"); // value:  Dilshod Welcom to facebook
 use("Shomrod"); // value:  Shomrod Welcom to facebook
 // har bir chaqirilgan valuega qarab verable qiymatini uzgartiradi
 
-// classWork
+
+//##########
+
 
 // -=-=-=-=-=- Function expression
 // 3 ta parametrli (name,surnaem,age) function yaratinglar va qiymat berib chiqinglar
@@ -201,10 +203,78 @@ const sayHi = function () {
 // biz buni uzidan yuqorida chairolmaymiz
 sayHi(); // tug'ri holat
 
+
+//###########
+
+
 // -=-=-=-=-=- Arrow Function
 
-const arrow = () => {};
+const arrow = () => {console.log(1)};
 
+console.log(arrow()) // undefinide chiqdi chunke fnc dan bizga hechnarsa qaymayapdi
+// faqat gina return qilganimizdagina bizga qiymat qaytaradi 
+
+// =-=-=- return 
+// bu ham cobsolga uxshab malumot qaytarib beradi (chiqrb)
+// faqat bundan qaytayotgan qiymat ustida yana boshqa amal bajarsak buladi 
+// Misol: Imtihin baholarini foizga utgazim yaxlitlangan holda chiqaarish 
+
+ const getNum = (a) => {
+  let total = 193;
+  console.log((a * 100) / total) // foizni chiqrib olyapmiz 
+  // consol hisoblangan qiymatni shuyirni uzida chiqaradi bu qiymat bilan qayta ishlab bulmaydi 
+
+  // return qiymatni functionga biriktiryapdi boshqa narsalardaham shunday
+
+  return (a * 100) / total // foizni chiqrib olyapmiz 
+  // bu esa qiymatni function ga biriktiradi qachonke fnc ni consolda chaqirsak fnc dan shu qiymat qaytadi va shu qitmat blan yana ishlashimiz mumkun 
+ }
+
+ console.log(getNum(160))
+// bu holatda bizga yaxlitlanmagan qiymat chiqyapdi 81.90... buni yaxlitlash uchun parseInt dan foydalanamz 
+
+// consolda qaytarilgan qiymatni buyirda qaytadan yaxlidlash uchun ishlatolmaymiz 
+// chunke u qiymat usha yirni uzida chiqqan fnc ga u qiymat birlashtirilmagan
+console.log(parseInt(getNum(160))) // NaN chiqadi chunke consolda chiqadigan qiymat buyirda yuq 
+
+// return
+// returndagi qiymat getNum ga qaytayotganligi uchun 
+console.log(parseInt(getNum(160))) 
+// console undefinide qaytargandi uni yaxlitlab bulmaydi 
+// return esa chiqqan qiymatni qaytaryotgan edi uni biz yaxlitlasak buladi
+
+//  console.log(getNum(160)) // consol.log bunlsa - value : undefinide
+//  console.log(getNum(160)) // return bulsa - value : 82.90
+
+// =-=-=-=-=-=-=
+
+
+
+// !_!_! clean code nima ? -> naming function 
+// function kurgan odam ishida nima yozilganligiga qaramasfdan nomidan nima qilishini tushinishi kerak
+//  -> 'get...' - return a value
+//  -> 'calc...' - calculate smth 
+//  -> 'check...' - check smth n return boolen 
+//  -> camle case - getAge,showPrime, calcMath
+
+// Har doim fncga nom beryotganda 2 ta suz bulsa camel case dan foydalnish kerak
+
+// GPA hisoblash misol 
+// gpa hamma olingan fanlarning bali fanlar soniga bulinadi 
+// 5 ta fan uchu  5 ta paramert olib olishimiz kerak 
+const getGpa = (a = 0,b = 0,c = 0,d = 0,f = 0) => { // bu defolt holda qiymat 0 berib ketyapmiz 
+  let res = (a + b + c + d + f) / 4; 
+  console.log(res)
+  // return res
+}
+console.log(getGpa(2.6, 3.5, 4, 2.3, 5)) // value: 4.35
+// biz returnda bu qaytyotgan qiymat ustida yana ishlashimiz mumkun 
+// console.log(getGpa(2.6, 3.5, 4, 2.3, 5) * 2) // value: 8.7
+
+// lekn return urniga consol ishlatilgan bulsa  bu amalni bajarib bulmaydi
+// console.log(getGpa(2.6, 3.5, 4, 2.3, 5)) // value: NaN - chiqardi return urniga consol bulganda
+
+// -=-=-=-=-=-= Return - bu bizga fnc dagi narsalarni qaytarib beradi console dek narsa
 // verable fnc ichida bulsa inner verable tshqarisida bulsa outer verable diyaladi
 
 // -=-=-=-=-=-=-= verable shadow
@@ -219,6 +289,7 @@ console.log(title); // Jahongir
 shadow(); // Doniyarov
 
 // =-=-=-=-=-= Defult qiymat
+
 const telegram = (name, surName) => {
   console.log(name, surName); // John undefinide / 2 ga qiymat berilmaganligi uchun
 };
@@ -241,8 +312,6 @@ const teleg = (name, surName = '') => { // surname bulsa chiqar bulsama bush joy
   // agar surName bulsa chiqar bulmasa chiqarma name ni uzini chiqar dedik
 };
 teleg("John", "Doniyarov");
-
-// -=-=-=-=-=- Callback Function
 
 // -#-#-#-#-#- Hoisting nma
 // hosting verable larni va function expression larni js codeimizning eng yuqorisida declayer (tyaratishga) aytiladi
