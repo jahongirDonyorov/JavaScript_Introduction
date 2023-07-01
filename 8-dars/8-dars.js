@@ -51,6 +51,7 @@
 
 // // -=-=-=- 1 -  farqi
 
+
 // // console.log(user.'age') // . talini bu holatda hech qachon chaqirib bulmaydi
 
 // // string holatda chaqarishning yaxshi tamoni 2 buginli key larni chaqirsak buladi
