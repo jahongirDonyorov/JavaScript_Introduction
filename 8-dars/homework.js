@@ -1,5 +1,4 @@
-자홍기르 돈요로프, [03/07/2023 11:30]
-// #    /////////////////object/////////////////
+///////////////////object/////////////////
 // No1
 // object keylarini toping
 // let obj={
@@ -156,7 +155,6 @@
 // talaba oz malumotlarini toldirmoqda. sizga object va massiv berilgan. massiv ichida uzbekiston viloyatlari berilgan. agar talaba massiv ichidagi viloyatlardan boshqa tanlasa bizning filallarimiz faqat shu viloyatlarda degan natija chiqsin.
 // arr=['Andijon','Namangan','Qarshi','toshkent']
 
-자홍기르 돈요로프, [03/07/2023 11:30]
 // No14
 // talabalar malumotlari massiv berilgan. massiv objectlardan tashkil topgan. objectda login parol keltirilgan.
 // funksiyaga login va parol jonatiladi.
