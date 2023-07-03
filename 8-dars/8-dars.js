@@ -14,7 +14,7 @@
 // // bunga hohlagancha malumot yozishimiz mumkun
 
 // // masalan bizga userning tuliq malumotlari kerak va biz uni bitta qilib olishimiz kerak
-
+ 
 // // buni verable yordamida qilak bitta verable ga bir nichta qiymatni biriktirib bulmaydi
 // // bitta verablega faqat bitta qiymat biriktirsak buladi
 
