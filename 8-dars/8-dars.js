@@ -265,21 +265,21 @@
 // ##############
 
 
-// // -=-=-=-=-=-=- for loop with in // prints key
-// // bizning obj ichida juda kup key bulsa ularning hammasini chiqarmoqchi bulsak for dan foydalansak buladi 
+// -=-=-=-=-=-=- for loop with in // prints key
+// bizning obj ichida juda kup key bulsa ularning hammasini chiqarmoqchi bulsak for dan foydalansak buladi 
 
-// let user = {FirstName:'Jahongir', LastName:'Doniyarov', age:18, Merriad:false, hight: 1.80, weight:60}
-// // buni ichidagi qiymatlarni hammasini chiqarmoqchi bulsa hammasini bittalab yozib chiqishimiz kerak buladi 
-// console.log(user.FirstName)
-// console.log(user.LastName) // va qolganlariniham shunday yozishga tug'ri keladi 
+let user = {FirstName:'Jahongir', LastName:'Doniyarov', age:18, Merriad:false, hight: 1.80, weight:60}
+// buni ichidagi qiymatlarni hammasini chiqarmoqchi bulsa hammasini bittalab yozib chiqishimiz kerak buladi 
+console.log(user.FirstName)
+console.log(user.LastName) // va qolganlariniham shunday yozishga tug'ri keladi 
 
-// // Lekn for blan buni bitta console da chiqarish mumkun 
-// for( let i in user){ // bu user ichidagi key larni for har ishlaganda i ga biriktiradi
-//   console.log(i) // i endi user ning keylariga biriktirildi har aylangada bitta keyni chiqaradi
+// Lekn for blan buni bitta console da chiqarish mumkun 
+for( let i in user){ // bu user ichidagi key larni for har ishlaganda i ga biriktiradi
+  console.log(i) // i endi user ning keylariga biriktirildi har aylangada bitta keyni chiqaradi
 
-//   // i ni uzini chaqirsak bizga keylarni qaytaryapdi siz value qaytaradigan qilishingiz kerak 
+  // i ni uzini chaqirsak bizga keylarni qaytaryapdi siz value qaytaradigan qilishingiz kerak 
 
-// }
+}
 
 // // =-=-=- bush obj yaratishni 2 ta yuli mavjud
 // // 1.
