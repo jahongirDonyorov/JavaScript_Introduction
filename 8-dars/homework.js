@@ -146,46 +146,50 @@
 // -=-=-=-=-
 
 // No6 
+// bu mavzu hali utilmaga object 2/2 da utiladi
 
-// object ichida objectlar berilgan. ichki objectlarning ichiga age degan key berilgan. barcha ichki keylardagi age lar yigindisini toping
-let person = {
-    id: 1,
-    name: 'Odil',
-    age:78,
-    child: {
-        id: 1,
-        name: 'Ali',
-        age:48,
-        child: {
-            id: 1,
-            name: 'Umar',
-            age:20
-        }
-    }
-}
-function sumChil(obj){
-  let total = 0
+// // object ichida objectlar berilgan. ichki objectlarning ichiga age degan key berilgan. barcha ichki keylardagi age lar yigindisini toping
+// let person = {
+//     id: 1,
+//     name: 'Odil',
+//     age:78,
+//     child: {
+//         id: 1,
+//         name: 'Ali',
+//         age:48,
+//         child: {
+//             id: 1,
+//             name: 'Umar',
+//             age:20
+//         }
+//     }
+// }
+// function sumChil(obj){
+//   let total = 0
 
-  for(let i in obj){
-    if(typeof obj[i] === 'object'){
-      if('age' in obj[i]){
-        // console.log(i)
-        total += obj[i].age;
-      }
-      total += sumChil(obj[i])
-      // for(let c in i){
-      //   console.log(obj)
-      // }
-    }
-  }
-  return total
-  // console.log(total)
-}
-console.log(sumChil(person))
-// chiqish
-// 146
+//   for(let i in obj){
+//     if(typeof obj[i] === 'object'){
+//       if('age' in obj[i]){
+//         // console.log(i)
+//         total += obj[i].age;
+//       }
+//       total += sumChil(obj[i])
+    
+//     }
+//   }
+//   return total
+//   // console.log(total)
+// }
+// console.log(sumChil(person))
+// // chiqish
+// // 146 
+
+// -=-=-=- Error 
+// murakkabroq misollar 
 
 // No7
+// bu mavzu hali utilmaga object 2/2 da utiladi
+
 // array berilgan array ning ichida objectlar berilgan. object ichida age berilgan. age ni 18dan katta bolgan objectlarni qaytaring
 // let user = {
 //     id: 1,
@@ -207,8 +211,12 @@ console.log(sumChil(person))
 //     ]
 // }
 
+
+// -=-=-=-=-=-=
+
+
 // No8
-// array ichida object berilgan. job berilgan objectlarni qaytaring
+// // array ichida object berilgan. job berilgan objectlarni qaytaring
 // let arr=[
 //     {id:1,name:'Usmon',job:'developer'},
 //     {id:2,name:'Usmon',job:'developer'},
@@ -216,16 +224,38 @@ console.log(sumChil(person))
 //     {id:4,name:'Usmon',job:'developer'},
 //     {id:5,name:'Usmon'}
 // ]
-// No9
-// objectdan clone oling birinchi objni o'zgartirsa ikkinchisi malumotlari ozgarmasligi kk
-// let obj={
-// id:1,name:'Usmon',job:'developer'
+
+// for(let i in arr ){
+//   // console.log(arr[i])
+//   if('job' in arr[i]){
+//     console.log(arr[i])
+//   }
 // }
+
+// SUCCESS
+
+// -=-=-=-=-=-
+
+
+// No9
+// // objectdan clone oling birinchi objni o'zgartirsa ikkinchisi malumotlari ozgarmasligi kk
+// let obj={
+//   id:1,name:'Usmon',job:'developer'
+// }
+// let use = structuredClone(obj)
+// obj.id = 2
+// console.log(obj)
+// console.log(use)
+
+// SUCCESS
+
+// =-=-=-=-=
 
 // No10
 // objectga yangi qiymat qo'shuvchi funksiya yozing
-// add(obj,key,value){}
+// add(obj,key,value)
 // add(obj,'address','toshkent')
+
 // No11
 // agar object ichida practice 1 dan katta bolsa 'qabul qilindi'.aks holda 'ming bor uzur.'
 // let obj = {
@@ -234,10 +264,22 @@ console.log(sumChil(person))
 //     job: 'developer',
 //     practice:1
 // }
-// chiqish
-// qabul qilindi
+// // chiqish
+// // qabul qilindi
+// if(obj.practice >= 1){
+//   console.log('qabul qilindi')
+// }else{
+//   console.log('ming bor uzur.')
+// }
+// // sharti sal tushinarsiz buldi
+
+// SUCCESS
+
+// -=-=-=-=-
+
 // No11
-// agar object ichida talaba bolsa objectga {kiridit:true} key va value qoshilsin aks holsa {kiridit:olinmadi} qoshilsin
+
+// // agar object ichida talaba bolsa objectga {kiridit:true} key va value qoshilsin aks holsa {kiridit:olinmadi} qoshilsin
 // let obj = {
 //     id: 1,
 //     name: 'Usmon',
@@ -245,52 +287,118 @@ console.log(sumChil(person))
 //     practice:1,
 //     talaba:true
 // }
-// chiqish
-// let obj = {
-//     id: 1,
-//     name: 'Usmon',
-//     job: 'developer',
-//     practice:1,
-//     talaba:true,
-//     kiridit:true
-// }
+// // chiqish
+// // let obj = {
+// //     id: 1,
+// //     name: 'Usmon',
+// //     job: 'developer',
+// //     practice:1,
+// //     talaba:true,
+// //     kiridit:true
+// // }
+
+//   if('talaba' in obj && obj.talaba === true){
+//     obj.kiridit = true 
+//   }else{
+//     obj.kiridit = 'olinmadi'
+//   }
+//   console.log(obj)
+
+  // SUCCESS
+
+  // =-=-=-=-=-=
+
+
 // No12
-// object ichida tugilgan yil,hozirgi yoshi malumotlari keltirilgan. agar yosh togri bolmasa 'xato malumot kiritdingiz' chiqarilsin
+// // object ichida tugilgan yil,hozirgi yoshi malumotlari keltirilgan. agar yosh togri bolmasa 'xato malumot kiritdingiz' chiqarilsin
+// // agar tugilgan yil(year) hozirgi yoshiga tug'ri kelmasa 'xato malumot kiritilgan disin'
+
 // let obj = {
 //     id: 1,
 //     name: 'Usmon',
 //     age:34,
 //     year:1990
 // }
-// chiqish
-// 'xato malumot kiritdingiz'
+// // chiqish
+// // 'xato malumot kiritdingiz'
+
+// if((2023 - obj.year) !== obj.age){
+//   console.log('xato malumot kiritdingiz')
+// }
+
+// SUCCESS
+
+// -=-=-=-=-=-
+
+
 // No13
-// talaba oz malumotlarini toldirmoqda. sizga object va massiv berilgan. massiv ichida uzbekiston viloyatlari berilgan. agar talaba massiv ichidagi viloyatlardan boshqa tanlasa bizning filallarimiz faqat shu viloyatlarda degan natija chiqsin.
-// arr=['Andijon','Namangan','Qarshi','toshkent']
+// // talaba oz malumotlarini toldirmoqda. sizga object va massiv berilgan. massiv 
+// // ichida uzbekiston viloyatlari berilgan. agar talaba massiv ichidagi viloyatlardan boshqa tanlasa bizning filallarimiz faqat shu viloyatlarda degan natija chiqsin.
+// arr = ['Andijon','Namangan','Qarshi','Toshkent', 'Samarqand']
+// let a = 'Samrqand';
+
+
+// if(arr.includes(a))
+// {}else{
+//   console.log(`bizning filiallarimiz vaqat shu viloyatlardda ${ar}`)
+// }
+
+// SUCCESS
 
 // No14
 // talabalar malumotlari massiv berilgan. massiv objectlardan tashkil topgan. objectda login parol keltirilgan.
 // funksiyaga login va parol jonatiladi.
 // agar login parol togri bolsa 'hush kelibsiz' aks holda 'login yoki parol xato degan qiymat chiqazing'
-// let arr=[
-//     {id:3,name:'Usmon',parol:'1231'},
-//     {id:1,name:'Umar',parol:'1241'},
-//     {id:5,name:'Jasur',parol:'3452'}
-//     {id:2,name:'Asmo',parol:'2312'},
-//     {id:4,name:'Salohiddin',parol:'3421'},
-// ]
+let arr=[
+    {id:3,name:'Usmon',parol:'1231'},
+    {id:1,name:'Umar',parol:'1241'},
+    {id:5,name:'Jasur',parol:'3452'},
+    {id:2,name:'Asmo',parol:'2312'},
+    {id:4,name:'Salohiddin',parol:'3421'},
+]
+// chiqish
 // logIn('Umar','2113') => xato
 // logIn('Salohiddin','3421') => hush kelibsiz
 
+// console.log(arr)
+
+
+function Info(arr,login,parol){
+  for(i = 0; i <  arr.length; i++){
+    // console.log(arr[i].parol)
+    if(arr[i].parol === parol && arr[i].name === login){
+      return 'Hush kelibsiz'
+    }
+    
+  }
+  return 'Login yoki parol xato' // else urniga returnni buyirdaham quysak buladi uzi if ishlamasa bu chiqadi ishlasa if ni uzi chiqadi
+
+}
+
+let nam = 'Usmon',
+    parol = '1231';
+console.log(Info(arr,nam,parol)) // Hush kelibsiz
+
+let login = 'Asmo',
+    password = '1299';
+console.log(Info(arr,login,password)) // Login yoki parol xato
+
+
 // No15
 // object ichida objectlar berilgan. ichki objectlar bor yoqligini tekshiring
-// obj={
-//   id:1,
-//   title:'the best',
-//   address:{street:"Farobiy",number:'34'}
-// }
+obj={
+  id:1,
+  title:'the best',
+  address:{street:"Farobiy",number:'34'}
+}
+for( let i in obj){
+  if(typeof obj[i] === 'object'){
+    console.log(obj[i]) 
+  }
+}
 // chiqish
 // true
+
 // No16
 // let person = {
 //     id: 1,
@@ -367,3 +475,4 @@ console.log(sumChil(person))
 // Kirish(101,'Umar') //=> hush kelibsiz
 // Kirish(10,'Umar')  // => parol yoki name xato
 // Kirish(101,'Ali')   // => parol yoki name xato
+
