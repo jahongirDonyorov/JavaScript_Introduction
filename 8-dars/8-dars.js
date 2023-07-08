@@ -1,8 +1,3 @@
-// 1. functionlarni nechi hil usulda yaratda buladi
-// 2. shadow verable nma ?
-// 3. return blan va retun siz yozilgan function ni farqi
-// 4. for loop, while, do while farqlari nmada#
-
 // -#-#-#-#-#-#-#-#-#-#- JavaScript 8 -> Basics 2/3 started
 
 // -=-=-=-=-= Object 1/2
@@ -83,11 +78,11 @@
 // console.log(test['2']) // bu holatda bizga value ni chiqarib beradi
 // console.log(test[2]) // number keylarni chaqirishda '' ga olmasakham buladi
 
-// let info = {
-//   name: 'Geek Academy',
-//   major: 'JavaScript',
-//   founded:2022,
-// }
+let info = {
+  name: 'Geek Academy',
+  major: 'JavaScript',
+  founded:2022,
+}
 
 // let key  = 'major';
 // // bizga key dgan uzgaruvchi bor va uzni qiymati majorga teng
@@ -100,23 +95,24 @@
 // console.log(info[key]) // info[key] === info['major'] becouse biz chaqirgan key qiymati majorga teng
 // // bu bizga info ichidan key qiymatini 'major' ni izlaydi
 
-// let Hi = 'founded'
+let Hi = 'founded'
 // console.log(info[Hi])
 // // bu bizga info ni ichidan Hi ning qiymatini 'founded' ni izlaydi
 
-// /* info[Hi] === info['founded']  verable yozganimiz uning valuesini yozganimiz
+/* info[Hi] === info['founded']  verable yozganimiz uning valuesini yozganimiz
 // bilan bir xil hech qachon verable nomini obj ichidan izlamaydi faqat verable value sini izlaydi */
 
 // // Real projectda user tomonidan kiritilgan narsani chiqarishda ishlatsak buladi
-// // Misol: user proptga malumot kiritsin va shu malumot obj ichida bulsa chiqarsin bbulmasa chiqarmasin
+// // Misol: user proptga malumot kiritsin va shu malumot obj ichida bulsa chiqarsin bulmasa chiqarmasin
 
-// // let use = prompt() // prompt ga kiritgan malumotimiz use ning valuesi buladi
+let use = 'name' // prompt ga kiritgan malumotimiz use ning valuesi buladi
 
 // // console.log(info[use]) // desak use valusini obj ichidan izlaydi bulsa chiqaradi
 // // brawserga kirib kurishimiz mumkun hammasi tug'ri ishlayapdi lekn yuq malumotni kiritsak undefined chiqyapdi
 
 // // ClassWork
 // // user agar objda yuq malumotni kiritsa undefined emas bunday malumot yuq disin
+
 
 // ##############
 
@@ -216,7 +212,7 @@
 // Object.seal(obj)
 
 // //-=-=-=-=-=-= Object.assign(... , ...)
-// // bu 1ta obj ni ikkinchisini qiymatin=ga tenglashtiradi
+// // bu 1ta obj ni ikkinchisini qiymatiga tenglashtiradi
 
 // let a1 = {
 //   age:11,

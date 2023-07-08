@@ -145,10 +145,10 @@
 
 // -=-=-=-=-
 
-// No6 
-// bu mavzu hali utilmaga object 2/2 da utiladi
+// // No6 
+// // bu mavzu hali utilmaga object 2/2 da utiladi
 
-// // object ichida objectlar berilgan. ichki objectlarning ichiga age degan key berilgan. barcha ichki keylardagi age lar yigindisini toping
+// // // object ichida objectlar berilgan. ichki objectlarning ichiga age degan key berilgan. barcha ichki keylardagi age lar yigindisini toping
 // let person = {
 //     id: 1,
 //     name: 'Odil',
@@ -164,28 +164,32 @@
 //         }
 //     }
 // }
-// function sumChil(obj){
-//   let total = 0
+// let sun = 0;
+// // while(1){
+// //   // if(person = person.child) // agarda biz if da shunday qilsak bu ohirgi child ni chiqarmaydi chunke oxirgisini ichida child yuq
+// //   // shuning uchun person = person.child ni oxirida quyamz 
 
-//   for(let i in obj){
-//     if(typeof obj[i] === 'object'){
-//       if('age' in obj[i]){
-//         // console.log(i)
-//         total += obj[i].age;
-//       }
-//       total += sumChil(obj[i])
-    
-//     }
-//   }
-//   return total
-//   // console.log(total)
+// // 1 - usul
+// //   if(person){ // bu bizga person ichida malumot bor yuqligini tekshiradi agar bulsa ishlaydi
+// //     // console.log(person.age)// agr pastdagi person = person.age bulmasa bu consol takroriy chiqaveradi
+// //     sun += person.age
+// //   }else break;
+
+// //   person = person.child // har ishlaganda person.child qiymatini tenglashtiradi va ushani boshqa tekshirmaydi 
+// //   // qachon person peron.child ga teng bulmay qolsa yane peronni ichida child bulmasa code tuxtaydi
+// // }
+// // console.log(sun)
+
+// // 1 - ning qisqartma usuli 
+// // bu kodning qisqa varianti 
+// while(person){ // bunda personni tuliq childlari blan chiqarib beradi 
+//   sun += person.age;
+//   person = person.child
 // }
-// console.log(sumChil(person))
-// // chiqish
-// // 146 
 
-// -=-=-=- Error 
-// murakkabroq misollar 
+// SUCCESS
+
+//-=-=-=-=-=-=-
 
 // No7
 // bu mavzu hali utilmaga object 2/2 da utiladi
@@ -346,42 +350,44 @@
 // SUCCESS
 
 // No14
-// talabalar malumotlari massiv berilgan. massiv objectlardan tashkil topgan. objectda login parol keltirilgan.
-// funksiyaga login va parol jonatiladi.
-// agar login parol togri bolsa 'hush kelibsiz' aks holda 'login yoki parol xato degan qiymat chiqazing'
-let arr=[
-    {id:3,name:'Usmon',parol:'1231'},
-    {id:1,name:'Umar',parol:'1241'},
-    {id:5,name:'Jasur',parol:'3452'},
-    {id:2,name:'Asmo',parol:'2312'},
-    {id:4,name:'Salohiddin',parol:'3421'},
-]
-// chiqish
-// logIn('Umar','2113') => xato
-// logIn('Salohiddin','3421') => hush kelibsiz
+// // talabalar malumotlari massiv berilgan. massiv objectlardan tashkil topgan. objectda login parol keltirilgan.
+// // funksiyaga login va parol jonatiladi.
+// // agar login parol togri bolsa 'hush kelibsiz' aks holda 'login yoki parol xato degan qiymat chiqazing'
+// let arr=[
+//     {id:3,name:'Usmon',parol:'1231'},
+//     {id:1,name:'Umar',parol:'1241'},
+//     {id:5,name:'Jasur',parol:'3452'},
+//     {id:2,name:'Asmo',parol:'2312'},
+//     {id:4,name:'Salohiddin',parol:'3421'},
+// ]
+// // chiqish
+// // logIn('Umar','2113') => xato
+// // logIn('Salohiddin','3421') => hush kelibsiz
 
-// console.log(arr)
+// // console.log(arr)
 
 
-function Info(arr,login,parol){
-  for(i = 0; i <  arr.length; i++){
-    // console.log(arr[i].parol)
-    if(arr[i].parol === parol && arr[i].name === login){
-      return 'Hush kelibsiz'
-    }
+// function Info(arr,login,parol){
+//   for(i = 0; i <  arr.length; i++){
+//     // console.log(arr[i].parol)
+//     if(arr[i].parol === parol && arr[i].name === login){
+//       return 'Hush kelibsiz'
+//     }
     
-  }
-  return 'Login yoki parol xato' // else urniga returnni buyirdaham quysak buladi uzi if ishlamasa bu chiqadi ishlasa if ni uzi chiqadi
+//   }
+//   return 'Login yoki parol xato' // else urniga returnni buyirdaham quysak buladi uzi if ishlamasa bu chiqadi ishlasa if ni uzi chiqadi
 
-}
+// }
 
-let nam = 'Usmon',
-    parol = '1231';
-console.log(Info(arr,nam,parol)) // Hush kelibsiz
+// let nam = 'Usmon',
+//     parol = '1231';
+// console.log(Info(arr,nam,parol)) // Hush kelibsiz
 
-let login = 'Asmo',
-    password = '1299';
-console.log(Info(arr,login,password)) // Login yoki parol xato
+// let login = 'Asmo',
+//     password = '1299';
+// console.log(Info(arr,login,password)) // Login yoki parol xato
+
+// SUCCESS
 
 
 // No15
