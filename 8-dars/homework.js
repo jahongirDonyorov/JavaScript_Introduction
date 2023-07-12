@@ -11,7 +11,7 @@
 // // value: id,name
 
 // // anwes
-// console.log(Object.keys(obj)) // Objeck keys bizlarga obj ning keylarini chiqarib berardi 
+// console.log(Object.keys(obj)) // Objeck keys bizlarga obj ning keylarini chiqarib berardi
 
 // -=-=-=-=-=-=-
 
@@ -29,13 +29,13 @@
 
 // // Eslatma:
 
-// // -=-=-=-=- har doim type tekshirilyotganda boshiga typeof quyishimiz kerak  
+// // -=-=-=-=- har doim type tekshirilyotganda boshiga typeof quyishimiz kerak
 
 // console.log(obj.id === Number) // value: false; bizning obj.id number bulsaham false chiqyapdi
 // console.log(typeof obj.id === Number) // value: false; chiqishining sababi biz data type numberga tekshirmayapmz 'number' yoziladi
 
 // // -=-=-=-=- data type ga tenglashtirganda Number,String yozilmaydi 'ichida', 'number', bulishi kerak shundagina data type ga tekshiryotganimizni anglatadi
-// console.log(typeof obj.id === 'number') // value: true; 
+// console.log(typeof obj.id === 'number') // value: true;
 // // har doim shu holatda bulishi kerak type tekshirilganda:  (typeof ... === '...')
 
 // // Yichim: har bir key ni olish uchun for loop, ichidagi shart uchun if else dan foydalanamiz
@@ -46,7 +46,7 @@
 //   // console.log(obj[i])
 
 //   if(typeof obj[i] === 'number'){
-//     // console.log(obj[i]) // 1,18,1.60 chiqaradi lekn shartda number bulgan keylarni chiqarsin deyilgan valuesini emas 
+//     // console.log(obj[i]) // 1,18,1.60 chiqaradi lekn shartda number bulgan keylarni chiqarsin deyilgan valuesini emas
 //     console.log(i) // id,age,hight / success
 //   }
 
@@ -76,8 +76,8 @@
 
 // for(let i in obj){
 //   // type ni tekshirishimiz kerak bulganligi uchun typeof yoziladi if da birinchi kiyin qolganlari
-//   if(typeof obj[i] === 'boolean'){ 
-//     // bunda bizga key ham value ham chiqishi kerak ekan 
+//   if(typeof obj[i] === 'boolean'){
+//     // bunda bizga key ham value ham chiqishi kerak ekan
 //     console.log(`${i} : ${obj[i]}`) // success
 //   }
 // }
@@ -104,15 +104,15 @@
 // // Yichish:
 // function Search(obj,str){
 //   for(let i in obj){
-//     // bu faqat str (parametr) ga teng bulsa chiqsin dgan variant 
+//     // bu faqat str (parametr) ga teng bulsa chiqsin dgan variant
 //     if( obj[i] === str){
 //       console.log(`${i} : ${obj[i]}`)
 //     }
-//     // bu esa polne stringlarga teng bulsa chiqsin dgan variant 
+//     // bu esa polne stringlarga teng bulsa chiqsin dgan variant
 //     if(typeof obj[i] === 'string'){
 //       console.log(`${i} : ${obj[i]}`)
 //     }
-//     // ikkalasidaham bir hil javob chiqadi chunke string bitta 
+//     // ikkalasidaham bir hil javob chiqadi chunke string bitta
 //     // agar string kup bulganda 2 - variantda kuproq malumot chiqardi
 //   }
 // }
@@ -139,13 +139,13 @@
 //     }
 //   }
 // }
-// searchValue(obj,'string') 
+// searchValue(obj,'string')
 
 // // SUCCESS
 
 // -=-=-=-=-
 
-// // No6 
+// // No6
 // // bu mavzu hali utilmaga object 2/2 da utiladi
 
 // // // object ichida objectlar berilgan. ichki objectlarning ichiga age degan key berilgan. barcha ichki keylardagi age lar yigindisini toping
@@ -167,7 +167,7 @@
 // let sun = 0;
 // // while(1){
 // //   // if(person = person.child) // agarda biz if da shunday qilsak bu ohirgi child ni chiqarmaydi chunke oxirgisini ichida child yuq
-// //   // shuning uchun person = person.child ni oxirida quyamz 
+// //   // shuning uchun person = person.child ni oxirida quyamz
 
 // // 1 - usul
 // //   if(person){ // bu bizga person ichida malumot bor yuqligini tekshiradi agar bulsa ishlaydi
@@ -175,14 +175,14 @@
 // //     sun += person.age
 // //   }else break;
 
-// //   person = person.child // har ishlaganda person.child qiymatini tenglashtiradi va ushani boshqa tekshirmaydi 
+// //   person = person.child // har ishlaganda person.child qiymatini tenglashtiradi va ushani boshqa tekshirmaydi
 // //   // qachon person peron.child ga teng bulmay qolsa yane peronni ichida child bulmasa code tuxtaydi
 // // }
 // // console.log(sun)
 
-// // 1 - ning qisqartma usuli 
-// // bu kodning qisqa varianti 
-// while(person){ // bunda personni tuliq childlari blan chiqarib beradi 
+// // 1 - ning qisqartma usuli
+// // bu kodning qisqa varianti
+// while(person){ // bunda personni tuliq childlari blan chiqarib beradi
 //   sun += person.age;
 //   person = person.child
 // }
@@ -192,32 +192,34 @@
 //-=-=-=-=-=-=-
 
 // No7
-// bu mavzu hali utilmaga object 2/2 da utiladi
 
 // array berilgan array ning ichida objectlar berilgan. object ichida age berilgan. age ni 18dan katta bolgan objectlarni qaytaring
-// let user = {
-//     id: 1,
-//     name: 'Odil',
-//     age: 78,
-//     children: [
-//         {
-//             id: 1,
-//             name: 'Umar',
-//             age: 54,
-//             children: [
-//                 { id: 1, name: 'Asmo', age: 34 },
-//                 { id: 2, name: 'Osim', age: 30 },
-//                 { id: 3, name: 'Xattob', age: 25 },
-//             ]
-//         },
-//         { id: 2, name: 'Umar', age: 54 },
-//         { id: 3, name: 'Umar', age: 54 },
-//     ]
-// }
-
+let user = {
+    id: 1,
+    name: 'Odil',
+    age: 78,
+    children: [
+        {
+            id: 1,
+            name: 'Umar',
+            age: 54,
+            children: [
+                { id: 1, name: 'Asmo', age: 34 },
+                { id: 2, name: 'Osim', age: 30 },
+                { id: 3, name: 'Xattob', age: 25 },
+            ]
+        },
+        { id: 2, name: 'Umar', age: 54 },
+        { id: 3, name: 'Umar', age: 54 },
+    ]
+}
+for(i in user){
+  if(typeof user[i] === 'object'){
+    console.log(user)
+  }
+}
 
 // -=-=-=-=-=-=
-
 
 // No8
 // // array ichida object berilgan. job berilgan objectlarni qaytaring
@@ -239,7 +241,6 @@
 // SUCCESS
 
 // -=-=-=-=-=-
-
 
 // No9
 // // objectdan clone oling birinchi objni o'zgartirsa ikkinchisi malumotlari ozgarmasligi kk
@@ -302,16 +303,15 @@
 // // }
 
 //   if('talaba' in obj && obj.talaba === true){
-//     obj.kiridit = true 
+//     obj.kiridit = true
 //   }else{
 //     obj.kiridit = 'olinmadi'
 //   }
 //   console.log(obj)
 
-  // SUCCESS
+// SUCCESS
 
-  // =-=-=-=-=-=
-
+// =-=-=-=-=-=
 
 // No12
 // // object ichida tugilgan yil,hozirgi yoshi malumotlari keltirilgan. agar yosh togri bolmasa 'xato malumot kiritdingiz' chiqarilsin
@@ -334,13 +334,11 @@
 
 // -=-=-=-=-=-
 
-
 // No13
-// // talaba oz malumotlarini toldirmoqda. sizga object va massiv berilgan. massiv 
+// // talaba oz malumotlarini toldirmoqda. sizga object va massiv berilgan. massiv
 // // ichida uzbekiston viloyatlari berilgan. agar talaba massiv ichidagi viloyatlardan boshqa tanlasa bizning filallarimiz faqat shu viloyatlarda degan natija chiqsin.
 // arr = ['Andijon','Namangan','Qarshi','Toshkent', 'Samarqand']
 // let a = 'Samrqand';
-
 
 // if(arr.includes(a))
 // {}else{
@@ -348,6 +346,8 @@
 // }
 
 // SUCCESS
+
+// -=-=-=-=-=
 
 // No14
 // // talabalar malumotlari massiv berilgan. massiv objectlardan tashkil topgan. objectda login parol keltirilgan.
@@ -366,14 +366,13 @@
 
 // // console.log(arr)
 
-
 // function Info(arr,login,parol){
 //   for(i = 0; i <  arr.length; i++){
 //     // console.log(arr[i].parol)
 //     if(arr[i].parol === parol && arr[i].name === login){
 //       return 'Hush kelibsiz'
 //     }
-    
+
 //   }
 //   return 'Login yoki parol xato' // else urniga returnni buyirdaham quysak buladi uzi if ishlamasa bu chiqadi ishlasa if ni uzi chiqadi
 
@@ -389,36 +388,41 @@
 
 // SUCCESS
 
+// -=-=-=-=-=-=-=
 
 // No15
-// object ichida objectlar berilgan. ichki objectlar bor yoqligini tekshiring
-obj={
-  id:1,
-  title:'the best',
-  address:{street:"Farobiy",number:'34'}
-}
-for( let i in obj){
-  if(typeof obj[i] === 'object'){
-    console.log(obj[i]) 
-  }
-}
-// chiqish
-// true
+// // object ichida objectlar berilgan. ichki objectlar bor yoqligini tekshiring
+// obj={
+//   id:1,
+//   title:'the best',
+//   address:{street:"Farobiy",number:'34'}
+// }
+// for( let i in obj){
+//   if(typeof obj[i] === 'object'){
+//     console.log(true)
+//   }else false
+// }
+// // chiqish
+// // true
+
+// SUCCESS
+
+// -=-=-=-=-=-=
 
 // No16
-// let person = {
-//     id: 1,
-//     name: 'Umar',
-//     surname: 'Ismoilov',
-// }
+let person = {
+  id: 1,
+  name: "Umar",
+  surname: "Ismoilov",
+};
 
-// // add IELTS
-// person = {
-//     id: 1,
-//     name: 'Umar',
-//     surname: 'Ismoilov',
-//     ielts: 5.5
-// }
+// add IELTS
+person = {
+  id: 1,
+  name: "Umar",
+  surname: "Ismoilov",
+  ielts: 5.5,
+};
 
 // 2 - shart
 // // agar ielts 5.5 yoki katta bolsa consoleda qabul qilindi,aks holda qayta topshirish kk
@@ -429,24 +433,44 @@ for( let i in obj){
 //     ielts: 5.5
 // }
 // // qabul qilindi
+
+// if(person.ielts > 5.5 ){
+//   console.log('qabul qilindi')
+// }else{
+//   console.log('qayta topshiring')
+// }
+
+// // success
+
+// -=-=-=-=-=-
+
 // 3 - shart
 // // agar ielts 5.5 yoki katta bolsa objectga student:true qoshilsin qiymati bn birga
 // person = {
-//     id: 1,
-//     name: 'Umar',
-//     surname: 'Ismoilov',
-//     ielts: 5.5
-// }
-// chiqish
-// person = {
-//     id: 1,
-//     name: 'Umar',
-//     surname: 'Ismoilov',
-//     ielts: 5.5,
-//     student: true
-// }
+//   id: 1,
+//   name: "Umar",
+//   surname: "Ismoilov",
+//   ielts: 5.5,
+// };
+// // chiqish
+// // person = {
+// //     id: 1,
+// //     name: 'Umar',
+// //     surname: 'Ismoilov',
+// //     ielts: 5.5,
+// //     student: true
+// // }
 
-// // qoshimcha
+// if (person.ielts >= 5.5) {
+//   person.student = true;
+// }
+// console.log(person) // quwilyapdi 
+
+// // success
+
+// -=-=-=-=-
+
+// qoshimcha
 // 4 - shart
 // // agar student true bolsa unga maxsus key berilsin(math.random+id orqali berilsin)
 // person = {
@@ -456,15 +480,27 @@ for( let i in obj){
 //     ielts: 5.5,
 //     student: true
 // }
-// chiqish
-// person = {
-//     id: 1,
-//     name: 'Umar',
-//     surname: 'Ismoilov',
-//     ielts: 5.5,
-//     student: true,
-//     parol: 101
+// // chiqish
+// // person = {
+// //     id: 1,
+// //     name: 'Umar',
+// //     surname: 'Ismoilov',
+// //     ielts: 5.5,
+// //     student: true,
+// //     parol: 101
+// // }
+// let id = 1000
+// var tasodifiySon = Math.floor(Math.random() * id) + 100;
+
+// if(person.student === true){
+//   person.parol = tasodifiySon
 // }
+// console.log(person)
+
+// // success
+
+// -=-=-=-=-=-
+
 // 5 - shart
 // // talaba bazaga kirishi kk shunday funksiya yarating u parol va name ni jonatsin. agar qarol bn name bazadagi
 // // parol bn name ga togri kelsa consoleda hush kelibsiz aks holda parol yoki name xato chiqsin
@@ -476,9 +512,18 @@ for( let i in obj){
 //     student: true,
 //     parol: 101
 // }
-// function Kirish(parol,name){}
+// function Kirish(parol,name){
+//   if(person.name === name && person.parol === parol){
+//     console.log('Hush kelibsiz')
+//   }else{
+//     console.log('Parol yoke Name xato')
+//   }
+// }
 
 // Kirish(101,'Umar') //=> hush kelibsiz
 // Kirish(10,'Umar')  // => parol yoki name xato
 // Kirish(101,'Ali')   // => parol yoki name xato
 
+// SUCCESS
+
+// fully completed
