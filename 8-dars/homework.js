@@ -1,16 +1,16 @@
 ///////////////////object/////////////////
 
 // No1
-// // object keylarini toping
+// object keylarini toping
 // let obj={
 //     id:1,
 //     name:"WebBrain"
 // }
 
-// // chiqish
-// // value: id,name
+// chiqish
+// value: id,name
 
-// // anwes
+// // answes
 // console.log(Object.keys(obj)) // Objeck keys bizlarga obj ning keylarini chiqarib berardi
 
 // -=-=-=-=-=-=-
@@ -28,7 +28,6 @@
 // // id,age,hight
 
 // // Eslatma:
-
 // // -=-=-=-=- har doim type tekshirilyotganda boshiga typeof quyishimiz kerak
 
 // console.log(obj.id === Number) // value: false; bizning obj.id number bulsaham false chiqyapdi
@@ -194,30 +193,30 @@
 // No7
 
 // array berilgan array ning ichida objectlar berilgan. object ichida age berilgan. age ni 18dan katta bolgan objectlarni qaytaring
-let user = {
-    id: 1,
-    name: 'Odil',
-    age: 78,
-    children: [
-        {
-            id: 1,
-            name: 'Umar',
-            age: 54,
-            children: [
-                { id: 1, name: 'Asmo', age: 34 },
-                { id: 2, name: 'Osim', age: 30 },
-                { id: 3, name: 'Xattob', age: 25 },
-            ]
-        },
-        { id: 2, name: 'Umar', age: 54 },
-        { id: 3, name: 'Umar', age: 54 },
-    ]
-}
-for(i in user){
-  if(typeof user[i] === 'object'){
-    console.log(user)
-  }
-}
+// let user = {
+//     id: 1,
+//     name: 'Odil',
+//     age: 78,
+//     children: [
+//         {
+//             id: 1,
+//             name: 'Umar',
+//             age: 54,
+//             children: [
+//                 { id: 1, name: 'Asmo', age: 34 },
+//                 { id: 2, name: 'Osim', age: 30 },
+//                 { id: 3, name: 'Xattob', age: 25 },
+//             ]
+//         },
+//         { id: 2, name: 'Umar', age: 54 },
+//         { id: 3, name: 'Umar', age: 54 },
+//     ]
+// }
+// for(i in user){
+//   if(typeof user[i] === 'object'){
+//     console.log(user)
+//   }
+// }
 
 // -=-=-=-=-=-=
 
@@ -258,9 +257,14 @@ for(i in user){
 
 // No10
 // objectga yangi qiymat qo'shuvchi funksiya yozing
-// add(obj,key,value)
-// add(obj,'address','toshkent')
-
+// let obj = {};
+// let a = 2;
+// let b = 1;
+// function add(obj, key, value) {
+//   obj[key] = value;
+// }
+// add(obj, a, b);
+// console.log(obj);
 // No11
 // agar object ichida practice 1 dan katta bolsa 'qabul qilindi'.aks holda 'ming bor uzur.'
 // let obj = {
@@ -284,7 +288,9 @@ for(i in user){
 
 // No11
 
-// // agar object ichida talaba bolsa objectga {kiridit:true} key va value qoshilsin aks holsa {kiridit:olinmadi} qoshilsin
+// // Agar object ichida talaba bolsa objectga {kiridit:true} key va value qoshilsin 
+// // aks holsa {kiridit:olinmadi} qoshilsin
+
 // let obj = {
 //     id: 1,
 //     name: 'Usmon',
@@ -337,13 +343,13 @@ for(i in user){
 // No13
 // // talaba oz malumotlarini toldirmoqda. sizga object va massiv berilgan. massiv
 // // ichida uzbekiston viloyatlari berilgan. agar talaba massiv ichidagi viloyatlardan boshqa tanlasa bizning filallarimiz faqat shu viloyatlarda degan natija chiqsin.
-// arr = ['Andijon','Namangan','Qarshi','Toshkent', 'Samarqand']
-// let a = 'Samrqand';
+arr = ['Samarqand', 'Andijon', 'Namangan', 'Qarshi', 'Toshkent']
+let a = 'Samrqand';
 
-// if(arr.includes(a))
-// {}else{
-//   console.log(`bizning filiallarimiz vaqat shu viloyatlardda ${ar}`)
-// }
+if(arr.includes(a))
+{}else{
+  console.log(`bizning filiallarimiz vaqat shu viloyatlardda : ${arr}`)
+}
 
 // SUCCESS
 
@@ -409,120 +415,7 @@ for(i in user){
 
 // -=-=-=-=-=-=
 
-// No16
-let person = {
-  id: 1,
-  name: "Umar",
-  surname: "Ismoilov",
-};
 
-// add IELTS
-person = {
-  id: 1,
-  name: "Umar",
-  surname: "Ismoilov",
-  ielts: 5.5,
-};
-
-// 2 - shart
-// // agar ielts 5.5 yoki katta bolsa consoleda qabul qilindi,aks holda qayta topshirish kk
-// person = {
-//     id: 1,
-//     name: 'Umar',
-//     surname: 'Ismoilov',
-//     ielts: 5.5
-// }
-// // qabul qilindi
-
-// if(person.ielts > 5.5 ){
-//   console.log('qabul qilindi')
-// }else{
-//   console.log('qayta topshiring')
-// }
-
-// // success
-
-// -=-=-=-=-=-
-
-// 3 - shart
-// // agar ielts 5.5 yoki katta bolsa objectga student:true qoshilsin qiymati bn birga
-// person = {
-//   id: 1,
-//   name: "Umar",
-//   surname: "Ismoilov",
-//   ielts: 5.5,
-// };
-// // chiqish
-// // person = {
-// //     id: 1,
-// //     name: 'Umar',
-// //     surname: 'Ismoilov',
-// //     ielts: 5.5,
-// //     student: true
-// // }
-
-// if (person.ielts >= 5.5) {
-//   person.student = true;
-// }
-// console.log(person) // quwilyapdi 
-
-// // success
-
-// -=-=-=-=-
-
-// qoshimcha
-// 4 - shart
-// // agar student true bolsa unga maxsus key berilsin(math.random+id orqali berilsin)
-// person = {
-//     id: 1,
-//     name: 'Umar',
-//     surname: 'Ismoilov',
-//     ielts: 5.5,
-//     student: true
-// }
-// // chiqish
-// // person = {
-// //     id: 1,
-// //     name: 'Umar',
-// //     surname: 'Ismoilov',
-// //     ielts: 5.5,
-// //     student: true,
-// //     parol: 101
-// // }
-// let id = 1000
-// var tasodifiySon = Math.floor(Math.random() * id) + 100;
-
-// if(person.student === true){
-//   person.parol = tasodifiySon
-// }
-// console.log(person)
-
-// // success
-
-// -=-=-=-=-=-
-
-// 5 - shart
-// // talaba bazaga kirishi kk shunday funksiya yarating u parol va name ni jonatsin. agar qarol bn name bazadagi
-// // parol bn name ga togri kelsa consoleda hush kelibsiz aks holda parol yoki name xato chiqsin
-// person = {
-//     id: 1,
-//     name: 'Umar',
-//     surname: 'Ismoilov',
-//     ielts: 5.5,
-//     student: true,
-//     parol: 101
-// }
-// function Kirish(parol,name){
-//   if(person.name === name && person.parol === parol){
-//     console.log('Hush kelibsiz')
-//   }else{
-//     console.log('Parol yoke Name xato')
-//   }
-// }
-
-// Kirish(101,'Umar') //=> hush kelibsiz
-// Kirish(10,'Umar')  // => parol yoki name xato
-// Kirish(101,'Ali')   // => parol yoki name xato
 
 // SUCCESS
 
