@@ -348,6 +348,25 @@
 
 // console.log(!0) // true 0 false bulganligi uchun uni teskarisi (true) ni chiqarayapdi
 
+// -=-=-=-=-=-=-=- Bitwise Operator
+/* 
+JavaScriptda Bitwise operatorlar bitlarni mantiqiy (logic) xossalarga asoslangan 
+arifmetik amallar bilan birlashtirish uchun ishlatiladi. Bu operatorlar bitlar va 
+byte (1 va 0) darajasidagi arifmetik muammolarni hal qilishga yordam beradi.
+
+*/
+
+// Quyidagi Bitwise operatorlar JavaScriptda mavjud:
+
+// & - Bitwise AND: Berilgan operandlarning har bir bitini AND bilan solishtiradi.
+// | - Bitwise OR: Berilgan operandlarning har bir bitini OR bilan solishtiradi.
+// ^ - Bitwise XOR: Berilgan operandlarning har bir bitini XOR bilan solishtiradi.
+// ~ - Bitwise NOT: Berilgan operandning har bir bitini NOT bilan solishtiradi (bitlarni o'zgartiradi).
+// << - Bitwise Left Shift: Berilgan operanddagi bitlarni chapga to'g'rilab ko'chiradi.
+// >> - Bitwise Right Shift: Berilgan operanddagi bitlarni o'ngga to'g'rilab ko'chiradi.
+// >>> - Bitwise Zero-fill Right Shift: Berilgan operanddagi bitlarni o'ngga to'g'rilab, bo'sh joylar bilan to'ldiradi.
+
+
 // -=-=-=-=-=-=-=- Logical Operations
 // 1. || OR
 
