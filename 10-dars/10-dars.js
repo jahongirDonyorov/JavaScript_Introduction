@@ -267,3 +267,28 @@ console.log(Math.sign(-21)) // -1
 console.log(Math.sign('-99')) // -1
 // JavaScriptda -0 ham mavjud bu son matimatikada mavjud emas 
 console.log(Math.sign(-0)) // -0 - bu -0 bulgsnligi uchun -0 chiqardi
+
+
+// -=-=-=-=-=-=-=- Optional Chaining
+
+// masalan biz obj.age qilganmiz age ga undefined yokeda null degan qiymat kelib qoldi deyaylik bu holatda bizga error beradi 
+let obj = {name:'John', child:null}
+console.log(obj.child.age) 
+// child ga {gae:..} emas null degan qiymat kelib qoldi shuning uchun error beradi 
+// biz buni agar qiymat kelsa chiqar kelmasa undefined qaytar deyishimiz mumkun
+console.log(obj.child?.age) // ? ning ishi child ichida xaqqatdan age bulsa uuqigin bulmasa undefined qaytaradi  
+
+// Homework Number 
+// 1. istalgan sonni binary ko'rinishiga o'tkazib nechta 0 va nechta 1 qatnashganligini aniqlang 
+// example: 5 === 101
+// res: 2 ta bir, 1 ta nol qatnashgan 
+
+// 2. Berilgan sonni ichidagi eng katta va eng kichik sonlar ayirmasini toping. Musbat son chiqmasligi kerak.
+// (1 ,2, 3, 44, 5, 45, 64, 33, 2, 145, 6)
+
+// 3. Math ning trunc vs floor vs ceil larini paresInt  bilan farqini tushintirib bering.
+
+// 4. randomIntiger(min, max) function yozilsin. min dan max gacha bulgan qiymatni random qaytarsin 
+
+
+// -=-=-=-=-=-=-=- String 
