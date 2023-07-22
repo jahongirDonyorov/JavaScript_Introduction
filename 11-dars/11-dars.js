@@ -109,23 +109,23 @@ console.log(test2.at(-1));
 // 5  - .indexOf(str) // represent index of str -- -1 if not found
 // 6  - .lastIndexOf(str) // represent index of str -- -1 if not found
 // 7  - .includes(str) - returns true or false
-// 8  - .endsWith(str)
 // 8  - .startsWith(str)
-// 9  - .padEnd(count, value) - 'hello'.padEnd(5) // 'hello'.padEnd(5, '.') // 'hello.....'
-// 10 - .padStart(caunt, value) - 'hello'.padStart(5) // 'hello'.padStart(5, '.') // '.....hello'
-// 11 - .slice(strat, end(not included)) - accept
-// 12 - .substring(start,end(not included)) - not accept +- -- swipe greater value --
-// 13 - .substr(start, length) --
-// 14 -  slice vs substring vs substr - ref pic is availble
-// 15 - .eval(str) - calculation
-// 16 - .trim() - remove ending and starting spaces
-// 17 - .trimStart()
-// 18 - .trimEnd()
-// 19 - .split()/split(sperator) / split(sperator, limit) - repeat(count)
-// 20 - .concat(str2) - concationation
-// 21 -  String.row`path` - ignore \ chars
-// 22 - .search vs .indexOf - regex uses search, indexing uses indexOf
-// 23 -  valueOf(new String('ss'))
+// 9  - .endsWith(str)
+// 10  - .padEnd(count, value) - 'hello'.padEnd(5) // 'hello'.padEnd(5, '.') // 'hello.....'
+// 11 - .padStart(caunt, value) - 'hello'.padStart(5) // 'hello'.padStart(5, '.') // '.....hello'
+// 12 - .slice(strat, end(not included)) - accept
+// 13 - .substring(start,end(not included)) - not accept +- -- swipe greater value --
+// 14 - .substr(start, length) --
+// 15 -  slice vs substring vs substr - ref pic is availble
+// 16 - .eval(str) - calculation
+// 17 - .trim() - remove ending and starting spaces
+// 18 - .trimStart()
+// 19 - .trimEnd()
+// 20 - .split()/split(sperator) / split(sperator, limit) - repeat(count)
+// 21 - .concat(str2) - concationation
+// 22 -  String.row`path` - ignore \ chars
+// 23 - .search vs .indexOf - regex uses search, indexing uses indexOf
+// 24 -  valueOf(new String('ss'))
 
 // -=-=-=-=-=- Usege (ishlatilishi)
 
@@ -183,6 +183,114 @@ console.log(str4.includes('we'))// true chiqadi chunke we str4 da bor
 
 // bularni ishlatishga bitta mison tilifon kantakda nomerni boshini yozsak qolganlari automatik ravishda chiqib 
 // keladi ushanda filtirlarda ishlatishimiz mumkun ekan
+
+
+// 8. -=-=-=- .startsWith(str)
+// stringni boshida biz hohlagan suz bor yuqligini tekshiradi 
+console.log(str4.startsWith('web')) // true chiqadi chunke str4 ning boshi web blan boshlanadi 
+console.log(str4.endsWith('as'))// false chiqadi chunke str4 ning boshi as blan boshlanmaydi
+// ishlatishga misol maslan kurs uchun faqat usb fuqorolari ruyhattan utaolishlari kerak bunda nomerning boshini tekshirishimiz mumkun +998 blan bulsa ruyhatdan utsin desak buladi 
+
+
+// 9. -=-=-=- .endsWith(str)
+// bu esa string oxirini tekshiradi 
+console.log(str4.endsWith('emy'))// true chiqadi chunke str4 ning oxiri emy blan tugaydi
+console.log(str4.endsWith('as'))// false chiqadi chunke str4 ning oxiri as blan tugamaydi
+
+// 10. -=-=-=- .padEnd(count, value)
+// gapning oxiriga uzimizga kerakli narsani qushib beradi 
+console.log(str4.padEnd(22,'.')) // webbeain academy......
+// 2ta parametr olyapdi binchisi 22 ta joyni egallasin ikkinchisi '.' stringimiz 22 tadan kichik bulsa qolganiga ... quysin 
+
+// 11. -=-=-=- .padStart
+// bu huddi shunday faqat boshidan quyadi 
+console.log(str4.padStart(22,'.')) // ......webbeain academy
+
+// 12. -=-=-=- .slice(strat, end(not included))
+// bu bizga stringni kesib beradi
+//  2 ta parametr oladi 1-si boshlanishi 2-si tugashi yani 1 dan 2 gacha bulgan indexni kesib oladi 
+console.log(str4.slice(0,5)) // webbe 
+// yane 0-indexdan 5 indexgacha kesb oladi 5 ni uzini olmaydi 
+// bu - qiymatham qabul qiladi menus orqadan sanab keladi 
+console.log(str4.slice(0,-2)) // webbeain acade
+// orqadan 2 ta sanaydi my ni olib tashladi 
+
+// 13. -=-=-=- .substring(start,end(not included))
+// buham kesadi faqat bu - lik qiymat olmaydi va kattasidan kichigiga qarab tug'irlab oladi 
+console.log(str4.substring(2,0)) // we
+// bu mantiqiy notug'ri 2 dan 0 gacha bulmaydi lekn substring buni automatik tug'irlab oladi 0dan 2 gacha qilib
+// qolganlarida bu ishlamaydi
+console.log(str4.slice(2, 0)) // vallue chiqmaydi
+
+// 14. -=-=-=- .substr(start, length) --
+// buham kesadi faqat buning boshlaqalardan faqartlari mavjud 
+console.log(str4.substr(2,2)) // bb
+// 1-qiymati nechinchi indexdan 2- sisi nechta kesishini bildiradi 
+// bu holatda 2 indexdan kiyin 2ta chiqar degani qolganlarida bu yuq
+
+// 15. -=-=-=- slice vs substring vs substr - ref pic is availble farqlarini kurdik
+
+// 16. -=-=-=- .eval()
+// string ichidagi malumotlarni xisoblab beradi 
+console.log('2+2') // 2+2 - chiqadi
+console.log(eval('2+2')) // 4 - chiqarib beradi
+
+
+// 17. -=-=-=- .trim 
+// stringdagi boshidagi va oxiridagi bush joylarni olib tashlaydi 
+// urtada bish joy bulsa olmaydi 
+let str5 = '      John    p      '
+console.log(str5.trim()) // John    p
+
+// 18. -=-=-=- .trimStart 
+// boshidagi bush joylarni uchiradi 
+console.log(str5.trimStart())// John    p
+
+// 19. -=-=-=- .trimEnd
+// oxiridagi bush joylarni chiqarib tashlaydi 
+console.log(str5.trimEnd()) //       John    p
+
+// 20. -=-=-=- .split()/split(sperator) / split(sperator, limit) - repeat(count)
+// bu malumotni arrayga uzgartiradi 
+console.log(str4.split()) // [ 'webbeain academy' ] 
+// bu holatda hammasini array qilib beradi 
+console.log(str4.split('')) // ['w','e','b','b', 'r']
+// array qiladi va ishidagi har bir harfni 'stringa olib chiqadi'
+console.log(str4.split(' ')) // string orasida bitta bush joy tashlasak har joy tashlanganlarni array ichida addelne stringa oladi 
+// value: [ 'webbeain', 'academy' ]
+console.log(str4.split('a')) // bu a bulgan joylarda bitta element yasab beradi a ni uzini chiqarmaydi 
+// value: [ 'webbe', 'in ', 'c', 'demy' ]
+
+// bunga 2-parametr quysak ham buladi u nechta element chiqarishini bildiradi
+// 21. -=-=-=- consat()
+// bu sitrinning oxiridan suz qushib beradi 
+console.log(str4.concat(' Jahon', ' ...', ' Doniyarov')) // webbeain academy Jahon ... Doniyarov
+
+// 22. -=-=-=- search indexOf blan bir hil 
+
+// 24. -=-=-=- valueOf()
+// biz new stringni console da kurganimizda [String: '...'] chiqaradi bizga faqatgina valuesi kerak bulsa shundan fydalanamiz 
+console.log(new String('Jahon')) // [String: 'Jahon']
+console.log(new String('Jahon').valueOf()) // Jahon
+
+
+// 23. -=-=-=- .replace 
+// stringni kerakli joyini uzgartirish uchun ishlatiladi 
+// 2 ta parametr oladi 1-siga qaysi suzni uzgartirmoqchi bulsak usha yoziladi 2-si nmaga uzgarishi 
+console.log(str4.replace('web', "WEB")) // web WEB ga uzgarsin deyapdi javob: WEBbrain buladi
+// bunda birinchi parametrning harflariham stringdagi blan bir hil bulishi kerak 
+console.log(str4.replace('Web', 'Join')) // bu ishlamaydi chunke str4 ning boshi Web blan emas web blan boshlangan yane kichik harf blan 
+// buni tug'irlash mumkun yani harflarga qaramaydi suz tug'ri kelsa buldi 
+console.log(str4.replace(/WEB/i, 'Join')) // / buni ichida bu '' yozilmaydi /i ignor degani ignor qiladi katta kichikligiga qaramaydi suz tugri kelsa buldi 
+// agar web dan 2 ta bulsa bu birinchi kelganini uzgartirib beradi 
+console.log(str4.replace(/WEB/ig, 'Join')) // / /ig qilsak bu str4 ichidagi hamma web larni uzgartiradi nechta bulishidan qate nazar
+
+
+// -=-=-=-=- Loop
+// obj da for lop orqali keylarni olganimizdek bunda har bitta harfni olsak buladi faqat bunda in urniga of ishlatiladi 
+for(i of str4){
+  console.log(i)// har bitta harfni bittadan aylantirib chiqarib beradi 
+}
 
 // Homework
 // 1. check(str1, srt2)  - function yozilsin. berilgan parametrlar bir biriga mos yoki
