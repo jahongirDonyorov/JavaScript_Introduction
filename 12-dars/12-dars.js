@@ -336,8 +336,3 @@ console.log(rev.reverse()) // value: [5,4,3,2,1]
 // bu bizga kerakli element arrayni ichida bor yuqligini tekshirib beradi
 console.log(rev.includes(4)) // true chunke 4 rev ni ichida bor
 console.log(rev.includes(41)) // false chunke 41 rev ni ichida yuq
-// 17. -=-=-=-=- 
-// 18. -=-=-=-=- 
-// 19. -=-=-=-=- 
-// 20. -=-=-=-=- 
-// 21. -=-=-=-=- 
