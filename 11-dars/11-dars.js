@@ -349,18 +349,52 @@ console.log(del(str,n))
 // ex: '$1200' - 1200
 let str1 = '$120'
 function getCount(str1){
-  let count = ''
-  for(i of str1){
-    // console.log(i)
-    if( i !== '$'){
-     console.log(count.concat(i))
-    }
-  }
-  console.log(count)
+  let count = str1.replace('$', '')
+ return count
 }
-getCount(str1)
+console.log(getCount(str1))
+
 // 5. berilgan string raqam, string va characterlarni alohida sano'gi blan chiqaring.
-// ex: 'John@!n_2004', res:{letter:6, char:3, number:4}
+// ex: 'John@!n_2004', res:{letter:5, char:3, number:4}
+// let a = 'John@!n_2004'
+// function add (str) {
+//   let ar = []
+// for(i of str){
+//   if(i.included('d')){
+//     console.log(i)
+//   }
+// }
+// } 
+// add(a)
 
 // 6. copitalize(str) - berilgan stringdagi barcha so'zlarni faqat bosh harifini katta harfga o'zgartirib chiqish kerak
 // ex: str = jahongir doniyarov // Jahongir Doniyarov
+// let str2 = 'jahongir doniyarov'
+
+// function copitalize(str){
+//   let ar = str.split(' ')
+//   for(i of ar){
+//     let a = ar[i];
+//     console.log(a)
+//     // console.log(i[0].toUpperCase() + )
+//   }
+// }
+// copitalize(str2)
+
+function capitalize(str) {
+  const words = str.split(' ');
+
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+    if (word.length > 0) {
+      words[i] = word[0].toUpperCase() + word.slice(1);
+    }
+  }
+
+  return words.join(' ');
+}
+
+const inputString = 'jahongir doniyarov';
+const result = capitalize(inputString);
+console.log(result);
+
