@@ -235,85 +235,109 @@
 // // -=-=-=-=-=- findlastIndex
 // // findIndex blan bir xil faqat bu oxiridan qidiradi 
 
-//####################
 
-// -=-=-=-=- forEach
-// array ichini aylanib malumotlarini oladi bu for loop dek 
-// ichida callback fnc buladi va 2 ta parametr ketadi value va index 
-let num = [1, 2, 34, 3, 25, 44, 0];
-
-let resEach = num.forEach((value,index) => {
-  console.log(value) // valuni chiqardai value: 1, 2, 34, 3, 25, 44, 0
-  console.log(value + 2) // kelyotgan valuega 2 ni qushib chiqaradi value: 3,4,36,5,27,46,2
-
-  // forEach da return qilib malumotni tashqarida qayta ishlatolmaymiz 
-  return value + 2 // undefined qaytaradi chunke return forEach da ishlamaydi 
- })
- console.log(resEach)// undefined chiqadi chunke forEach da return ishlamaydi 
-// forEach uzi qanday amal bajarayotgan busa buldi faqat shuni bajaradi uni ustida boshqa amal bajarib bulmaydi 
+// ####################
 
 
-// -=-=-=-=- map
-// map ham array ni aylanadi faqat bunda return ishlaydi 
-// bundaham callback fnc yoziladi va 2 ta parametr oladi 1-si value 2-si index buladi 
+// // -=-=-=-=- forEach
+// // array ichini aylanib malumotlarini oladi bu for loop dek 
+// // ichida callback fnc buladi va 2 ta parametr ketadi value va index 
+// let num = [1, 2, 34, 3, 25, 44, 0];
 
-let resMap = num.map((value,index) => {
-  console.log(value) // value: 1, 2, 34, 3, 25, 44, 0
-  // bunga returndan bror narsa qaytib turishi kerak agar return qilmasak resMap chaqirilganda  [undefined, undefined] shu holatda vajob chiqadi
-  return value + 2
-})
-console.log(resMap) // [3,4,36,5,27,46,2]
-// agar map ichida return bulmasa [inchida undefineds qaytadi har bir element uchun bittadan undefined ]
-// [
-//   undefined,
-//   undefined,
-//   undefined,
-//   undefined,
-//   undefined,
-//   undefined,
-//   undefined
-// ]
-// map har safar aylanganida nmagadur return qiladi biz hech narsaga return qilmadikmi unda undefined buladi 
+// let resEach = num.forEach((value,index) => {
+//   console.log(value) // valuni chiqardai value: 1, 2, 34, 3, 25, 44, 0
+//   console.log(value + 2) // kelyotgan valuega 2 ni qushib chiqaradi value: 3,4,36,5,27,46,2
+
+//   // forEach da return qilib malumotni tashqarida qayta ishlatolmaymiz 
+//   return value + 2 // undefined qaytaradi chunke return forEach da ishlamaydi 
+//  })
+//  console.log(resEach)// undefined chiqadi chunke forEach da return ishlamaydi 
+// // forEach uzi qanday amal bajarayotgan busa buldi faqat shuni bajaradi uni ustida boshqa amal bajarib bulmaydi 
 
 
-// -=-=-=- forEach vs Map
+// // -=-=-=-=- map
+// // map ham array ni aylanadi faqat bunda return ishlaydi 
+// // bundaham callback fnc yoziladi va 2 ta parametr oladi 1-si value 2-si index buladi 
 
-// faqat bror narsani hisoblamoqchi bulsak forEach forEach dan foydalansak buladi 
+// let resMap = num.map((value,index) => {
+//   console.log(value) // value: 1, 2, 34, 3, 25, 44, 0
+//   // bunga returndan bror narsa qaytib turishi kerak agar return qilmasak resMap chaqirilganda  [undefined, undefined] shu holatda vajob chiqadi
+//   return value + 2
+// })
+// console.log(resMap) // [3,4,36,5,27,46,2]
+// // agar map ichida return bulmasa [inchida undefineds qaytadi har bir element uchun bittadan undefined ]
+// // [
+// //   undefined,
+// //   undefined,
+// //   undefined,
+// //   undefined,
+// //   undefined,
+// //   undefined,
+// //   undefined
+// // ]
+// // map har safar aylanganida nmagadur return qiladi biz hech narsaga return qilmadikmi unda undefined buladi 
 
-// bror narsani brawserga chiqarmoqchi bulsak forEach dan foydalanolmaymiz faqat map dan foydalanishimiz mumkun 
 
-// masalan siz bajarilgan amalni alert yordamida ekranga chiqarmoqchisiz 
-let res = num.forEach((a,b) => {
-  return a + 2;
-})
-console.log(res) // undefined 
-// alert yordamida ekranga chiqarmoqchi bulsakham shu holat buladi 
-// alert(res) // userga alert ichida undefined chiqadi 
+// // -=-=-=- forEach vs Map
 
-let res1 = num.map((a,b) => {
-  return a + 2;
-})
-console.log(res1) // [ 3, 4, 36, 5, 27, 46, 2]
-// alert yordamida ekranga chiqarmoqchi bulsakham shu holat buladi 
-// alert(res1) // userga alert ichida yechgan javoblari  chiqadi 
+// // faqat bror narsani hisoblamoqchi bulsak forEach forEach dan foydalansak buladi 
+
+// // bror narsani brawserga chiqarmoqchi bulsak forEach dan foydalanolmaymiz faqat map dan foydalanishimiz mumkun 
+
+// // masalan siz bajarilgan amalni alert yordamida ekranga chiqarmoqchisiz 
+// let res = num.forEach((a,b) => {
+//   return a + 2;
+// })
+// console.log(res) // undefined 
+// // alert yordamida ekranga chiqarmoqchi bulsakham shu holat buladi 
+// // alert(res) // userga alert ichida undefined chiqadi 
+
+// let res1 = num.map((a,b) => {
+//   return a + 2;
+// })
+// console.log(res1) // [ 3, 4, 36, 5, 27, 46, 2]
+// // alert yordamida ekranga chiqarmoqchi bulsakham shu holat buladi 
+// // alert(res1) // userga alert ichida yechgan javoblari  chiqadi 
 
 
-let student = [
-  { id: 1, year: 2001, name: "Elshod" },
-  { id: 2, year: 2003, name: "Begzod" },
-  { id: 3, year: 2004, name: "John" },
-  { id: 4, year: 2004, name: "Boymirod" },
-  { id: 5, year: 2002, name: "Xusayin" },
-  { id: 6, year: 2003, name: "Saddam" },
-  { id: 7, year: 2002, name: "Belladen" },
-  { id: 8, year: 2003, name: "Jorj" },
-  { id: 9, year: 2002, name: "Jurabek" },
-];
+// let student = [
+//   { id: 1, year: 2001, name: "Elshod" },
+//   { id: 2, year: 2003, name: "Begzod" },
+//   { id: 3, year: 2004, name: "John" },
+//   { id: 4, year: 2004, name: "Boymirod" },
+//   { id: 5, year: 2002, name: "Xusayin" },
+//   { id: 6, year: 2003, name: "Saddam" },
+//   { id: 7, year: 2002, name: "Belladen" },
+//   { id: 8, year: 2003, name: "Jorj" },
+//   { id: 9, year: 2002, name: "Jurabek" },
+// ];
 
-// bizga faqat studend dagi name lar  kerak bulsa hammasini bitta array da chiqarishimiz mumkun ekan 
-let rest = student.map((a,b) => {
-  return a.name 
-  // htmlda bu name larni bittalab yozmasdan birdaniga yozishimiz mumkun ekan 
-  return <h1>{a.name}</h1>
-})
-console.log(rest)
+// // bizga faqat studend dagi name lar  kerak bulsa hammasini bitta array da chiqarishimiz mumkun ekan 
+// let rest = student.map((a,b) => {
+//   return a.name 
+//   // htmlda bu name larni bittalab yozmasdan birdaniga yozishimiz mumkun ekan 
+//   return <h1>{a.name}</h1>
+// })
+// console.log(rest)
+
+
+// ####################
+
+// // -=-=-=-=-=-=-=- every()
+// // every ning vazifasi array ichidagi hamma malumot biz qilgan shartga mos kelish kelmasligini tekshiradi true va false qiymat qaytaradi 
+
+// let num = [1, 2, 34, 3, 25, 44, 0];
+
+// // arrayni ichidagi malumotlar number emasligini bilish uchun isNaN dan foydalanardik 
+// console.log(num.every((value) => isNaN(value))) // false chiqadi bular number 
+// // biz array ichidagi malumot numbermi demoqchi bulsak isNaN oldiga ! quyardik 
+// console.log(num.every((value) => !isNaN(value))) // true chiqadi - chunke bu holatda biz array ichidagi valuelar numbermi deb surayapmiz 
+
+// let str = [1, 2, 34, 3, '25', '44', 0];
+// console.log(num.every((value) => !isNaN(value))) // ichidagi bir ikta element string bulgan bulsaham bu true chiqaradi / bu hammasini tekshirmayapdi  
+// // bu holatda isNaN blan tug'ri vajobni ololmas ekanmiz 
+// // biz hammasi numbermi deyishimiz uchun bu usuldan foydalanamiz 
+// console.log(str.every((value) => {
+//   return typeof value === "number"
+// })) // every array ichidagi hamma malumot return dagi shartga tug'ri keladimi yuqmi shuni tekshiradi
+// // valularning hammasi numberga teng bulmaganligi uchun false chiqadi 
