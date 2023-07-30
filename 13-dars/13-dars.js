@@ -341,3 +341,57 @@
 //   return typeof value === "number"
 // })) // every array ichidagi hamma malumot return dagi shartga tug'ri keladimi yuqmi shuni tekshiradi
 // // valularning hammasi numberga teng bulmaganligi uchun false chiqadi 
+
+
+// ####################
+
+// // -=-=-=-=-=-=- some
+// // bu every ning teskarisi hisoblanadi yane every array ichidagi hamma malumot tuliq shartga tug'ri kelsa shundagina true chiqrardi
+// // sam esa array ichida bitta malumot shartimizga tug'ri kelsaham true chiqaradi 
+// // let str = [1, 2, 34, 3, '25', '44', 0];
+
+// let str1 = [1, 2, 34, 3, '25', '44', 0];
+
+// console.log(str1.some((value) => {
+//   return typeof value === "number" // true chiqadi 
+// }))
+// // bi shu narsani value stringga tengmi deb tekshirsakham true chiqadi yane biz tekshiryotgan narsadan bitta bulsaham arrayda true chidagi
+
+
+// // -=-=-=-=-=-=- fill manosi tuldirmoq 
+
+// // buning vazifasi array valuelarini azgartirish 
+// // bu 3 ta paramert oladi 3-si hohishiy 
+// // 1-parametr valuelar nmaga uzgarishi
+// // 2-parametr valuelar nichinchi indexdan boshlab uzgarishi 
+// // 3-parametr valular nichinchi indexgacha uzgarishini bildiradi 
+// // 3-parametr ni quymasak valular 2-parametr dan boshlab ohirigacha uzgaradi
+
+// let str2 = [1, 2, 34, 3, '25', '44', 0];
+// console.log(str2.fill('John', 2)) // 2 - indexdan boshlam hamma malumot John ga aylandi 
+// console.log(str2.fill(0, 2, 4)) // 2 - indexdan 3 gacha bulgan hamma malumot 0 ga aylandi 
+
+
+// // -=-=-=-=-=-=-=-=- copyWithin
+// // array ichida bizga kerak bulgan malumotni copy qilib oladi va biz hohlagan boshqasini urniga quyadi 
+// // bu faqat arran value urniga qushadi avvalgisi urniga copy qilingani quyiladi bish joyga copyni quyib quymaydi 
+
+// // 3 ta parametr oladi
+// // 1 - si nechinchi indexdan boshlab quyishni bildiradi 
+// // 2 - si nechinchi indexdan boshlab copy qilib olishni bildiradi 
+// // 3 - si nechinchi indexgacha copy qilishni bildiradi 
+// // 2 va 3 orasida copy qilgan narsani 1 ning urniga quyadi 
+
+// let arr = [0,0,0,1,2,3,4,5,6]
+
+// console.log(arr.copyWithin(0,3,6)) // 0 indexga 3 blan 6 - index oralig'idagi malumotni quyadi 
+// // hoz bu 3 ta malumotni copy qilib olyapdi lekn biz faqat 0-indexga quysin deyapmz
+// // yane bitta joyga 3 ta ,alumotni quysin deyapmiz bu holatda nechta malumot quymoqchi bulsak ushancha elementni 0-indexdan olib urniga quyadi 
+// // 3 ta 0 ning urniga 1 2 3 ni quyadi 
+// // value: [1, 2, 3, 1, 2, 3, 4, 5, 6]
+
+// // agar biz malumotni oxidan qushsak va qushilyotgan narsa siqmay qolsa qolganini kesb tashlaydi 
+
+// console.log(arr.copyWithin(7,0,6)) // 7-index(5) ga qushadi 0-index(1) dan 6-index(4) gacha valueni 
+// // qushilishi kerak 1,2,3,1,2,3,4 bulardan faqat 1,2 qushiladi chunke qolganiga joy yrtmay qoldi  
+// // 5 ni urniga 1, 6 ni urniga 2 qushiladi va qolganiga joy qolmaydi 
