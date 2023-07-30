@@ -184,15 +184,119 @@
 
 //####################
 
-// -=-=-=-=-=- find
-// find filter blan birhil buham filter qilib beradi va bungaham callback yozilishi kerak
+// // -=-=-=-=-=- find
+// // find filter blan birhil buham filter qilib beradi va bungaham callback yozilishi kerak
+// let num = [1, 2, 34, 3, 25, 44, 0];
+// // bu true false da ishlaydi true bulsa code tuctaydi
+// console.log(
+//   num.find((value) => {
+//     return value === 34; // valusi 34 ga teng bulganini chiqar degani
+//   })
+// );
+
+// let student = [
+//   { id: 1, year: 2001, name: "Elshod" },
+//   { id: 2, year: 2003, name: "Begzod" },
+//   { id: 3, year: 2004, name: "John" },
+//   { id: 4, year: 2004, name: "Boymirod" },
+//   { id: 5, year: 2002, name: "Xusayin" },
+//   { id: 6, year: 2003, name: "Saddam" },
+//   { id: 7, year: 2002, name: "Belladen" },
+//   { id: 8, year: 2003, name: "Jorj" },
+//   { id: 9, year: 2002, name: "Jurabek" },
+// ];
+// // id 5 ga teng bulgan studentni name ni chiqar desak
+// let res = student.find((value) => {
+//   return value.id === 5;
+// });
+// console.log(res.name); // Xusayin chiqayapdi chunke uning id si 5 ga teng
+
+// // filter vs find farqi 
+
+// // filter uziga kerakli narsani izlayotganda masalan id:3 ni [] ichidan 3 ni topgandan kiyinham array ni tuliq kutib chiqadi 
+// // bizga 3 kerak birinchi 1 ni kuradi kiyin 2 ni va 3 topildi lekn filter 4,5,6,7,8,9 larniham kurib chiqadi 
+
+// // find esa 3 ni topgandan kiyin tuxtaydi qolganlarini kurmaydi shuning uchun filterdan tezroq ishlaydi 
+
+// // ikkalasiham bitta ishni qiloladi lekn uz urnida ishlatganimiz yaxshi 
+// // filterni uz nomi blan filter bror narsani sartirofka qilish kerak bulganida ishlatsak buladi
+// // find ni uz nomi blan find bror narsani topadi buldi 
+
+// // -=-=-=-=-=- findIndex
+// // bu indexsini qaytaradi uni ichidagiu malumotni uqib bulmaydi 
+// // bu bizga usha id 5 bulgan talaba nechinchi indexdaligini bilib berish uchun kerak 
+
+//  res = student.findIndex((value) => {
+//   return value.id === 5;
+// });
+// console.log(res.name); // undeffined qaytaradi - chunke bu index qaytarganligi uchun uning malumotini olib bulmaydi 
+// console.log(res) // 4 - id 5 bulgan studend 4 indexda ekan 
+
+// // -=-=-=-=-=- findlastIndex
+// // findIndex blan bir xil faqat bu oxiridan qidiradi 
+
+//####################
+
+// -=-=-=-=- forEach
+// array ichini aylanib malumotlarini oladi bu for loop dek 
+// ichida callback fnc buladi va 2 ta parametr ketadi value va index 
 let num = [1, 2, 34, 3, 25, 44, 0];
-// bu true false da ishlaydi true bulsa code tuctaydi
-console.log(
-  num.find((value) => {
-    return value === 34; // valusi 34 ga teng bulganini chiqar degani
-  })
-);
+
+let resEach = num.forEach((value,index) => {
+  console.log(value) // valuni chiqardai value: 1, 2, 34, 3, 25, 44, 0
+  console.log(value + 2) // kelyotgan valuega 2 ni qushib chiqaradi value: 3,4,36,5,27,46,2
+
+  // forEach da return qilib malumotni tashqarida qayta ishlatolmaymiz 
+  return value + 2 // undefined qaytaradi chunke return forEach da ishlamaydi 
+ })
+ console.log(resEach)// undefined chiqadi chunke forEach da return ishlamaydi 
+// forEach uzi qanday amal bajarayotgan busa buldi faqat shuni bajaradi uni ustida boshqa amal bajarib bulmaydi 
+
+
+// -=-=-=-=- map
+// map ham array ni aylanadi faqat bunda return ishlaydi 
+// bundaham callback fnc yoziladi va 2 ta parametr oladi 1-si value 2-si index buladi 
+
+let resMap = num.map((value,index) => {
+  console.log(value) // value: 1, 2, 34, 3, 25, 44, 0
+  // bunga returndan bror narsa qaytib turishi kerak agar return qilmasak resMap chaqirilganda  [undefined, undefined] shu holatda vajob chiqadi
+  return value + 2
+})
+console.log(resMap) // [3,4,36,5,27,46,2]
+// agar map ichida return bulmasa [inchida undefineds qaytadi har bir element uchun bittadan undefined ]
+// [
+//   undefined,
+//   undefined,
+//   undefined,
+//   undefined,
+//   undefined,
+//   undefined,
+//   undefined
+// ]
+// map har safar aylanganida nmagadur return qiladi biz hech narsaga return qilmadikmi unda undefined buladi 
+
+
+// -=-=-=- forEach vs Map
+
+// faqat bror narsani hisoblamoqchi bulsak forEach forEach dan foydalansak buladi 
+
+// bror narsani brawserga chiqarmoqchi bulsak forEach dan foydalanolmaymiz faqat map dan foydalanishimiz mumkun 
+
+// masalan siz bajarilgan amalni alert yordamida ekranga chiqarmoqchisiz 
+let res = num.forEach((a,b) => {
+  return a + 2;
+})
+console.log(res) // undefined 
+// alert yordamida ekranga chiqarmoqchi bulsakham shu holat buladi 
+// alert(res) // userga alert ichida undefined chiqadi 
+
+let res1 = num.map((a,b) => {
+  return a + 2;
+})
+console.log(res1) // [ 3, 4, 36, 5, 27, 46, 2]
+// alert yordamida ekranga chiqarmoqchi bulsakham shu holat buladi 
+// alert(res1) // userga alert ichida yechgan javoblari  chiqadi 
+
 
 let student = [
   { id: 1, year: 2001, name: "Elshod" },
@@ -205,34 +309,11 @@ let student = [
   { id: 8, year: 2003, name: "Jorj" },
   { id: 9, year: 2002, name: "Jurabek" },
 ];
-// id 5 ga teng bulgan studentni name ni chiqar desak
-let res = student.find((value) => {
-  return value.id === 5;
-});
-console.log(res.name); // Xusayin chiqayapdi chunke uning id si 5 ga teng
 
-// filter vs find farqi 
-
-// filter uziga kerakli narsani izlayotganda masalan id:3 ni [] ichidan 3 ni topgandan kiyinham array ni tuliq kutib chiqadi 
-// bizga 3 kerak birinchi 1 ni kuradi kiyin 2 ni va 3 topildi lekn filter 4,5,6,7,8,9 larniham kurib chiqadi 
-
-// find esa 3 ni topgandan kiyin tuxtaydi qolganlarini kurmaydi shuning uchun filterdan tezroq ishlaydi 
-
-// ikkalasiham bitta ishni qiloladi lekn uz urnida ishlatganimiz yaxshi 
-// filterni uz nomi blan filter bror narsani sartirofka qilish kerak bulganida ishlatsak buladi
-// find ni uz nomi blan find bror narsani topadi buldi 
-
-// -=-=-=-=-=- findIndex
-// bu indexsini qaytaradi uni ichidagiu malumotni uqib bulmaydi 
-// bu bizga usha id 5 bulgan talaba nechinchi indexdaligini bilib berish uchun kerak 
-
- res = student.findIndex((value) => {
-  return value.id === 5;
-});
-console.log(res.name); // undeffined qaytaradi - chunke bu index qaytarganligi uchun uning malumotini olib bulmaydi 
-console.log(res) // 4 - id 5 bulgan studend 4 indexda ekan 
-
-// -=-=-=-=-=- findlastIndex
-// findIndex blan bir xil faqat bu oxiridan qidiradi 
-
-//####################
+// bizga faqat studend dagi name lar  kerak bulsa hammasini bitta array da chiqarishimiz mumkun ekan 
+let rest = student.map((a,b) => {
+  return a.name 
+  // htmlda bu name larni bittalab yozmasdan birdaniga yozishimiz mumkun ekan 
+  return <h1>{a.name}</h1>
+})
+console.log(rest)
