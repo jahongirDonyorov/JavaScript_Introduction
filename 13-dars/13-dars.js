@@ -45,7 +45,8 @@
 
 // // fil.filter(()=>{})
 // // filter har doim calback function oladi functionning 3 ta parametiri bor
-// //  1    2                3
+
+// //               1     2     3
 // // fil.filter((value,index,array)=>{})
 
 // // 1 - parametr array ichidagi valueni chiqarib beradi
@@ -88,7 +89,6 @@
 
 // let rest = b.filter((value,index) => {
 //   return value < 10 // true bulgan sonlar restga qushilib boradi false lar esa qushilmaydi
-
 // })
 // console.log(rest) // [ 1, 3, 4, 0 ] - faqat 10 dan kichiklarni chiqaryapdi
 
@@ -116,6 +116,7 @@
 //   { id: 8, year: 2003, name: 'Jorj'},
 //   { id: 9, year: 2002, name: 'Jurabek'}
 // ]
+
 // let ar = student.filter((a,b)=>{
 //   return a.year === 2002
 // })
@@ -136,9 +137,9 @@
 // // Bu holatda tugri ishlamaydi bizga tug'ri ishlashi uchun calback fnc klerak buladi
 
 // let res = b.sort((a,b) => {
-//   // return a - b // bu holatda js uzining algaretimidan foydalanadi  value:  1,  3, 25, 33,65, 73, 77, 83
+//   return a - b // bu holatda js uzining algaretimidan foydalanadi  value:  1,  3, 25, 33,65, 73, 77, 83
 //   // har bitta sonni olib uzidan kiyingilariga solishtirib chiqadi kichigindan kattasiga qarab filterlaydi
-//   return b - a // bu teskarisi jkattasidan kichigiga qarab taqqoslaydi  value: 83, 77, 73, 65,33, 25,  3,  1
+//   // return b - a // bu teskarisi jkattasidan kichigiga qarab taqqoslaydi  value: 83, 77, 73, 65,33, 25,  3,  1
 // })
 // console.log(res)
 
@@ -395,3 +396,26 @@
 // console.log(arr.copyWithin(7,0,6)) // 7-index(5) ga qushadi 0-index(1) dan 6-index(4) gacha valueni 
 // // qushilishi kerak 1,2,3,1,2,3,4 bulardan faqat 1,2 qushiladi chunke qolganiga joy yrtmay qoldi  
 // // 5 ni urniga 1, 6 ni urniga 2 qushiladi va qolganiga joy qolmaydi 
+
+
+// ####################
+
+// -=-=-=-=-=-= reduce -=-=-=-=-=-=-
+// bu 2 ta parametr oladi birinchisi callback fnc 2-si boshlang'ich qiymat 
+let num = [1,2,3,4,5,6,7]
+
+//                            1        2
+// console.log(num.reduce((value)=>value, 0)) // value: 0 chiqadi chunke boshlang'ich qiymat 0 ga teng 
+// 1 - callback fnc 
+// 2 - 0 bu boshlang'ich qiymat hisoblanadi 
+// bu holatda a ham calback ham 0 ga teng buladi 
+
+// calback ham uziga 2 ta paramert oladi a.reduce((sum,current) => {},0)
+// 1 - parametr (sum) callback nmaga return qilsa ushanga teng hisoblanadi 
+// 2 - current for loopdek aylanib malumotlarni chiqarib beradi 
+
+console.log(num.reduce((sum,current) => {
+  // console.log(sum) // 0 chunke boshlang'ich qiymat 0 ga teng 
+  return 1 // bu holatda sum 1 ga teng
+  console.log(sum) // 1 return 1 qilganligimiz uchun sum 1 ga teng buldi 
+}, 0)) // 0 chiqadi chunke boshlang'ich qiymat 0
