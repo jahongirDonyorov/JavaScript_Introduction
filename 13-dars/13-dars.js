@@ -400,22 +400,50 @@
 
 // ####################
 
-// -=-=-=-=-=-= reduce -=-=-=-=-=-=-
-// bu 2 ta parametr oladi birinchisi callback fnc 2-si boshlang'ich qiymat 
-let num = [1,2,3,4,5,6,7]
+// // -=-=-=-=-=-= reduce -=-=-=-=-=-=-
+// // bu 2 ta parametr oladi birinchisi callback fnc 2-si boshlang'ich qiymat 
+// // reduce(callback, initialvalue)
 
-//                            1        2
-// console.log(num.reduce((value)=>value, 0)) // value: 0 chiqadi chunke boshlang'ich qiymat 0 ga teng 
-// 1 - callback fnc 
-// 2 - 0 bu boshlang'ich qiymat hisoblanadi 
-// bu holatda a ham calback ham 0 ga teng buladi 
+// let num = [1,2,3,4,5,6,7]
 
-// calback ham uziga 2 ta paramert oladi a.reduce((sum,current) => {},0)
-// 1 - parametr (sum) callback nmaga return qilsa ushanga teng hisoblanadi 
-// 2 - current for loopdek aylanib malumotlarni chiqarib beradi 
+// //                            1        2
+// // console.log(num.reduce((value)=>value, 0)) // value: 0 chiqadi chunke boshlang'ich qiymat 0 ga teng 
+// // 1 - callback fnc 
+// // 2 - 0 bu boshlang'ich qiymat hisoblanadi 
+// // bu holatda a ham calback ham 0 ga teng buladi 
 
-console.log(num.reduce((sum,current) => {
-  // console.log(sum) // 0 chunke boshlang'ich qiymat 0 ga teng 
-  return 1 // bu holatda sum 1 ga teng
-  console.log(sum) // 1 return 1 qilganligimiz uchun sum 1 ga teng buldi 
-}, 0)) // 0 chiqadi chunke boshlang'ich qiymat 0
+// // calback ham uziga 3 ta paramert oladi a.reduce((sum,current,index) => {},0)
+
+
+// console.log(num.reduce((sum,current) => {
+//   console.log(sum) // 0 chunke boshlang'ich qiymat 0 ga teng 
+//   console.log(current) // 1,2,3,4,5,6,7 gacha qiymatlarni chiqarib beradi 
+//   return 1 // bu holatda sum 1 ga teng
+// }, 0)) // 0 chiqadi chunke boshlang'ich qiymat 0
+
+// // 1 - parametr (sum) callback nmaga return qilsa ushanga teng hisoblanadi 
+// // 2 - parametr (current) ayni vahdagi qiymat hisoblanadi / for loopdek aylanib malumotlarni chiqarib beradi 
+// // 3 - parametr (index) bu bizga index qaytaradi 
+
+// let res = num.reduce((sum,current) => {
+//   console.log(sum) // birinchi qiymat 0 bulganligi uchun 1-aylanganda qiymat 0 chiqadi va riyin returnni qiymatini oladi 4 qolganlari 4 chiqadi 0,4,4,4,4,4,4,4 
+//   return 3 + 1
+// },0)
+// // calback return qilgan qiyman sum blan res ga teng hisoblanadi 
+// console.log(res) // 4 ga teng buladi 
+
+// // reduce bu halatdaham ishlatiladi 
+
+// // aslida reduse array ichidagi sonlarni bir biriga qushibham beradi 
+
+// let rest = num.reduce((sum,current) => {
+//   console.log(sum)
+//   return sum += current // birinchi aylanganda sum (0) ga current (1) ni qusahdi kiyin chiqqan javobga
+// },0)
+// console.log(rest)
+
+
+
+// ####################
+
+
