@@ -438,11 +438,46 @@
 
 // let rest = num.reduce((sum,current) => {
 //   console.log(sum)
-//   return sum += current // birinchi aylanganda sum (0) ga current (1) ni qusahdi kiyin chiqqan javobga
+//   // return sum = sum + current // buni qisqatrmasini yozganimiz yaxshi 
+
+//   return sum += current // birinchi aylanganda sum (0) ga current (1) ni qushadi kiyin chiqqan javobga arrayni 2 - soni 2 ni qushadi 3 unga 3 
+//   // ni qushadi va shu tariqa array ichidagi barcha sonlarni bir biriga qushib chiqdi 
+  
+//   // value: birinchi 0 chiqadi chunke boshlang'ich qiymat 0
+//   // [1,2,3,4,5,6,7] = 1 ga 2 ni chiqqan javobga 3 ni undan chiqqan javobga kiyingi sonlarni qushib chiqadi 
+//   // 0,1,3,6,10,15,21,28 = jami 28 chiqadi oddiy qushishdaham lekn bu har bir amalni kursatib utyapdi 
+
+
 // },0)
 // console.log(rest)
 
 
+// let rest1 = num.reduce((sum,current,index) => {
+//   console.log(sum, '-', index, '=', sum - index) // bu holatda sum dan index ayirilgandagi valueni chiqarib beradi 
+//   // value:
+//   //  0 - 0 = 0
+//   //  0 - 1 = -1
+//   // -1 - 2 = -3
+//   // -3 - 3 = -6
+//   // -6 - 4 = -10
+//   // -10 - 5 = -15
+//   // -15 - 6 = -21
+//   // chiqqan qiymat sum ga teng buladi va undan index ayriladi 
+   
+
+//   // console.log(index, '-', sum, '=', index - sum) // bu holatda index dan sum ayirilgandagi valueni chiqarib beradi 
+//   // value:
+//   // 0 - 0 = 0
+//   // 1 - 0 = 1
+//   // 2 - -1 = 3
+//   // 3 - -3 = 6
+//   // 4 - -6 = 10
+//   // 5 - -10 = 15
+//   // 6 - -15 = 21
+
+//   return sum - index 
+// },0)
+// console.log(rest1)
 
 // ####################
 
