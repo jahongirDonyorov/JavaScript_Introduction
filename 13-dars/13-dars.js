@@ -26,19 +26,6 @@
 //         - range - Array.from({length: (stop - start) / step * 1}, (_,i) => strat + i * step)
 // 16 - .new Set(arr) - removes deplicate ex: new Set([1,2,3,4,4,5,6,6]) // [1,2,3,4,5,6]
 // 17 - .new Map() - let mapper = new Map([[1,'a'],[2,'b'],[3,'c']])
-// 18 - .
-// 19 - .
-// 20 - .
-// 21 - .
-// 22 - .
-// 23 - .
-// 24 - .
-// 25 - .
-// 26 - .
-// 27 - .
-// 28 - .
-// 29 - .
-// 30 - .
 
 // // -=-=-=-=-=-=- Filter
 // // bizga malumotlaarni filterlab beradi
@@ -139,7 +126,7 @@
 // let res = b.sort((a,b) => {
 //   return a - b // bu holatda js uzining algaretimidan foydalanadi  value:  1,  3, 25, 33,65, 73, 77, 83
 //   // har bitta sonni olib uzidan kiyingilariga solishtirib chiqadi kichigindan kattasiga qarab filterlaydi
-//   // return b - a // bu teskarisi jkattasidan kichigiga qarab taqqoslaydi  value: 83, 77, 73, 65,33, 25,  3,  1
+//   // return b - a // bu teskarisi kattasidan kichigiga qarab taqqoslaydi  value: 83, 77, 73, 65,33, 25,  3,  1
 // })
 // console.log(res)
 
@@ -214,7 +201,7 @@
 
 // // filter vs find farqi 
 
-// // filter uziga kerakli narsani izlayotganda masalan id:3 ni [] ichidan 3 ni topgandan kiyinham array ni tuliq kutib chiqadi 
+// // filter uziga kerakli narsani izlayotganda masalan id:3 ni [] ichidan 3 ni topgandan kiyinham array ni tuliq kurib chiqadi 
 // // bizga 3 kerak birinchi 1 ni kuradi kiyin 2 ni va 3 topildi lekn filter 4,5,6,7,8,9 larniham kurib chiqadi 
 
 // // find esa 3 ni topgandan kiyin tuxtaydi qolganlarini kurmaydi shuning uchun filterdan tezroq ishlaydi 
@@ -440,13 +427,14 @@
 //   console.log(sum)
 //   // return sum = sum + current // buni qisqatrmasini yozganimiz yaxshi 
 
-//   return sum += current // birinchi aylanganda sum (0) ga current (1) ni qushadi kiyin chiqqan javobga arrayni 2 - soni 2 ni qushadi 3 unga 3 
-//   // ni qushadi va shu tariqa array ichidagi barcha sonlarni bir biriga qushib chiqdi 
-  
+//   return sum += current;
+//   // sum (0) ga birinchi qiymat (1) ni qushadi sum valuega (1) ga teng buladi 
+//   // sum (1) ga ikkinchi qiymat (2) ni qushadi sum valuega (3) ga teng bulad va shu tariqa davom etib ketaveradi 
+//   // sum bizga valularni saqlab turadi va current dagi malumotlarga qushadi 
+
 //   // value: birinchi 0 chiqadi chunke boshlang'ich qiymat 0
 //   // [1,2,3,4,5,6,7] = 1 ga 2 ni chiqqan javobga 3 ni undan chiqqan javobga kiyingi sonlarni qushib chiqadi 
 //   // 0,1,3,6,10,15,21,28 = jami 28 chiqadi oddiy qushishdaham lekn bu har bir amalni kursatib utyapdi 
-
 
 // },0)
 // console.log(rest)
@@ -481,4 +469,283 @@
 
 // ####################
 
+
+// // =-=-=-=-=-=-= Array ichidagi array 
+// let a = [1,[2,3,4], 5,6,7,8]
+
+// console.log(a[1]) // qilsak bizga array ichidagi array [2,3,4] ni chiqaradi 
+// // bu holatda biz 2 ni uzini chiqarolmaymiz bu array holatida chiqadi 
+// // biz array ichidagi arrayning malumotlarini olishimiz uchun num[1][chiqqan array ichidagi olmoqchi bulgan element indexsi ]
+
+// console.log(a[1][0]) // bu holatda 2 ni uzi chiqadi   
+// // 1-arraydan qaytayotgan malumot [2,3,4] ni ichigs kiryapdi
+
+// // array ichidagi arraylar bundanham kup bulishi mumkun 
+// let b = [1,[2,[3,4,[5,6,7]]]]
+// // biz 5 ni chiqarib olishimiz kerak 
+// console.log(b[4]) // qilsak bizga undefined chiqaradi chunke 4 - indexda hechqanaqa malumot yuq 
+// console.log(b[1]) // value: [ 2, [ 3, 4, [ 5 ] ] ]
+// console.log(b[1][1]) // value: [ 3, 4, [ 5 ] ]
+// console.log(b[1][1][2]) // value: [5, 6, 7]
+// console.log(b[1][1][2][0]) // value: 5
+
+// // array ichidagi arraylarni shu holatda olsak bular ekan 
+
+// // endi biz buni ichidagi sonlarning yig'indisini chiqarmoqchi bulsak bu holatda qusholmaymiz 
+// // chunke bunda ichgi arraylar bor ichgi arraylarni yuq qilish uchun  flat dan foydalanamiz 
+
+// // -=-=-=-=-=-=- flat
+
+// let c = [1,[2,[3,[4]]], [5]]
+
+// console.log(c) // bu holatda bizga arrayuni tuliq shu holatida chiqarib beradi 
+// // [1,[2,[3,4]], [5]]
+
+// console.log(c.flat()) // flat esa bizga automatik ravishda birinchi child(bola) arrayni olib tashlaydi 
+// // value: [ 1, 2, [ 3, [4] ], 5 ] - array ichida tug'ridan tug'ri turgan birinchi bolar arraylarni olib tashlayapdi 
+// // faqat arrayga nevara bolasining ichidagi arraylar qolyapdi 
+
+// // flat() === flat(1) yane flatni ichiga hechgnarsa yozmasakham ichiga 1 yozilgan bilan bir hil buladi 
+// // flat(1) qilsak bu array ichida tug'ridan tug'ri yozilgan arraylarni uchiradi / bolasini / 1 ta avlotni uchiradi
+// // flat(2) qilsak bu array ichidagi array va uning ichidagi arrayniham uchiradi / nevarasi / 2 ta avlotni uchiradi
+// // flat(3) qilsak bu array ichidagi array va uning ichidagi array va uningham ichidagi arrayni uchiradi / chevarasi / 3 ta avlotni uchiradi 
+// // va shu tariqqancha ichki arraylar kup bulsa son oshib boraveradi  
+
+// console.log(c.flat(2)) // bu holatda bola array va uning ichida (nevara) array bulsa ularniham oladi 
+// // [ 1, 2, 3, [4], 5 ] - shu holatda javob chiqadi bizga 
+// // bizda yana bitta qoldi (chevarasi) uni yuq qilishimiz uchun 3 yozishimiz kerak 
+
+// console.log(c.flat(3))
+// // [ 1, 2, 3, 4, 5 ] - bizda shu javob chiqadi hechqanday arraylarsiz
+// // yane ichgi (nestet) arraylarni olib tashladik endi buning ichidagi malumotlarni yig'indisini chiqarsak buladi
+
+// // endi ichki arraylar cheksiz yoke sanogini bilmasak bu holatda hammasini birdan uchirish uchun Infinity yozamiz 
+// console.log(b.flat(Infinity))// bu bizga nechta ichki (nestet) array bulishidan qatrey naar hammasini uchirib beradi 
+// // [1,2,3,4,5,6,7]
+// // endi arrayni yigindisini chiqarishimiz mumkun yigindini reduce blan hisoblas edik 
+// console.log(b.flat(Infinity).reduce((s,c) => s + c ,0)) // yane s 0 ga c (array) dagi malumotni qushadi 
+// // s 0 + c 1 = s1 
+// // s 1 + c 2 = s3 
+// // s 3 + c 3 = s6 
+// // s 6 + c 4 = s10
+// // s 10 + c 5 = s15
+// // s 15 + c 6 = s21
+// // s 21 + c 7 = s28 
+
+// // yigindi 28 ga teng buladi 
+
+
+// // arrayda 2 ta birhil sonlarni chiqarib faqat bittadan qoldirish kerak 
+// // buni oddiy usulda 
+// let ar = [1,2,2,3,2,45,5,3]
+// let res = ar.filter((value,index,array) => {
+//   // console.log(array.indexOf(value)) // 0,1,1,3,1,5,6,3
+//   console.log(index)// 0,1,2,3,4,5,6,7
+//   return array.indexOf(value) === index; // indexOf faqat birinchisini oladi 2ta birhil bulsa birinchisini oladi qolganini uqimaydi 
+//   // array ichidagi value indexsini  chiqaryapdi va index ga teng bulsa chiqsin deyilyapdi 
+//   // har birini nittadan tekshiradi index 0 array.index(value) danham 0 linchi indexdagi malumotni chiqaradi 
+//   // index 1 undanham 1 ni izlaydi 1 3 ta bulsaham filter faqat birinchisini uqiydi shuning uchun birinchisini chiqaradi 
+//   // 
+  
+// })
+// console.log(res) // [ 1, 2, 3, 45, 5 ] - takroriy sonlarni olib tashlaydi va bittadan qoldiradi 
+
+// // -=-=-=-=-=-=-=- new Set 
+// // bu bizga arrayda 2 ta birhil sonlarni chiqarib tashlaydi 
+
+// // 2 ta birhil sonlarni chiqarib tashlash kerak 
+// console.log(new Set(ar)) // Set(5) { 1, 2, 3, 45, 5 } holatda chiqarib beradi 
+
+
+// // -=-=-=-=- Biz objni bu holatda array qilolardik 
+// let obj = {name:'John', status: 'IT Center'}
+// console.log(Object.entries(obj)) // bu bizga obj bitta katta array qilib uning ichidan har bir element uchun yana bittadan array qilib beradi 
+// // value: [ [ 'name', 'John' ], [ 'status', 'IT Center' ] ] - ichki birinchi array ichida birinchi kelgan name key ikkinchisin value edi 
+
+// // -=-=-=- endi biz arrayni obj aylantirishni kkuramiz buning uchun new Map dan foydalanishimiz kerak 
+
+
+// // -=-=-=-=-=-=-=- new Map 
+// // bu arrayni obj qilib beradi 
+// console.log(
+//   new Map([
+//     ['a',1],
+//     ['b',2],
+//   ])
+// )
+// // value: Map(2) { 'a' => 1, 'b' => 2 } - new Map bizga shu holatda chiqarib beradi
+// // buyirda a ning qiymati 1 ga teng degani yane a key 1 value sifatida 
+// // buni qushimcha methodelariham bor new Map(). keys yoke value qilib value va keylarni olsak buladi 
+
+// console.log(
+//   new Map([
+//     ['a',1],
+//     ['b',2],
+//   ]).keys() // [Map Iterator] { 'a', 'b' }
+//   // .values // [Map Iterator] { 1, 2 }
+// )
+
+// console.log(
+//   new Map([
+//     [null,1],
+//     [undefined,2],
+//   ])
+// ) // value: Map(2) { null => 1, undefined => 2 } - bularniham key blan value qilib beradi 
+
+// console.log(
+//   new Map([
+//     [null,1],
+//     [undefined,2],
+//   ]).entries() // [Map Entries] { [ null, 1 ], [ undefined, 2 ] } - bu holatda chiqarib beradi obj ichida aholida alohida array 
+// ) 
+// // entries bu key va valuega uzgartirirb beradi  yuqoridagidek
+
+// // biz buni verablega biriktirib verableni chaqirish jarayonida yana amal bajarsak buladi 
+// let obj2 = new Map([
+//   ['a',1],
+//   ['b',2],
+// ]).entries();
+// // obj2 ustida amal bajarsak buladi 
+// console.log(obj2.next()) // { value: [ 'a', 1 ], done: false } - birinchi value va done bu agar chiqqan valuedan kiyin yana value bulsa false bulmasa true buladi 
+// // next(). value qilishimiz ham mumkun buni faqat entries da qilsak buladi 
+// console.log(obj2.next().value) // ['b',2] - bunda faqat value ni chiqarib beradi
+
+// // -=-=-= biz bu orqali array tugagan tugamaganligini tekshirishimiz mumkun ekan  .done qilib 
+// console.log(obj2.next().done) // true bulsa tugagan buladi false bulsa tugamagan
+// // bunda hozir true chiqadi chunke hara bir next qilganimizda bittasi yurib ikkinchisiga utadi biz tepada 2 martta 
+// // next() qildik shuning uchun boshqa element qolmadi 
+
+// // -=-=-=-=-=-=-=-=- Array.from 
+// // bu bizga array yasab berish uchun ishlatiladi 
+
+// // buni ichida array yozib quysak uzini chiqarib beradi 
+// console.log(Array.from([1,2,3,4])) // value: [1,2,3,4]
+
+// // ichiga bror element yozsak uni array qilib beradi 
+// console.log(Array.from('webbrain')) // bu holatda array ichida har bir harfni bitta elemet qilib beradi 
+// // value: ['w','e','b','b','r','a','i','n']
+
+
+// /// -=-=-=--=-=-=- Bu ikkinchi parametr ham oladi 
+// // ikkinchi parametr calback buladi va shunga tegishli buladi 
+// console.log(Array.from('webbrain', () => 1)) // bu holatda harflar urniga 1 bulib qoladi 
+// // value: ['1','1','1','1','1',]
+
+// // calback ham uziga parametr oladi 
+// // 1-parametr har bittasiga bitta bitta kirgani hisoblanadi for loop dek 
+// // bu bilan biz kelyotgan value ustida ishlolemiz 
+// console.log(Array.from('webbrain', (v)=> v.toLocaleUpperCase())) // v value har bir kelyotga malumot uni ustida ishlasak buladi bu holatda hamma harflar katta bulib keladi 
+// // value: ['W', 'E', 'B','B', 'R', 'A','I', 'N']
+
+
+// // console.log(Array.from(1,2,3)) // biz buholatda malumot yozolmaymiz chunke ikkinchi qiymat uzi calback bulishi  kerak 
+// // bunda bizga 2 is not function deydi yane uzi 2-parametrga function kutyapdi shuning uchun 2 fnc emas deyapdi 
+
+// console.log(Array.from(1))// sonni uzini yozib quysak ignor qilib yuboradi uqimaydi value: [] chiqadi 
+// console.log(Array.from('1')) // string holatda yozsak array qilib beradi value: ['1']
+
+// // biz bularni uzunligini ulchasak 
+// console.log(Array.from(1).length)// 0 
+// console.log(Array.from('1').length) // 1 
+
+// // new Array ham shunga uxshaydi lekn bu boshqacha 
+// // masalan new Array ga 1 yozsak 
+// console.log(new Array(1)) // [ <1 empty item> ]
+// console.log(new Array('1')) // [ '1']
+// // bunda 1 yozsak 1 ni uzini chiqarmasaham bitta element bor deb chiqaradi va uning uzunligi buladi 
+// console.log(new Array(1).length) // 1
+// // Array fromda esa 0
+// console.log(Array.from(1).length)// 0 
+
+// // va new Arrayga kup malumot quyolamiz 
+// console.log(new Array(1,2,3,4)) // [1,2,3,4]
+
+// ####################
+
+
+// Homework 
+
+// 1. Array ichidagi sonlar yig'indisini toping
+let arr = [1,4,23,5,34,44] // value: 111 - hisoblashdaham shu javob chiqishi kerak 
+
+let rest  = arr.reduce((a,b)=>{
+  return a + b
+  // a 0 aga array ichidagi malumotlarni birma bir qushib chiqadi 
+  // har qushgandagi javob a da saqlanib qoladi va qolgan sonlar usha bundan oldingining javobiga qushiladi 
+},0)
+console.log(rest) // value: 111
+
+// SUCCES 
+
+// ####################
+
+
+// 2. ['webbeain', 'academy'] - array ichidagi char sanogini topish kerak 
+
+// 3. arrayni bir biriga taqqoslang
+
+let ar1 = [1,2,4,34,7]
+let ar2 = [75,34,2,7,4]
+// bu ikkalasini taqqoslab tug'ri kelgan malumotlarni chiqarsin 
+// value: [2,4,34,7] chiqish kerak chunke bu solar ikkalasidaham bor 
+
+let rest2 = ar1.filter((value) => ar2.includes(value))
+// bunda ar1 ning ichidagi valuelar ar2 ga tug'ri kelsa ularni restga yuboryapdi 
+
+// -=-=-=- buni reduce blan qilinadigan usuliham mavjud 
+
+let rest3 = ar1.reduce((sum,current) => {
+  if(ar2.includes(current)){
+    sum.push(current)
+  }
+  return sum
+},[])
+// sum buyirda bush massiv bulyapd va agar ar1 valuelari teng bulsa ar2 ga teng bulganlari sum ga push bulyapdi
+console.log(rest3)
+
+// SUCCES 
+
+
+// ####################
+
+
+console.log(rest2)
+// 4. o'zgartirish
+//    1 camelize('background-color') == 'backroundColor'
+//    2 camelize('list-style-image') == 'listStyleImage'
+//    3 camalize('-webkit-transition') == 'WebkitTransition'
+
+// 6. let ar
+let users = [
+  {id: 1, year: 1998, engine: 1, name:'Tico'},
+  {id: 1, year: 2005, engine: 1.2, name:'Matiz'},
+  {id: 1, year: 2010, engine: 1.6, name:'Gentra'},
+  {id: 1, year: 2010, engine: 1.5, name:'Cobalt'},
+  {id: 1, year: 2012, engine: 2, name:'Malibu'},
+  {id: 1, year: 2000, engine: 1.2, name:'Damas'},
+  {id: 1, year: 2018, engine: 1.4, name:'Tracker'},
+]
+// 2000 - yildan oldingi mashinalar ruyhatini chiqaing 
+console.log(users.filter((a,b)=>a.year<=2000))
+// 2010 - yildan kiyingi chiqqan mashinalar ruyhatini chiqaring 
+console.log(users.filter((a,b)=>a.year>=2010)) // bu holatda shunga tug'ri kelganlarni obj holatda chiqaradi 
+// engine kuchiga qarab malumotlarni sartirofka qiling 
+console.log(users.sort((a,b) => b.engine - a.engine))
+// chiqarilgan yiliga qarab malumotlarni sartirofka qiling 
+console.log(users.sort((a,b) => a.year - b.year))
+// ismlarini alifbo tarzida sartirofka qiling 
+console.log(users.sort((a,b) => a.name - b.name))
+// 2000 yildan oldin chiqgan mashinalarga status: eski malumot qushing
+console.log(users.forEach((a,b) => {
+
+  
+}))
+for(a of users){
+  if(a.year <= 2000){
+    
+    console.log(a.push(a.status = 2))
+  }
+}
+// 2000~2010 yilda chiqqan mashinalarga status: o'rta malumot qushing 
+// 2010~2022 yldan oldin chiqqan mashinalarga status: yangi malumot qushing 
 
