@@ -50,7 +50,9 @@
 // a.getName();
 // a.getAge()(); // bu constraktor fnc ni chaqirish
 
+
 // ##########
+
 
 // -=-=-=-=-=- constraktor fnc
 // // function ichidagi functionni chaqirish uchun shundan foydalanamz
