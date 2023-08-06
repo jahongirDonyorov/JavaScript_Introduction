@@ -265,6 +265,8 @@
 // // ]
 // // map har safar aylanganida nmagadur return qiladi biz hech narsaga return qilmadikmi unda undefined buladi 
 
+// -=-=- biz map orqali bror qart bajarsak shartga tug'ri keladiganlarini chiqaradi shartga tug'ri kelmasa
+// undefined null true false qiymat bulsa ularniham chiqaraveradi 
 
 // // -=-=-=- forEach vs Map
 
