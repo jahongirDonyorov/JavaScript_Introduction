@@ -682,6 +682,19 @@ console.log(rest) // value: 111
 
 // 2. ['webbeain', 'academy'] - array ichidagi char sanogini topish kerak 
 
+const words = ['webbeain', 'academy']
+
+function countChar(arr) {
+  let totalChar = 0;
+  for(i of arr){
+    totalChar += i.length
+  }
+  return totalChar
+}
+console.log(countChar(words))
+
+// SUCCES
+
 // 3. arrayni bir biriga taqqoslang
 
 let ar1 = [1,2,4,34,7]
@@ -702,6 +715,7 @@ let rest3 = ar1.reduce((sum,current) => {
 },[])
 // sum buyirda bush massiv bulyapd va agar ar1 valuelari teng bulsa ar2 ga teng bulganlari sum ga push bulyapdi
 console.log(rest3)
+console.log(rest2)
 
 // SUCCES 
 
@@ -709,43 +723,68 @@ console.log(rest3)
 // ####################
 
 
-console.log(rest2)
+
 // 4. o'zgartirish
 //    1 camelize('background-color') == 'backroundColor'
 //    2 camelize('list-style-image') == 'listStyleImage'
-//    3 camalize('-webkit-transition') == 'WebkitTransition'
+//    3 camelize('-webkit-transition') == 'WebkitTransition'
 
-// 6. let ar
-let users = [
-  {id: 1, year: 1998, engine: 1, name:'Tico'},
-  {id: 1, year: 2005, engine: 1.2, name:'Matiz'},
-  {id: 1, year: 2010, engine: 1.6, name:'Gentra'},
-  {id: 1, year: 2010, engine: 1.5, name:'Cobalt'},
-  {id: 1, year: 2012, engine: 2, name:'Malibu'},
-  {id: 1, year: 2000, engine: 1.2, name:'Damas'},
-  {id: 1, year: 2018, engine: 1.4, name:'Tracker'},
-]
-// 2000 - yildan oldingi mashinalar ruyhatini chiqaing 
-console.log(users.filter((a,b)=>a.year<=2000))
-// 2010 - yildan kiyingi chiqqan mashinalar ruyhatini chiqaring 
-console.log(users.filter((a,b)=>a.year>=2010)) // bu holatda shunga tug'ri kelganlarni obj holatda chiqaradi 
-// engine kuchiga qarab malumotlarni sartirofka qiling 
-console.log(users.sort((a,b) => b.engine - a.engine))
-// chiqarilgan yiliga qarab malumotlarni sartirofka qiling 
-console.log(users.sort((a,b) => a.year - b.year))
-// ismlarini alifbo tarzida sartirofka qiling 
-console.log(users.sort((a,b) => a.name - b.name))
-// 2000 yildan oldin chiqgan mashinalarga status: eski malumot qushing
-console.log(users.forEach((a,b) => {
 
-  
-}))
-for(a of users){
-  if(a.year <= 2000){
-    
-    console.log(a.push(a.status = 2))
-  }
+function camelize (str) {
+  return str.replace(/[-_](.)/g, function(match, char){
+    return char.toUpperCase()
+    // console.log(match)
+  })
 }
-// 2000~2010 yilda chiqqan mashinalarga status: o'rta malumot qushing 
-// 2010~2022 yldan oldin chiqqan mashinalarga status: yangi malumot qushing 
+console.log(camelize('background-color'))
+console.log(camelize('list-style-image'))
+console.log(camelize('-webkit-transition'))
 
+// SUCCES
+
+// // 5. let ar
+// let users = [
+//   {id: 1, year: 1998, engine: 1, name:'Tico'},
+//   {id: 1, year: 2005, engine: 1.2, name:'Matiz'},
+//   {id: 1, year: 2010, engine: 1.6, name:'Gentra'},
+//   {id: 1, year: 2010, engine: 1.5, name:'Cobalt'},
+//   {id: 1, year: 2012, engine: 2, name:'Malibu'},
+//   {id: 1, year: 2000, engine: 1.2, name:'Damas'},
+//   {id: 1, year: 2018, engine: 1.4, name:'Tracker'},
+// ]
+// // 2000 - yildan oldingi mashinalar ruyhatini chiqaing 
+// console.log(users.filter((a,b)=>a.year<=2000))
+// // 2010 - yildan kiyingi chiqqan mashinalar ruyhatini chiqaring 
+// console.log(users.filter((a,b)=>a.year>=2010)) // bu holatda shunga tug'ri kelganlarni obj holatda chiqaradi 
+// // engine kuchiga qarab malumotlarni sartirofka qiling 
+// console.log(users.sort((a,b) => b.engine - a.engine))
+// // chiqarilgan yiliga qarab malumotlarni sartirofka qiling 
+// console.log(users.sort((a,b) => a.year - b.year))
+// // ismlarini alifbo tarzida sartirofka qiling 
+// console.log(users.sort((a,b) => a.name.localeCompare(b.name)))
+// // 2000 yildan oldin chiqgan mashinalarga status: eski malumot qushing
+// for(a of users){
+//   if(a.year <= 2000){
+//     a.status = 'eski '
+//     // console.log(a)
+//   }
+// }
+// // 2000~2010 yilda chiqqan mashinalarga status: o'rta malumot qushing 
+// for(a of users){
+//   if(a.year > 2000 && a.year <= 2010){
+//     a.status = "o'rta "
+//     // console.log(a)
+//   }
+// }
+// // 2010~2022 yldan oldin chiqqan mashinalarga status: yangi malumot qushing 
+// for(a of users){
+//   if(a.year > 2010 && a.year <= 2023){
+//     a.status = "yangi"
+//     // console.log(a)
+//   }
+// }
+
+// console.log(users)
+
+// SUCCES 
+// Array 2/3 math finished
