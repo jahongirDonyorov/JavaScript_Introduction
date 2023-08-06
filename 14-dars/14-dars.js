@@ -280,3 +280,9 @@ let str = 'Webbeain Academy';
   let arr = [1,64,8,27,64,125];
   // arraydagi ikki honali sonlarni chiqaring
 }
+
+// 4
+{
+  let ar = [1,2,4,5]
+  // 2 dan kiyin 3 qushibn ketish kerak 
+}
