@@ -322,4 +322,34 @@
 // teleg("John", "Doniyarov");
 
 // -#-#-#-#-#- Hoisting nma
-// hosting verable larni va function expression larni js codeimizning eng yuqorisida declayer (tyaratishga) aytiladi
+// hosting verable larni va function expression larni js codeimizning eng yuqorisida declayer (yaratishga) aytiladi
+
+
+// -=-=-=-=-=- function Destructuring 
+// buni functionning parametri obj bulsa ishlatolamiz faqat
+
+function TestName (data) { // data parametiri biz yozgan obj ga teng 
+  console.log(data) // bu holatda butun obj chiqadi 
+  // biz ga faqat name ni uzi kerak bulsa data.name qilishimiz kerak 
+  console.log(data.name) // bu holatda Jahonning uzi chiqadi  
+}
+TestName({name:'Jahon', age:18}) // biz fnc (name) ning parametiriga obj qiymat beryapmiz 
+
+// Bu oddiy usul hisoblanadi biz Destructuring yordamida obj ichidagi keyni uzini yozib valuelarni chiqarishimiz mumkun ekan 
+ 
+function TestName1 ({name,age}) { // bu hozir {} ichida bzga kelgan parametrlarni keylariga tenglashdi har doim obj keyi blan bu birhil bulishi kerak 
+  // {} ichida argument sfatida name va age ochildi name  obj name ga teng age  age obj age ga 
+  console.log(name) // qilsakham bizga valueni chiqaraveradi data.name qilishimiz shart emas 
+  console.log(age) 
+  // bu bizni kodimizni ancha osonlashtiradi 
+}
+TestName1({name:'Jahon', age:18})
+// agar fnc ni chaqirishimizda obj dan boshqa parametr bersak xatolik buladi
+// Testname1(name)
+// buni tug'rilash uchun dataga Defult diymat berib ketishimiz kerak
+// TestName1(data = {}) qilgan holda  
+
+function GetData (data = {}) {
+  console.log(data?.name ) // agar data ichida name bulsa chiqaradi bulmasa undefined chiqaradi 
+}
+GetData()
