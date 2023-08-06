@@ -169,7 +169,6 @@ console.log(Math.round(2.5)) // 3 chiqadi chunke kasr qismi 5 ga teng yoke katta
 console.log(Math.floor(4.999999)) // bulsaham uzagi 4 bulganligi uchun 4 ni chiqaradi 
 // huddi taxiga utirgan kilintdek 4.500 bulsa 4 meng berib quyay degan dek
 
-
 // -=-=-=-=-=- Math.ceil()
 
 // ceil (patalog) - bu har doim yuqoriga qarab yaxlitlaydi 
