@@ -46,6 +46,28 @@
 // console.log(arr.at(-2)) // Symbol chiqadi - qiymat orqadan sanab keladi
 
 
+// -=-=-=-=-=-=-=-=-= Array destrakche 
+// biz obj dek arrayniham destrakche qilishimiz mumkun 
+let obj = {name:'Jahon',age:18}
+let {name,age} = obj 
+console.log(name) // bu holatdaham value chiqardi obj.name qilmasakham
+// biz objni shu holatda destrakche qilolardik
+
+// arrayniham qilsak buladi faqat bunda key bulmaganligi uchun element buyicha buladi va uzining qavslarida []
+// element    1          2        3
+let ar1 = ['Jahon', 'Doniyarov', 18, ]
+// [] ichiga element buyicha ixtiyoriy yangi nom verable yozamiz 
+//      1         2        3
+let [FirsName, LasName, NewAge] = ar1 // bu holatda biz bu verablelarni chaqirib array ichidagi valularni olishimiz mumkun 
+// 1 - verable arrayning birinchi elementiga teng 2-si 2 - elementga teng va qolganlariham shu tariqa ketadi 
+console.log(FirsName, LasName, NewAge) // Jahon, Doniyarov, 18 - chiqadi 
+
+// masalan arrayda malumot kup bulsa biz birinchisini chiqarib qolsanini bitta verablega biriktirmoqchi bulsak ...verable yozamiz 
+let [ism, ...qolgani] = ar1
+// birinchisi Jahon ga teng bulyapdi qolgan hammasi ikkinchi verable (qolgani) ga teng bulyapdi 
+console.log(ism) // Jahon
+console.log(qolgani) // ['Doniyarov', 18]
+
 // // =-=-=-=-=-=-=-= new Array
 
 // let ar = new Array()
