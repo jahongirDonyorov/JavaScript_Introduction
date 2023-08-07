@@ -163,7 +163,7 @@ console.log(date.getMinutes())
 console.log(date.getHours())
 
 // -=-=-=- .getDay()
-// bu bizga bugun haftaning neechinchi kuni ekanligini chiqarib beradi 
+// bu bizga bugun haftaning nechinchi kuni ekanligini chiqarib beradi 
 console.log(date.getDay()) 
 // value: 0 chiqaryapdi chunke bugun haftaning (1-kuni) yakshanba / haftani 0 dan hisoblaydi (index dek)
 
@@ -207,12 +207,12 @@ console.log(getTuday('.')) // Tuday: 6.8.2023
 // -=- funtion yozib tuliq soatni chiqaradigan qilamiz 
 
 const getTime = (symbol) => {
-  return `Time: ${date.getHours()}
-  ${symbol}${date.getMinutes()}
-  ${symbol}${date.getSeconds()}
-  ${symbol}${date.getMilliseconds()}`
+  return `Time: ${date.getHours()}${
+    symbol}${date.getMinutes()}${
+    symbol}${date.getSeconds()}${
+    symbol}${date.getMilliseconds()}`
 } 
-console.log(getTime(':'))
+console.log(getTime(':')) // 2:39:35:471
 
 // -=- Hafta kunlar nomini chiqaradigan qilish 
 // hafta nomlarini yozib olamiz va ularni getDate) dan kelyotgan sonlarga biriktiramiz 
@@ -227,7 +227,6 @@ console.log(weeks[date.getDay()].slice(0,5))   // Yaksh
 
 
 // ####################
-
 
 // -=-=-=-=- JSON - JavaScript Object Notation
 // bu bizga malumotni kichik va hamma dasturlash tili uqiydigan qilib beradi 
