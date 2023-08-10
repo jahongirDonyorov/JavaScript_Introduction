@@ -25,7 +25,7 @@
 // let c = "12"; // bu string son yozilgan bulsaham u '' ichida bulganligi uchun string hisoblanadi
 // console.log(a + c); // 1212 buladi javob chunke JS number blan stringni qushganda faqatgina bir birini yoziga obkeb birlashtirib quyadi
 // // bunaqa hatolikni tug'irlash uchun  string uzgaruvchi oldiga arifmitik amal quwiwimiz kerak
-// console.log(a + +c); // 144
+// console.log(a + +c); // 25
 
 
 // /*** !_!_!_!
@@ -45,18 +45,21 @@
 // console.log(typeof(c)) // string
 // console.log(typeof(-c)) // number
 
+
+// // console.log(a + +c); // 25
+
 // // 1 - plus 2 ta variable ni bir birga qushish uchun 2 - plus (+c) stringni numberga uzgartirish uchun
 // // string oldidan arifmirik amal qushsak u numberga aylanadi
 
 // // -=-=-=-=-=-= Number() -=-=-=-=-=-=-
-// let num = 3.43
+// let num = '3.43'
 // // Stringni Number qilib beradi
-// console.log(Number(c) + a) // 24
+// // console.log(Number(c) + a) // 24
 // console.log(Number(num)) // 3.43 number holatda
 // // agar bizga string kasr bulsa number holatga yaxlitlanib utishi kerak bulsa Numberga qushimcha Methodes bor
 
 // // -=-=-=-=-= .parseInt()
-// // Yaxlitlab beradi
+// // Stringni Number qilib Yaxlitlab beradi
 // console.log(Number.parseInt(num)) // 3 - 3.43 ni yaxlitlab 3 chiqarib berayapdi
 // // bularni Number quymasdan yozsakham buladi
 // console.log(parseInt(num)) // 3
@@ -322,7 +325,7 @@
 // // boshidan hisoblaydi boshidagi bittasi kichik bulib qolsa qolgan hammasi kichik hisoblanadi undan kiyin nechchi qancha kelishidan qatte nazar
 // console.log('567' < '299999') // false chunke boshida 5 dan 2 kichkina qolganini ahamiyatga olmay ketadi boshida bittasi kichik bulsa
 
-// // 4. !=, !== - Teng emas
+// // 4. !=, !== - Teng emasmi
 // // bularniham taqqoslashda ishlatamiz faqat bular teng emasligini taqqoslaydi
 // // teng bulmasa true teng bulsa false chiqadi
 // // qolgan belgilar blanham ishlatsak buladi kattamas kichikmas >! <!
@@ -368,6 +371,7 @@ byte (1 va 0) darajasidagi arifmetik muammolarni hal qilishga yordam beradi.
 
 
 // -=-=-=-=-=-=-=- Logical Operations
+
 // 1. || OR
 
 // || ikki tomonidagi qiymatdan biri yoke ikkalasiham true bulsa true chiqaradi
