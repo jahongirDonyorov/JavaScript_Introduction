@@ -10,7 +10,7 @@
 //      - {...} - test Variables inside and outside the scope.
 //  - if, for, while - have their own scope 
 //      - for(let i = 1) - i looks like outside variable, but it's not
-//  - Lexical Envirmonment - is the environment of the function where it is written.
+//  - Lexical Environment - is the environment of the function where it is written.
 //      - has two parts: Environment Record and Referencs to outer lexical environment 
 //      - Environment Record - an object stores all local variables / local mem
 //      - Reference to outer lexical enviroment - associated with outer 
@@ -85,7 +85,7 @@
 // -=-=-=-=-=-=- Lexical Envirmonment
 // uz Scope dan tashqaridagi malumotni uz scope ichida chaqirishida 
 
-// Lixecal Envirmonment uzida 2 ta malumot saqlaydi local (usha scope ichidagi) malummotlar manzilini (Local Memorey)
+// Lixecal Envirmonment uzida 2 ta malumot saqlaydi local (usha scope ichidagi) malummotlar manzilini Local Memorey  (Environment Record)
 // va Global (usha scope dan tashqaridagi) malumotlarning manzilini uzida saqlaydi (outer lexical enviroment)
 
 
@@ -113,3 +113,20 @@ function getName() {
   }
 }
 getName()
+
+function outer() {
+  // buham Lixecal Environment hisoblanadi lekn bulda Environment Record vs Reference to outer lexical enviroment yuq
+  // yane uzini memoriysini saqlab turadigan Record va tashqaridan malumot keladigan referens
+}
+
+// -=-=-=-=-=-=- Closer
+// uz scope dan tashqaridagi veriablening ishlatilishiga Closer deyiladi 
+// lexical envament fnc ga referens beradi faqat (manzilni kelishi) Closer esa usha narsa ishlatilishi hisoblanadi 
+
+let a = 'GEEK'
+
+function getUSer() {
+  let b = 'webbrian'
+  console.log(a) // Closer - chunke tashqaridagi verable ni ishlatyapdi
+  console.log(b) // bu uzining veriablisini ishlatganligi uchun Closer emas
+}
