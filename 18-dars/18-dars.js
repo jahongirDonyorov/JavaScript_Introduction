@@ -130,3 +130,17 @@ function getUSer() {
   console.log(a) // Closer - chunke tashqaridagi verable ni ishlatyapdi
   console.log(b) // bu uzining veriablisini ishlatganligi uchun Closer emas
 }
+
+// -=-=-=-=-=- Garbage collection
+// Garbage collection automatik ravishda lexical envament dagi malumotlarni uchirib tashlaydi
+
+// functionni malumotlari memorydan joy oladi lekn functionni ishini tugatganda Garbage automatek fnc malumotlarini uchirib yuboradi
+
+function Garbage() {
+  let c = 'John' // fnc ichidan yozilgan verable ning qiymati fnc ishlab bulgandan yiyin uchib ketadi bu kup joy olmaydi 
+  // verable fnc dan tashqarida bulsa uning malumotlari memoryda turaveradi joy olib 
+
+  // fnc ichida ochilgan veriable faqat fnc ichida bizga kerak boshqa payt kerak emas 
+  // biz tashqarida fnc uchun verable ochib olas fnc ishini  tugatgandan kiyin ishlatilmasaham joy olib turaveradi shuning uchun 
+  // shunday verable ochmoqchi bulsak fnc ishidan ochganimiz maqqul
+}
