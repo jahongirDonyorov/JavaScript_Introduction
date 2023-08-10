@@ -13,7 +13,7 @@
 //  - Lexical Envirmonment - is the environment of the function where it is written.
 //      - has two parts: Environment Record and Referencs to outer lexical environment 
 //      - Environment Record - an object stores all local variables / local mem
-//      - REference to0 uter lexical enviromwnt - associated with outer 
+//      - Reference to outer lexical enviroment - associated with outer 
 //      - drow callstack
 //  - Closer - function which remembers outer variables.
 //  - Garbage collection - lexical enviranment is removed after fun
@@ -81,3 +81,35 @@
 
 // // var ishlatish tavsiya berilmaydi chunke u kup joy oladi va yangi verable yaratayotganimizda 
 // // adashib var a = 2 bulsaham var a = 10 qilib ketsakham bizga hatolik kursatmaydi 
+
+// -=-=-=-=-=-=- Lexical Envirmonment
+// uz Scope dan tashqaridagi malumotni uz scope ichida chaqirishida 
+
+// Lixecal Envirmonment uzida 2 ta malumot saqlaydi local (usha scope ichidagi) malummotlar manzilini (Local Memorey)
+// va Global (usha scope dan tashqaridagi) malumotlarning manzilini uzida saqlaydi (outer lexical enviroment)
+
+
+let name = 'John'
+
+function getName() {
+  let age = 18
+  // yane biz varebalni izlaganimizda lixecal envament bizga referens qaytaradi uning
+  // referensi tashqaridagi verablelar manziliga ega
+
+  console.log(name) // name uz scope dan topilmagandan sung Lixecal envament referens qaytaradi usha referensda
+  // tashqaridagi veriablelar manzili buladi usha buyicha bunga name ning malumoti keladi 
+
+
+  return function() {
+    console.log(age,name) // bunda 2 ta lexical envament bulyapdi 
+    // uz scope da age bulmaganligi uchun referens keladi referensda bundan bitta yuqori getName dagi vereblelar manzili buladi
+    // ushlar ichini qaraydi agar uziga kerakli malumot bulsa oladi
+
+    // name scope da yuq referens getName veriablela manzilini tashlaydi uyirdaham yuq referens yana bir martta ishlaydi va getName
+    // danham yuqoridagi scope veriable manzillarini tashlab beradi 
+
+    // name ga birinchi getName ning local envimenti referens buladi uyirdaham name yuqligi uchun outur envamenti referens buladi (puterga chiqib ketadi)
+    // name -> getName local envament -> outer envament 
+  }
+}
+getName()
