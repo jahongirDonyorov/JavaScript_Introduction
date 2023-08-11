@@ -371,21 +371,14 @@ console.log(getCount(str1))
 // ex: str = jahongir doniyarov // Jahongir Doniyarov
 // let str2 = 'jahongir doniyarov'
 
-// function copitalize(str){
-//   let ar = str.split(' ')
-//   for(i of ar){
-//     let a = ar[i];
-//     console.log(a)
-//     // console.log(i[0].toUpperCase() + )
-//   }
-// }
-// copitalize(str2)
+
 
 function capitalize(str) {
   const words = str.split(' ');
 
   for (let i = 0; i < words.length; i++) {
     const word = words[i];
+    // console.log(word)
     if (word.length > 0) {
       words[i] = word[0].toUpperCase() + word.slice(1);
     }
@@ -395,6 +388,6 @@ function capitalize(str) {
 }
 
 const inputString = 'jahongir doniyarov';
-const result = capitalize(inputString);
-console.log(result);
+console.log(capitalize(inputString));
+
 
