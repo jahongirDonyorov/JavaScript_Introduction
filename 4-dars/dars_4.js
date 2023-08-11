@@ -370,7 +370,9 @@ byte (1 va 0) darajasidagi arifmetik muammolarni hal qilishga yordam beradi.
 // >>> - Bitwise Zero-fill Right Shift: Berilgan operanddagi bitlarni o'ngga to'g'rilab, bo'sh joylar bilan to'ldiradi.
 
 
-// Bitwise operatorlar kompyuter dasturlash va ma'lumotlar bilan ishlashda foydalaniladigan amallardir. Bu operatorlar ma'lumotlar to'plamlari (bitlar) darajasidagi amallarni bajarish uchun ishlatiladi. Bitlar, kompyuterda ma'lumotlarni kuzatishning eng kichik yegindisidir va 0 yoki 1 qiymatini olishi mumkin bo'lgan eng yomon komponentlardan biridir.
+// Bitwise operatorlar kompyuter dasturlash va ma'lumotlar bilan ishlashda foydalaniladigan amallardir. 
+// Bu operatorlar ma'lumotlar to'plamlari (bitlar) darajasidagi amallarni bajarish uchun ishlatiladi. 
+// Bitlar, kompyuterda ma'lumotlarni kuzatishning eng kichik yegindisidir va 0 yoki 1 qiymatini olishi mumkin bo'lgan eng yomon komponentlardan biridir.
 
 // Quyidagi bitwise operatorlar eng ko'p ishlatiladiganlaridan ba'zilari:
 
@@ -424,7 +426,8 @@ byte (1 va 0) darajasidagi arifmetik muammolarni hal qilishga yordam beradi.
 // 0010   (Natija)
 // Natija: 0010 (2, bitta o'ngga chiqarildi)
 
-// Bitwise operatorlar ko'p joyda kriptografiyada, dasturlarni optimallashtirishda, ma'lumotlarni sifatli saqlashda va boshqa yerdagi ma'lumotlar bilan ishlashda foydalaniladi. Bularni tushuntish uchun quyidagi misolga e'tibor bering:
+// Bitwise operatorlar ko'p joyda kriptografiyada, dasturlarni optimallashtirishda, ma'lumotlarni sifatli saqlashda va 
+// boshqa yerdagi ma'lumotlar bilan ishlashda foydalaniladi. Bularni tushuntish uchun quyidagi misolga e'tibor bering:
 
 // Agar a = 5 va b = 3 bo'lsa:
 
