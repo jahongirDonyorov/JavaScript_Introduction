@@ -471,34 +471,34 @@
 
 // ChatGPT 3.5 vertion ning reduse haqidagi malumotlari 
 {
-  // reduce() JavaScript'da massivlar (array) uchun ishlatiladigan bir metoddir. Bu metod orqali massivdagi elementlarni birlashtirib, yangi bir qiymatni hisoblash, ma'lumotni olish yoki tahrirlash mumkin.
+  // // reduce() JavaScript'da massivlar (array) uchun ishlatiladigan bir metoddir. Bu metod orqali massivdagi elementlarni birlashtirib, yangi bir qiymatni hisoblash, ma'lumotni olish yoki tahrirlash mumkin.
 
-  // reduce() metodi kvadrat qavs orqali massivdagi elementlarni birlashtiradi. Ushbu kvadrat qavs orqali elementlar bir-biriga bog'liq bo'lib o'tadi va birorta qiymatga jamlanadi. Agar sizning massivingiz [a, b, c, d] bo'lsa, reduce() metodi quyidagi tartibda ishlaydi:
+  // // reduce() metodi kvadrat qavs orqali massivdagi elementlarni birlashtiradi. Ushbu kvadrat qavs orqali elementlar bir-biriga bog'liq bo'lib o'tadi va birorta qiymatga jamlanadi. Agar sizning massivingiz [a, b, c, d] bo'lsa, reduce() metodi quyidagi tartibda ishlaydi:
 
-  // Birinchi marta: accumulator = a, currentValue = b
-  // Ikkinchi marta: accumulator = (a+b), currentValue = c
-  // Uchinchi marta: accumulator = ((a+b)+c), currentValue = d
-  // Metodning sintaksisi:
+  // // Birinchi marta: accumulator = a, currentValue = b
+  // // Ikkinchi marta: accumulator = (a+b), currentValue = c
+  // // Uchinchi marta: accumulator = ((a+b)+c), currentValue = d
+  // // Metodning sintaksisi:
 
-  array.reduce(function(accumulator, currentValue, currentIndex, array) {
-    // Your logic here
-  }, initialValue);
+  // array.reduce(function(accumulator, currentValue, currentIndex, array) {
+  //   // Your logic here
+  // }, initialValue);
 
-  // - accumulator: Qiymatni jamlash uchun ishlatiladigan o'zgaruvchi.
-  // - currentValue: Joriy massiv elementi.
-  // - currentIndex: Joriy massiv elementining indeksi.
-  // - array: Asosiy massiv.
-  // - initialValue: Boshlang'ich qiymat (optional), agar berilsa, accumulatorning boshlang'ich qiymati bo'ladi, aks holda birinchi element accumulatorga tushadi.
-  // Quyidagi misolni ko'rib chiqamiz:
+  // // - accumulator: Qiymatni jamlash uchun ishlatiladigan o'zgaruvchi.
+  // // - currentValue: Joriy massiv elementi.
+  // // - currentIndex: Joriy massiv elementining indeksi.
+  // // - array: Asosiy massiv.
+  // // - initialValue: Boshlang'ich qiymat (optional), agar berilsa, accumulatorning boshlang'ich qiymati bo'ladi, aks holda birinchi element accumulatorga tushadi.
+  // // Quyidagi misolni ko'rib chiqamiz:
 
-  var array = [1, 2, 3, 4, 5];
-  var sum = array.reduce(function(accumulator, currentValue) {
-    return accumulator + currentValue;
-  }, 0); // Boshlang'ich qiymat: 0
-  console.log(sum); // Natija: 15
+  // var array = [1, 2, 3, 4, 5];
+  // var sum = array.reduce(function(accumulator, currentValue) {
+  //   return accumulator + currentValue;
+  // }, 0); // Boshlang'ich qiymat: 0
+  // console.log(sum); // Natija: 15
 
-  // Ushbu misolda reduce() metodi orqali massivdagi barcha elementlarni yig'indisini 
-  // hisobladik. Siz esa funksiyada kerakli hisoblash logikasini yozib, kerakli natijani qaytarishingiz mumkin.
+  // // Ushbu misolda reduce() metodi orqali massivdagi barcha elementlarni yig'indisini 
+  // // hisobladik. Siz esa funksiyada kerakli hisoblash logikasini yozib, kerakli natijani qaytarishingiz mumkin.
 
 }
 
@@ -695,87 +695,108 @@
 // // va new Arrayga kup malumot quyolamiz 
 // console.log(new Array(1,2,3,4)) // [1,2,3,4]
 
+// -=-=-=-=-=-=-=-=- flatMap
+// flatMap metod JavaScript massivlarda ishlatiladigan bir metod hisoblanadi, bu metod 
+// .map va .flat metodlarining bir birlig'ida ishlatishini ta'minlaydi.
+
+// .map metodi massivdagi har bir elementga berilgan funksiyani qo'llab-quvvatlaydi va
+//  o'zgarishsiz yangi massivni qaytaradi. 
+// .flat metodi esa massivning ichida bo'lgan ichki massivlarni birlashtirib yangi massivni qaytaradi.
+
+// flatMap metodida ishlatilgan funksiya massiv elementlarini o'zgartirib, undan keyin 
+// .flat metodini ishlatib ichki massivlarni birlashtiradi va o'zgarishsiz yangi massivni qaytaradi.
+
+// const arr = [1, 2, 3];
+const flatMappedArr = arr.flatMap(element => [element, element * 2]);
+console.log(flatMappedArr); // [1, 2, 2, 4, 3, 6]
+
+
+// Bu misolda, flatMap metodi massiv [1, 2, 3]ni oladi. 
+// Berilgan funksiya har bir elementni o'zgartirib [element, element * 2] massivini qaytaradi. Natijada, 
+// .flat metodi ichki massivlarni birlashtiradi va yangi massiv [1, 2, 2, 4, 3, 6] ni qaytaradi.
+
+
 // ####################
 
 
 // Homework 
 
-// 1. Array ichidagi sonlar yig'indisini toping
-let arr = [1,4,23,5,34,44] // value: 111 - hisoblashdaham shu javob chiqishi kerak 
+// // 1. Array ichidagi sonlar yig'indisini toping
+// let arr = [1,4,23,5,34,44] // value: 111 - hisoblashdaham shu javob chiqishi kerak 
 
-let rest  = arr.reduce((a,b)=>{
-  return a + b
-  // a 0 aga array ichidagi malumotlarni birma bir qushib chiqadi 
-  // har qushgandagi javob a da saqlanib qoladi va qolgan sonlar usha bundan oldingining javobiga qushiladi 
-},0)
-console.log(rest) // value: 111
+// let rest  = arr.reduce((a,b)=>{
+//   return a + b
+//   // a 0 aga array ichidagi malumotlarni birma bir qushib chiqadi 
+//   // har qushgandagi javob a da saqlanib qoladi va qolgan sonlar usha bundan oldingining javobiga qushiladi 
+// },0)
+// console.log(rest) // value: 111
 
-// SUCCES 
+// // SUCCES 
 
-// ####################
-
-
-// 2. ['webbeain', 'academy'] - array ichidagi char sanogini topish kerak 
-
-const words = ['webbeain', 'academy']
-
-function countChar(arr) {
-  let totalChar = 0;
-  for(i of arr){
-    totalChar += i.length
-  }
-  return totalChar
-}
-console.log(countChar(words))
-
-// SUCCES
-
-// 3. arrayni bir biriga taqqoslang
-
-let ar1 = [1,2,4,34,7]
-let ar2 = [75,34,2,7,4]
-// bu ikkalasini taqqoslab tug'ri kelgan malumotlarni chiqarsin 
-// value: [2,4,34,7] chiqish kerak chunke bu solar ikkalasidaham bor 
-
-let rest2 = ar1.filter((value) => ar2.includes(value))
-// bunda ar1 ning ichidagi valuelar ar2 ga tug'ri kelsa ularni restga yuboryapdi 
-
-// -=-=-=- buni reduce blan qilinadigan usuliham mavjud 
-
-let rest3 = ar1.reduce((sum,current) => {
-  if(ar2.includes(current)){
-    sum.push(current)
-  }
-  return sum
-},[])
-// sum buyirda bush massiv bulyapd va agar ar1 valuelari teng bulsa ar2 ga teng bulganlari sum ga push bulyapdi
-console.log(rest3)
-console.log(rest2)
-
-// SUCCES 
+// // ####################
 
 
-// ####################
+// // 2. ['webbeain', 'academy'] - array ichidagi char sanogini topish kerak 
+
+// const words = ['webbeain', 'academy']
+
+// function countChar(arr) {
+//   let totalChar = 0;
+//   for(i of arr){
+//     totalChar += i.length
+//   }
+//   return totalChar
+// }
+// console.log(countChar(words))
+
+// // SUCCES
+
+// // 3. arrayni bir biriga taqqoslang
+
+// let ar1 = [1,2,4,34,7]
+// let ar2 = [75,34,2,7,4]
+// // bu ikkalasini taqqoslab tug'ri kelgan malumotlarni chiqarsin 
+// // value: [2,4,34,7] chiqish kerak chunke bu solar ikkalasidaham bor 
+
+// let rest2 = ar1.filter((value) => ar2.includes(value))
+// // bunda ar1 ning ichidagi valuelar ar2 ga tug'ri kelsa ularni restga yuboryapdi 
+
+// // -=-=-=- buni reduce blan qilinadigan usuliham mavjud 
+
+// let rest3 = ar1.reduce((sum,current) => {
+//   if(ar2.includes(current)){
+//     sum.push(current)
+//   }
+//   return sum
+// },[])
+// // sum buyirda bush massiv bulyapd va agar ar1 valuelari teng bulsa ar2 ga teng bulganlari sum ga push bulyapdi
+// console.log(rest3)
+// console.log(rest2)
+
+// // SUCCES 
+
+
+// // ####################
 
 
 
-// 4. o'zgartirish
-//    1 camelize('background-color') == 'backroundColor'
-//    2 camelize('list-style-image') == 'listStyleImage'
-//    3 camelize('-webkit-transition') == 'WebkitTransition'
+// // 4. o'zgartirish
+// //    1 camelize('background-color') == 'backroundColor'
+// //    2 camelize('list-style-image') == 'listStyleImage'
+// //    3 camelize('-webkit-transition') == 'WebkitTransition'
 
 
-function camelize (str) {
-  return str.replace(/[-_](.)/g, function(match, char){
-    return char.toUpperCase()
-    // console.log(match)
-  })
-}
-console.log(camelize('background-color'))
-console.log(camelize('list-style-image'))
-console.log(camelize('-webkit-transition'))
+// function camelize (str) {
+//   return str.replace(/[-_](.)/g, function(match, char){
+//     return char.toUpperCase()
+//     // console.log(match)
+//   })
+// }
+// console.log(camelize('background-color'))
+// console.log(camelize('list-style-image'))
+// console.log(camelize('-webkit-transition'))
 
-// SUCCES
+// // SUCCES
 
 // // 5. let ar
 // let users = [
