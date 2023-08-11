@@ -212,7 +212,7 @@
 // weakMap
 // bu new Map GarbageCollaction bulganda memore (heap) dan new Map malumotlarini uchurib tashlaydi
 // GarbageCollaction obj larda uzi automatik ravishda ishlatilmaydigan valueni uchirib tashlaydi lekn 
-// new Map da bu uchib ketmaydi uimiz uchirishimiz kerak 
+// new Map da bu uchib ketmaydi uzimiz uchirishimiz kerak 
 
 let map = new Map([
   ['name','jahon']
