@@ -112,7 +112,7 @@ const MonthName = Mon[Month - 1]; // boya +1 qilganimiz uchun -1 qildik chunke a
 
 // -=-=-=- Multiple Locale Support
 
-function moment() {
+ function moment(param) {
   return{
     format : (a) => {
       // parametr Katta va Kichik varianti 
@@ -144,34 +144,44 @@ function moment() {
         ?`${Day} ${MonthName} ${Year}, ${WeekDayName} ${H_M}`
         :`${Day} ${MonthName.slice(0,3)} ${Year}, ${WeekDayName.slice(0,4)} ${H_M_S}`
 
-      }else if(a === 'MMMM Do YYYY, h:mm:ss a' ||a === 'dddd' ||a === 'MMM Do YY' || 
-               a === 'YYYY [escaped] YYYY' ||a === '' ){
-        // return `${MonthName} ${getDaySuffix(Day)} ${Year}, ${H_M_S}`
-        return a === 'MMMM Do YYYY, h:mm:ss a'?`${MonthName} ${getDaySuffix} ${Year}, ${H_M_S}`
-        :a === 'dddd'?`${WeekDayName}`: a === 'MMM Do YY'
-        ? `${MonthName.slice(0,3)} ${Day} ${Year.toString().substring(0,2)}`
-        : a === 'YYYY [escaped] YYYY' ? `${Year} escaped ${Year}` 
-        : a === '' ? `${Year}-${NewMonth}-${NewDay}`:'';
       }
       else{return `Bunday parametrli kod yuq`}
-    }
+    },
+    fromNow: (b) => {
 
+    },
+    
   }
   
 }
-// console.log(moment.locale())         // uz-latn
+// console.log(moment.locale())      // uz-latn
 console.log(moment().format('LT'))   // 10:31
 console.log(moment().format('LTS'))  // 10:31:38
 console.log(moment().format('L'))    // 07/08/2023
 console.log(moment().format('l'))    // 7/8/2023
-console.log(moment().format('LL'))   // 7 Avgust 2023
-console.log(moment().format('ll'))   // 7 Avg 2023
-console.log(moment().format('LLL'))  // 7 Avgust 2023 10:31
-console.log(moment().format('lll'))  // 7 Avg 2023 10:31
-console.log(moment().format('LLLL')) // 7 Avgust 2023, Dushanba 10:31
-console.log(moment().format('llll')) // 7 Avg 2023, Dush 10:31
-console.log(moment().format('MMMM Do YYYY, h:mm:ss a')) // Avgust 7th 2023, 17:09:17 PM
-console.log(moment().format('dddd')) // Avgust 7th 2023, 17:09:17 PM
-console.log(moment().format("MMM Do YY")) // Avgust 7th 2023, 17:09:17 PM
-console.log(moment().format('YYYY [escaped] YYYY')) // Avgust 7th 2023, 17:09:17 PM
-console.log(moment().format('')) // Avgust 7th 2023, 17:09:17 PM
+// console.log(moment().format('LL'))   // 7 Avgust 2023
+// console.log(moment().format('ll'))   // 7 Avg 2023
+// console.log(moment().format('LLL'))  // 7 Avgust 2023 10:31
+// console.log(moment().format('lll'))  // 7 Avg 2023 10:31
+// console.log(moment().format('LLLL')) // 7 Avgust 2023, Dushanba 10:31
+// console.log(moment().format('llll')) // 7 Avg 2023, Dush 10:31
+
+
+
+
+// Format date 
+// else if(a === 'MMMM Do YYYY, h:mm:ss a' ||a === 'dddd' ||a === 'MMM Do YY' || 
+//                a === 'YYYY [escaped] YYYY' ||a === '' ){
+//         // return `${MonthName} ${getDaySuffix(Day)} ${Year}, ${H_M_S}`
+//         return a === 'MMMM Do YYYY, h:mm:ss a'?`${MonthName} ${getDaySuffix} ${Year}, ${H_M_S}`
+//         :a === 'dddd'?`${WeekDayName}`: a === 'MMM Do YY'
+//         ? `${MonthName.slice(0,3)} ${Day} ${Year.toString().substring(0,2)}`
+//         : a === 'YYYY [escaped] YYYY' ? `${Year} escaped ${Year}` 
+//         : a === '' ? `${Year}-${NewMonth}-${NewDay}`:'';
+//       }
+
+// console.log(moment().format('MMMM Do YYYY, h:mm:ss a')) // Avgust 7th 2023, 17:09:17 PM
+// console.log(moment().format('dddd')) // Avgust 7th 2023, 17:09:17 PM
+// console.log(moment().format("MMM Do YY")) // Avgust 7th 2023, 17:09:17 PM
+// console.log(moment().format('YYYY [escaped] YYYY')) // Avgust 7th 2023, 17:09:17 PM
+// // console.log(moment().format('')) // Avgust 7th 2023, 17:09:17 PM

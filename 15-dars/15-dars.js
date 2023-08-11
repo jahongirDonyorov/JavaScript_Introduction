@@ -1,6 +1,7 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=- BASICS 
 // -=-=-=-=--=- JavaScript 15
-
+import { moment } from "./homework.js"
+console.log(moment().format('L'))
 // // -=-=-=- Destructuring - map with key like a obj 
 
 // // - object - keylarni ajratib olishga nisbatan.
