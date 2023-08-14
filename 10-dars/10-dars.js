@@ -1,5 +1,14 @@
 //  -=-=-=-=-=-=- Numbers
 
+// Muntarija 
+//    - Number representation
+//    - Decimal, Binary va Hex 
+//    - Math - abs, floor, ceil, round, trunc, rsndom, min, max, pow, sign, sqrt, cbrt 
+//    - Methods, toString, toFixed, parseFlot, isNaN, Object.is, toPrecision.
+//    - String JS 
+//    - Optional Chaining
+//    - Homework
+
 // -=-=-=- Number type
 //         1.Intijer
 //         2. Float
@@ -53,6 +62,8 @@ console.log(0.1000000000000001 === 0.1); // false oxiri 1 bulib qolganligi cuhun
 
 
 // --=-=-==-=-=-=-=-- toFixed()
+// bu bizga sonning kasr qismida qancha son bulishini kursatadi 
+
 let a = 0.1 + 0.2
 console.log(a)
 // toFixed ni a.toFixed() qilib ishlatamiz () ichiga nechchi yozsak . dan keyin shuncha sonni chiqarib beradi 
@@ -288,6 +299,3 @@ console.log(obj.child?.age) // ? ning ishi child ichida xaqqatdan age bulsa uuqi
 // 3. Math ning trunc vs floor vs ceil larini paresInt  bilan farqini tushintirib bering.
 
 // 4. randomIntiger(min, max) function yozilsin. min dan max gacha bulgan qiymatni random qaytarsin 
-
-
-// -=-=-=-=-=-=-=- String 
