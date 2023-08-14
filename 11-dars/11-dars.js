@@ -1,4 +1,14 @@
 // // -=-=-=-=-=-=-=-=- String
+// Muntarija 
+//    - Quots 
+//    - Special characters
+//    - Accessing chars 
+//    - Loop
+//    - Comparion
+//    - Methods: toUpperCase, toLoweCase, indexOf, includes, endsWith, padEnd, slice, splice, substring, substr
+// eval, trim, split, concat, new String, search, find, valueOf, replace, mathc, search,localeCompare, charAt vs boshqalar
+
+
 // // Stringlar 3 xil buladi
 
 // let str1 = "John";
