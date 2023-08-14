@@ -10,6 +10,12 @@
 
 // #_#_#_#_#_#_#
 
+// Muntarija 
+//    - Type convirsions
+//    - Operators +-*/%()=++--**
+//    - Comparision == === <> <= >=
+//    - Logical Operations || && !
+
 // -=-=-=-=-=-=- Type Convirsiond - data type larni uzgartirish
 
 // // String > Number
