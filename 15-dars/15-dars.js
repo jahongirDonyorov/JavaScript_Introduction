@@ -1,7 +1,16 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=- BASICS 
 // -=-=-=-=--=- JavaScript 15
-import { moment } from "./homework.js"
-console.log(moment().format('L'))
+
+//  Muntarija
+//    - dastructure with Object and funtion params 
+//    - destructure eith Arrays and Object.entries()
+//    - Date: new Date, getFullYear, getDate, getMonth, getTime, getHours, getMinutes, getSeconds, getMilliSeconds
+//    - JSON - JavaScript Object Notiation
+//    - JSON.parse - JSON to Object 
+//    - JSON.stringify - Object to JSON 
+//    - stringify(value, [replace], space) - formatting explanation
+//    - moment.js Homewor 
+
 // // -=-=-=- Destructuring - map with key like a obj 
 
 // // - object - keylarni ajratib olishga nisbatan.
@@ -16,7 +25,7 @@ console.log(moment().format('L'))
 // //    - nested array 
 
 
-// // -=-=-=-=-=-=- Object
+// // -=-=-=-=-=-=- Object Destructuring
 
 // let obj = {name: 'Jahongir', age: 18}
 // // name valuesini olmoqchi bulsak har doim obj.name qilishimiz kerak
@@ -27,7 +36,7 @@ console.log(moment().format('L'))
 
 // console.log(name) // bizga obj ichidagi name valuesini chiqarib beradi 
 
-// // -=-=-= function
+// // -=-=-= function Destructuring
 
 // // biz fnc ga parametr sifatida obj bersak uniham destructuring qilib olsak buladi 
 // // oddiy usul
@@ -77,14 +86,14 @@ console.log(moment().format('L'))
 
 // // value array bulganligi uchun biz valueni [value] qilib destructuring qilsak buladi 
 // Object.entries(object).map(([key,value],index) => { // [] ichida 1-yoilgan suz array birinchi elementiga ikkinchi yozilgani ikkinchi elementiga teng bulyapdi
-//   console.log(key) // bu holatda bizga faqat birinchi elementlarni chiqaradi 
+//   console.log(key) // bu holatda bizga faqat birinchi element (key) larni chiqaradi 
 //   // value: name, title, data 
-//   console.log(value) // bu holatda bizga faqat ikkinchi elementlarni chiqaradi
+//   console.log(value) // bu holatda bizga faqat ikkinchi element (value) larni chiqaradi
 //   // value: Jahongir, IT Center, {year: 1999}
 // })
 
 
-// // -=-=-=-=-= Array
+// // -=-=-=-=-= Array - Destructuring
 
 // let arr = ['Apple', 'Orange', 'Banano']
 // // buni ichidagi malumotlarni olish uchun arr[1] qilardik 
@@ -92,7 +101,7 @@ console.log(moment().format('L'))
 // // lekn bularniham destructuring qilib verablega biriktirsak buladi 
 // // arrayniham destructuring qilsak buladi bunda key bulmaganligi uchun tartib raqami buyicha joylashtirishimiz kerak 
 // // obj da destructuring qilganda uzining {qavslaridan} foydalanganimizdek bundaham uzining [qavslaridan] foydalanamiz 
-// let [a,b,c] = arr // bunda [] ichida quygan nomimiz ahamiyatga ema emas uzimiz hohlagan nom quysak buladi 
+// let [a,b,c] = arr // bunda [] ichida quygan nomimiz ahamiyatga ega emas uzimiz hohlagan nom quysak buladi 
 // // birinchi a arrayning birinchi elementiga 2 - si ikkinchi elementiga qolganlariham tartib raqam buyicha teng bulib ketaveradi 
 // console.log(a) // bunda bizga arraydagi 1-lement Apple ni chiqaradi 
 // console.log(c) // arraydagi 3 - element Banano chiqadi 
@@ -232,14 +241,15 @@ console.log(weeks[date.getDay()].slice(0,5))   // Yaksh
 // -=-=-=-=- JSON - JavaScript Object Notation
 // bu bizga malumotni kichik va hamma dasturlash tili uqiydigan qilib beradi 
 // backend ga malumotlarham JSON farmatda boradi ham backend dan JSON formatda keladiham
+// JSON file name.json deb ochiladi
 
 // JSON har doim [] - ichida obj holatda buladi [{}] va obj key va valulari har doim 2 talik qushtirnoqda "" yozilishi shart 
 // bulmasa xato buladi bitta numberni "" siz yozsak buladi 
 
 // Misol uchun 
 let user = {name:'Webbrain', year:2004} // shu kodning json variantini yozamiz 
-// bizda json file ochilgan usha yirda shu kodning jason kurinishi mavjud
 // [ {"name":"webbrain", "year": 2004} ] - JSON varianti
+
 
 // Misol uchun 
 // alert(user) // value: [object Object]
@@ -313,5 +323,8 @@ console.log(obj)
 // value: { name: 'John', year: 123432, date: { fullName: 'Jahongir Doniyarov', age: 18 } }
   
 
+// -=-=-=- 1. JSON.stringify()
+// malumotni JSON qilib beradi 
 
-
+// -=-=-=- 2. JSON.parse()
+// bu JSON malumotni obj qilib beradi 
