@@ -121,6 +121,7 @@ console.log(global); // 30
 // window.win = 90 // ReferenceError: window is not defined
 // console.log(window.win) // window ni html da ishlatsak  uqiydi 
 
+
 // -=-=-=-=-=-=-=- Function as an Object
 // -=-=-=-=-=- function.name 
 // function nomini chiqarib beradi 
