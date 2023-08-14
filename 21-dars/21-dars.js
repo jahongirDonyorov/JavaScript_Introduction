@@ -70,7 +70,7 @@ getFull()// bu holatda undefined undefined chiqadi chunke this da hechqanday mal
 // 1 - this nmaning qiymatini olishi 
 // 2 - functionga parametr buladi 
 
-getFull.call(user, 'Javlon') // javlon getFull ning parametiri smth ga teng buladi
+getFull.call(user, 'Javlon') // user malumotlari getFull this ga teng buldi va 'Javlon' getFull ning parametiri smth ga teng buladi
 // value: Webbrain Academy
 // bu holatda getFull ichidagi this userning qiymatlariga teng bulyapdi 
 getFull.call({name:'John', lastName:'Doniyarov'}) // Jahon Doniyarov
@@ -79,9 +79,9 @@ getFull.call({name:'John', lastName:'Doniyarov'}) // Jahon Doniyarov
 // backEnd dan kelyotgan malumotda obj lar kup va nomi yuq [{...},{...},{...}] biz bularniham thisga qiymat qilib berask buladi 
 // birinchi array ichidagi objlarni bittalab olishimiz kerak buning uchun fordan foydalanamiz 
 
-for(usr of users){
-  // console.log(usr) // array ichidagi 2 ta objniham bittadan chiqarayapdi 
-  getFull.call(usr)
+for(us of users){
+  // console.log(us) // array ichidagi 2 ta objniham bittadan chiqarayapdi 
+  getFull.call(us)
 }
 
 // -=-=-=- Bu Jenirek function deyiladi bitta fnc yoziladi va u hammasiga mos keladi 
