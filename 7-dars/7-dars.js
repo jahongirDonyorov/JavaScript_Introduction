@@ -5,6 +5,17 @@
 
 // // JavaScript 6 -> Basics 1/3 fineshed
 
+// Muntarija 
+//  - While !
+//  - do while 
+//  - function decloration 
+//  - function expression 
+//  - Arrow function 
+//  - Shadawed variable
+//  - Default parametr 
+//  - Function with return 
+
+
 // // =-=-=-=-=-=-=- While, Do While  -=-=-=-=-=-=-=
 
 // // ------ While (){}
@@ -290,7 +301,7 @@
 // // bu inner verable vs outer verable nomi bir xil bulsa verable shadow deyiladi
 // let title = "Jahongir";
 // const shadow = () => {
-//   let title = "Doniyarov";
+//   let   = "Doniyarov";
 //   console.log(title); // value: Doniyarov
 // };
 // console.log(title); // Jahongir
