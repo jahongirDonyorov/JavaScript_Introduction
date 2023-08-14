@@ -12,6 +12,18 @@
 
 // -=-=-=-=-=-=-=- JavaScript kirish
 
+// Muntarija
+
+//  - JS nima?
+//  - JS qanday ishlaydi 
+//  - Singe Thread ?
+//  - Mount thread ?
+//  - Variables - var,let,const 
+//  - Data Types 
+//  - NonPrimitive - object,arrays,functions
+//  - null vs undefined
+//  - alert(), prompt(),consfirm()
+
 // -=-=-=- JS File yaratish
 // js file ham qolgan file lardik yaratiladi Boshida mavzuga oid suz va oxiri . js blan tugashi shart
 // misol: index.js, style.js, main.js va hokozo .....
@@ -48,7 +60,7 @@
 
 // !_!_!_!_! Hozirgi kunda 90% let ishlatiladi let varga nisbatan ancha yaxshiroq va yangi var eski versia bulganligi uchun kam ishlatiladi !_!_!_!_!_!
 
-// _!_!_!_!_!_!_!_ huddi biz brozni ismi blan chaqirgandek variable ni ham nomi blan chaqirishimiz kerak
+// _!_!_!_!_!_!_!_ huddi biz brovni ismi blan chaqirgandek variable ni ham nomi blan chaqirishimiz kerak
 
 // 1   2         3
 let name = "Jahongir";
