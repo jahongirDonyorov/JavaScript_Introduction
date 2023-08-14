@@ -5,7 +5,7 @@
 //  - Garbage collection / clearinterval / clearTimeout
 
 
-// Bular methode lekn JS metodi emas, lekn hamma browserlar support qiladi
+// Bular method lekn JS metodi emas, lekn hamma browserlar support qiladi
 
 //  - SetTimeut(callback, sec, ...args) - bir marta yuradi 
 //      - returns tiremId
@@ -84,7 +84,7 @@
 
 // // 2
 
-// // biz fnc ichida for ni 10 000 gach yalantirsak va time 0 bulgan setTimeout dan kiyin chaqirsak  
+// // biz fnc ichida for ni 10 000 gach aylantirsak va time 0 bulgan setTimeout dan kiyin chaqirsak  
 // // birinchi qaysi chiqadi 
 
 // const get = () => {
@@ -110,7 +110,7 @@
 // // kiyin console 'three' chiqadi va oxiri setInterval queue ga utganligi uchun 'thwo' chiqadi 
 
 // // bizda asinxron(asynchrouns) va sinxron(synchrous) tushinchalari mavjud 
-// // setTimeout asinxron xisonlanadi 
+// // setTimeout va setInterval asinxron xisonlanadi 
 
 
 //#########################
@@ -138,8 +138,8 @@ let id = setInterval(() => {
 
 // Garbage Collaction
 
-// bularning qiymati tuxtagandan kiyinham automatik rafshda Memorydan uchib ketmaydi da uchib ketmaydi  
-//  setInterval shunchake uzidan uzi tuxtamaydiham qancha value chiqaraversa hammai memory (heap) da qolib ketaveradi 
+// bularning qiymati tuxtagandan kiyinham automatik rafshda Memorydan uchib ketmaydi 
+//  setInterval shunchake uzidan uzi tuxtamaydiham qancha value chiqaraversa hammasi memory (heap) da qolib ketaveradi 
 // bularni uchirib tashlash uchun clearInterval va clearTimeout dan foydalanamiz 
 
 // bu ikkalasi codni tuxtatadi va heap da qolgan malumotlari Garbagr Collaction qilib uchirib tashlaydi 
@@ -155,8 +155,29 @@ clearInterval(id)
 
 // -=-=-= Homework 
 // nechta ichki funtion bulsa hamma argument yigindisini chiqarsin
-sum(1)(2) == 3; // 1 + 2
-sum(1)(2)(3) == 6; // 1 + 2 + 3
-sum(5)(-1)(2) == 6;
-sum(6)(-1)(-2)(-3) == 0;
-sum(0)(1)(2)(3)(4)(5) == 15
+// sum(1)(2) == 3; // 1 + 2
+// sum(1)(2)(3) == 6; // 1 + 2 + 3
+// sum(5)(-1)(2) == 6;
+// sum(6)(-1)(-2)(-3) == 0;
+// sum(0)(1)(2)(3)(4)(5) == 15
+
+// -=--=- setInterval 10 martta ishlasin 1 secuntdan va tuxtasin
+
+let count = 0;
+const interval = setInterval(() => {
+  console.log(' Har 1 soniyada bir martta ishlaydi ')
+  count++
+  console.log(count)
+
+  if(count === 10){
+    clearInterval(interval) // 10 marta ishladikdan so'ng intervalni to'xtatish
+  }
+},1000)
+
+// Tahlil:
+
+// kodimiz har ishlagan vahtida count ga bir qushilib boradi va fnc ichidagi if da count teng bulsa 10 ga
+// setInterval ni clearInterval qilyapmiz (tuxtatyapmiz)
+
+// count: bush verable bunga har code ishlaganda 1 qushilib boradi 
+// bu biz kod 10 martta ishlaganini bilishimiz uchun va kodni tuxtatishimiz uchunkerak 
