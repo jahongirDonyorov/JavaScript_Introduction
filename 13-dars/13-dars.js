@@ -1,4 +1,13 @@
 // =-=-=-=-=-=-=-=-= Array 2/3
+// Muntarija
+//    - Advenced Array 
+//    - find va findindex ishlash tezligidagi farq 
+//    - forEach va Map farqi 
+//    - Multi dimansional arrays 
+//    - new Set va new Map 
+//    - Methods: filter, sort, find, findindex, forEach, map, reduce, every, some, fill, copyWithin
+// flat, flatMap, Array.from, new Set, new Map
+
 // -=-=-=-=- Advanced Array Methods
 // 1 - .find(callback(item,index,array)) - find item
 // 2 - .findIndex(callback(item,index,array)) - return index from end
@@ -168,7 +177,7 @@
 
 // search va filter farqi
 // search malumotni joylashish urnini uzgartiradi
-// filter uzimizga kerakligi qolib qolgani chiqib keratadi
+// filter uzimizga kerakligini qoldirib qolgani chiqib keratadi
 
 //####################
 
@@ -364,7 +373,7 @@
 
 // // -=-=-=-=-=-=-=-=- copyWithin
 // // array ichida bizga kerak bulgan malumotni copy qilib oladi va biz hohlagan boshqasini urniga quyadi 
-// // bu faqat arran value urniga qushadi avvalgisi urniga copy qilingani quyiladi bish joyga copyni quyib quymaydi 
+// // bu faqat arran value urniga qushadi avvalgisi urniga copy qilingani quyiladi bush joyga copyni quyib quymaydi 
 
 // // 3 ta parametr oladi
 // // 1 - si nechinchi indexdan boshlab quyishni bildiradi 
@@ -390,6 +399,7 @@
 // ####################
 
 // // -=-=-=-=-=-= reduce -=-=-=-=-=-=-
+// // bu bizga array ichidagi malumotlarni qushib beradi 
 // // bu 2 ta parametr oladi birinchisi callback fnc 2-si boshlang'ich qiymat 
 // // reduce(callback, initialvalue)
 
