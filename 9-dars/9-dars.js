@@ -2,6 +2,19 @@
 
 // -=-=-=-=-= Object 2/2
 
+// Muntarija 
+//    - Call Stack va Heap qanday malumot saqlaydi  
+//    - this method
+//    - Constructor function 
+//    - Symbol as key 
+//    - object keylarning yozilish usullari 
+//    - Destructure
+//    - Renaming variables
+//    - Spread operator(...)
+//    - Updating Object 
+
+
+
 // // -=-=-=-=-=- this
 // // this  === window = true
 // // bu ikkalasi bir biriga teng va JS dagi eng katta obj lardan (js dagi hamma narsa obj)
@@ -30,7 +43,7 @@
 //   getName: () => {
 //     console.log(`Hi, ${this.name}`) // undefined chiqadi
 //   },
-//   // buni faqat oddiy functionni wrapper qilish orqali thi ishlaydigan qilishimiz mumkun
+//   // buni faqat oddiy functionni wrapper qilish orqali this ishlaydigan qilishimiz mumkun
 //   // constraktor fnc
 //   getAge: function () {
 //     return () => { // fnc ichida return blan arraw fn ochib olamiz shundagina ishlaydi
