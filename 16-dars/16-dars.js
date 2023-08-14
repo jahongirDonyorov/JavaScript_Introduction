@@ -1,5 +1,13 @@
 // -=-=-=-=-=-=-=-=-=-=- Advanced
 // JavaScript - 16 - new Map, new Set, weakMap, wearSet
+// Muntarija 
+//    - new Map: set, get, delete, clear 
+//    - new Map as a generator
+//    - Loops with new Map 
+//    - new Set: ad, has, delete, clear
+//    - Loops with new Set 
+//    - new WeakMap 
+//    - new WeakSet
 
 // // -=-=-=- new Map (key,value colliction)
 // // bu bizga obj yaratib beradi buni biz bemalol obj urnida ishlatishimiz mumkun
@@ -32,7 +40,7 @@
 
 // // -=-=-=-=- Malumot olish (chaqirish)
 // // -=-=-=-=-=- .get()
-// // buni olish uchun .get() dan foydalanishimiz kerak
+// // buni olish (chaqirish) uchun .get() dan foydalanishimiz kerak
 
 // console.log(map.get('name')) // map ni ichidagi name nomli key valuesini chiqarib beradi value: IT Center
 // console.log(map.get('title')) // undefined chidagi chunke map ichida bunaqa key yuq obj ichida bor bu buni ma.title qilsak chiqadi 
@@ -159,6 +167,8 @@
 // // -=-=-=-=-=-=- new Set (value colliction)
 // // bu ham huddi new Map dek faqat bunda faqat value buladi key bulmaydi
 
+// bundaham defoult qiymat Map da berilgandek buladi [[],[]]
+
 // let set = new Set(); // Set(0) {}
 
 // // bu hardoim yenek value qabul qiladi new Set da bitta value 2 martta chiqmaydi 
@@ -214,31 +224,84 @@
 // GarbageCollaction obj larda uzi automatik ravishda ishlatilmaydigan valueni uchirib tashlaydi lekn 
 // new Map da bu uchib ketmaydi uzimiz uchirishimiz kerak 
 
-let map = new Map([
-  ['name','jahon']
-])
+// let map = new Map([
+//   ['name','jahon']
+// ])
 
-console.log(map) // Map(1) { 'name' => 'jahon' }
+// console.log(map) // Map(1) { 'name' => 'jahon' }
 
-// biz buni ojb keyga biriktirsak buladi 
-let obj = {data: map} // map qiymatlari obj key data ga tenglashdi 
+// // biz buni ojb keyga biriktirsak buladi 
+// let obj = {data: map} // map qiymatlari obj key data ga tenglashdi 
 
-console.log(obj.data) // Map(1) { 'name' => 'jahon' }
-// endi biz map ni malumotlarini null ga tenglashtirsak map malumotlari memory (Heap) da qolib ketadi
-map = null
-console.log(map) // null buldi lekn map ning malumotlarini GarbageCollaction outomatik memory (heap) dan uchirib tashlamaydi 
-// map ning eski qiymati ortiqch joy olib turaveradi 
+// console.log(obj.data) // Map(1) { 'name' => 'jahon' }
+// // endi biz map ni malumotlarini null ga tenglashtirsak map malumotlari memory (Heap) da qolib ketadi
+// map = null
+// console.log(map) // null buldi lekn map ning malumotlarini GarbageCollaction outomatik memory (heap) dan uchirib tashlamaydi 
+// // map ning eski qiymati ortiqch joy olib turaveradi 
 
-// Biz kodimizmi new Map emas weakMap blan yozsak bizga eski memory heap da qolib ketgan valueni automatik uchirib tashlaydi 
+// // Biz kodimizmi new Map emas weakMap blan yozsak bizga eski memory heap da qolib ketgan valueni automatik uchirib tashlaydi 
 
-console.log(obj.date) //  Map(1) { 'name' => 'jahon' } biz map qiymatini obj da bemalol ishlatolamiz 
+// console.log(obj.date) //  Map(1) { 'name' => 'jahon' } biz map qiymatini obj da bemalol ishlatolamiz 
 
 
-let ma = weakMap([
-  ['name','jahon']
-])
- ma = null // bu holatda weakMap ning eski qiymati uchib ketadi 
-// lekn weakMap da 
+// let ma = weakMap([
+//   ['name','jahon']
+// ])
+//  ma = null // bu holatda weakMap ning eski qiymati uchib ketadi 
 
 // -=-=-=-=-=- WearSet
 // bu ham huqqi weakMap dek faqat new Set ga nisbatan
+
+
+// Lekn bularni malumotlarini boshda bir malumotga bermoqchi bulsa WeakMap, WeakSet dan foydalanolmaymiz 
+// chunke bu malumotlarni ishlab bulgandan kiyin uchirib tashlaydi 
+// bunday hollarda new Set va new MAp dan foydalanishimiz kerak 
+
+
+
+
+// Full Methode 
+// method new Set 
+// -=-=-=- 1. set()
+// bu new Map ga malumot qushib beradi 
+
+// -=-=-=- 2. get()
+// uzimizga kerakli malumotni chaqirib olishimiz uchun get dan foydalanamiz 
+
+// -=-=-=- 3. has()
+// bu biz hohlagan key map ichida bor yuqligi bilib beradi 
+
+// -=-=-=- 4. delete
+// map ichidagi keraksiz malumotni uchirish uchun ishlatamiz 
+
+// -=-=-=- 5. clear
+// map ichidagi hamma malumotni uchirib tashlaydi 
+
+// -=-=-=- 6. keys()
+// bu bizga map dagi keylarni chiqarib beradi 
+
+// -=-=-=- 7. entries()
+// key valularni obj ichida array sifatida chiqaradi 
+
+// -=-=-=- 8. entries().next()
+// for loop dek ishlaydi faqat buni uzimiz yurgizishimiz kerak 
+
+// -=-=-=- 9. forEach
+// // har bir element ustida birma bir ishlaydi 
+
+// -=-=-=- 10. Object.fromEntries()
+// new Map ni oddiy obj qilib beradi 
+
+
+// =-=-=-=-=- new Set 
+// -=-=-=- 1. add()
+// set ga malumot qushib beradi 
+
+// -=-=-=- 2. has()
+// // new set ichida bizga kerakli malumot bor yuqligini aniqlab beradi 
+
+// -=-=-=- 3. delete()
+// malumot uchiradi 
+
+// -=-=-=- 4. clear()
+// hamma malumotni uchirib tashlaydi 
