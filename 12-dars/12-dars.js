@@ -1,4 +1,11 @@
 // // -=-=-=-=-=-=-=- Arrays  1/3
+// Muntarija
+//    - Array nma ?
+//    - Accessing array elemnt 
+//    - new Array 
+//    - Loops with arrays 
+//    - Methods: lenght, at, pop, push, ,shift, unsheft, splice, slice, concat, indexOf, lastindexOf, va boshqalar
+
 // // buni katta kantenr deb olsak buladi ichiga harhil malumot solishimiz mumkun va usha arrayni chaqirish blan ichidagi hamma malumotlarni olish imkoniyati buladi 
 // // ichidagi malumotlarni keraklisini olmoqchi bulsak index buyicha [] ichida chaqoroladi 
 
@@ -261,16 +268,17 @@ console.log(ar.at(2)) // 2 - indexdagi malumotni chiqaradi
 // buni avzalligi - qiymatham oladi 
 
 // 3. -=-=-=-=- .pop()
-// arrayning eng oxirgi qiymatini chiqarib tashlaydi 
+// arrayning eng oxirgi qiymatini chiqarib tashlaydi  (uchiradi)
 ar.pop()
 console.log(ar) // value: [ 1, 2, 3, 4, 5 ] 6 ni chiqarib tashadi
+
 // 4. -=-=-=-=- .push()
 // bu arrayga malumot qishadi / qushiladigan malumot arrayning oxiridan qushiladi 
 ar.push('salom',11, [0,9,8]) // nechta malumot qushmoqchi bulsa shu tariqa yozib ketishimiz mumkun 
 console.log(ar) // value: [ 1, 2, 3, 4, 5, 'salom', 11, [0, 9, 8] ] - salom qushildi 
 
 // 5. -=-=-=-=- .shift()
-// arrayning boshidan malumot chiqarib tashlaydi 
+// arrayning boshidan malumot chiqarib tashlaydi (uchiradi)
 ar.shift()
 console.log(ar) // [ 2, 3, 4, 5, 'salom', 11, [ 0, 9, 8 ] ]
 
@@ -295,7 +303,7 @@ arr1.splice(2,0, 3) // 2,0 degani 2 dan kiyin qushadi 0 hechnarsa uchu=irilmasin
 console.log(arr1) // [ 1, 2, 3, 4, 5 ]
 
 // 8.  -=-=-=-=- .slice()
-// buham solice dek arraydan malumotni kesb oladi faqat bu arrayning asl holatini uzgartirmaydi 
+// buham splice dek arraydan malumotni kesb oladi faqat bu arrayning asl holatini uzgartirmaydi 
 // bu faqat kesb oladi 
 let spl = [1,2,3,4]
 let sli = [1,2,3,4]
@@ -332,7 +340,7 @@ console.log(arr4.indexOf(4)) // value: 0
 console.log(arr4.lastIndexOf(4)) // value: 7
 
 // 12. -=-=-=-=- .join()
-// bu arrayni string qilib beradi 
+// bu arrayni valularini qushib string qilib beradi (bunga berilgan parametr har bir value orasida chiqadi)
 console.log(typeof arr4.join()) // string 
 // buni toStringdan farqi parametr kiritsak buladi 
 console.log( arr4.join(',')) // bu holatda har bir element orasiga , quyib chiqadi value: 4,1,3,4,2,Jahon,16,4
