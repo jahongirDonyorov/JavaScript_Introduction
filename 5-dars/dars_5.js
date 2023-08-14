@@ -1,3 +1,11 @@
+// Muntarija
+//    - if else with single condition 
+//    - if else with multi state condition 
+//    - if else with boolean conversion
+//    - order in if (//) {
+//    - Nullish
+//    - Difference between ?? and ||
+
 // //              true  ||     false       =   true
 // console.log(1 !== '0' || (false && 'hey')) // value: true
 // // 1 !== '0' - bu true chiqadi chunke 1 '0' ga teng emas
@@ -311,7 +319,7 @@ temp <= 10 && temp > 0 // bunday tekshirish moun sritga kirishining sababi bi va
 // OR || -> false === null, undefined, 0, false, NaN
 // Nullish ?? -> false === null, undefined
 
-// huqqi or || dek ishlaydi faqat bunda 2 ta false qiymat mavjud -> null, undefined
+// huddi or || dek ishlaydi faqat bunda 2 ta false qiymat mavjud -> null, undefined
 
 // bu faqat null va undefined ni false db oladi qolgan hamma qiymatni true hisoblaydi xatto false ni uziham
 // false === undefined, null
