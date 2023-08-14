@@ -110,7 +110,7 @@ console.log(us) // 10 chiqadi chunke fnc ishlagandaham uni ichidagi us faqat sco
 globalThis.global = 30; // bunga hohlagan narsamizni biriktirishimiz mumkun va hohlagan joyimizda chaqirishimiz mumkun 
 // biz bu verablini hohlagan joyimizda ishlatishimiz mumkun faqat globalThis.global qilib 
 (() => {
-  var global =20;
+  var a =20;
   console.log(a,globalThis.global) 
   // 20, 30 chiqadi chunke birinchi uzini ixhidagi verabli chaqirilyapdi kiyin globalThis blan global verable chaqirilyapdi 
 })();
