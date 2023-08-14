@@ -1,7 +1,12 @@
 // -=-=-=-=-=-=-=-=-=-=- Advanced 
 
 // Recursion - explain in depth
-
+ // Muntarija 
+ //   - Recursion function nima ?
+ //   - Recurtion qanday ishlaydi ?
+ //   - Kompanya oyliklari Recurtion blan hisoblanadi 
+ //   - Recurtion blan oddiy loop ning farqi va ustunligi 
+ //   - Homework 1 - fibonacci raqamini topish, 2 - Foctarial raqam topish, 3 - raqamlar yigindisini topish 
 
 // -=-=-=-=-=-=- Recursion function 
 
@@ -24,7 +29,7 @@
 // getSum(4)
 
 
-// Bu kod Aptemal yul emas bundaham javob tug'ri ishlaydi lekn forda astaroq ishlaydi 
+// Bu kod Aptemal yul emas bundaham javob tug'ri ishlaydi lekn for da astaroq ishlaydi 
 // Biz buni Recursion function orqali qilishimiz mumkun 
 // bu uusul ancha tez ishlaydi Aptemal yul desakham buladi 
 
@@ -47,7 +52,7 @@ const sum = (n) => {
   // tug'ri javob chiqishi uchun biz res + 1 qilishimiz kerak 
   else { // n 1 ga teng bulmasa 
     
-    res += n // bu esa n ning har bir qiymatini res ga qushim javobni resga tenglashtiryapdi 
+    res += n // bu esa n ning har bir qiymatini res ga qushib javobni resga tenglashtiryapdi 
 
     // n ning qiymati 4,3,2,1
 
