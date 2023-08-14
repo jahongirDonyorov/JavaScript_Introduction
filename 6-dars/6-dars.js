@@ -1,3 +1,14 @@
+// Muntarija 
+//   - GitHub is important !
+//   - Switch case 
+//   - For loop parametirlarining tushib qoldirilishi 
+//   - Infinite loops
+//   - Var blan let farqi 
+//   - Toq va Just sonni topish. 99% kishi buni xato yulda qiladi 
+//   - Nested Loops 
+//   - Label of inner loops 
+
+
 // // =-=-=-=-=-=-=-=-=-=-= Switch statement
 
 // // Same as if - if nma vazifa bajarsa Switch ham huddi shunday
@@ -60,7 +71,7 @@
 //   default:
 //     console.log("teng emas");
 // }
-// // value : teng emas chiqadi chunke switch === blan tekshiradi
+// // value: teng emas chiqadi chunke switch === blan tekshiradi
 
 // // !_!_! break ni olib tashlab yozsak xatolik kursatmaydi lekn hamma case larni uqib hammasini javobini chiqaradi
 
