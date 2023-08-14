@@ -4,7 +4,14 @@
 // https://www.w3schools.com/js/js_objects.asp
 // bu link orqali obj haqida qushimcha malumot olishingiz mumkun
 
-// // =--=--= obj key va valuedan tashkil topgan malumotga aytiladi
+// Muntarija 
+//  - Objects 
+//  - Dynamic access to keys 
+//  - Copying vs referencing 
+//  - Object assign 
+//  - structuredClone() 
+
+// // =--=--= obj deb key va valuedan tashkil topgan malumotga aytiladi
 // // obj har doim {} ichiga yoziladi qavs ichida {:} buladi : bundan oldingi qiymat 'key' kiyingisi 'value' hisoblanadi
 // // bunga hohlagancha malumot yozishimiz mumkun
 
