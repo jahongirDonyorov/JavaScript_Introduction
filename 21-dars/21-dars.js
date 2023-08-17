@@ -14,7 +14,7 @@
 
 // -=-=-=-=-=- function call 
 // bu this ga qiymat biriktirish uchun chiqarilgan 
-
+ 
  let user = {
   name: 'Webbrain',
   lastName: 'Academy',
