@@ -107,7 +107,7 @@
 
 // console.log(Boolean(1)) // true
 // console.log(Boolean(0)) // false
-
+ 
 // console.log(true == 1) // true
 // console.log(false == 0) // true
 // // true false urniga 1 va 0 dan foydalansakham buladi. 0 va 1 qaytishiga qarab code tug'ri notug'ri ekanligini bilishimiz mumkun
