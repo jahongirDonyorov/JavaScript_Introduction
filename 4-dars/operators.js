@@ -19,6 +19,7 @@
 //   - && Va (AND)
 //   - || Yoki (OR)
 //   - ! Qaytarilgan qiymatning qaytishini boshqarish (NOT)
+//   - ?? - Nullesh
 
 // Bitwise operatorlar: (Bitwise Operators:)
 //   - & Bitwise va

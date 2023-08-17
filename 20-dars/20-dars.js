@@ -109,8 +109,12 @@
 // // bu kurinishda value birinchi sinxronlarni ketma ketlik buyicha chiqaradi birinchi fnc 'one' chiqadi  
 // // kiyin console 'three' chiqadi va oxiri setInterval queue ga utganligi uchun 'thwo' chiqadi 
 
-// // bizda asinxron(asynchrouns) va sinxron(synchrous) tushinchalari mavjud 
+// // -=-=-=-  bizda asinxron(asynchrouns) va sinxron(synchrous) tushinchalari mavjud 
+
 // // setTimeout va setInterval asinxron xisonlanadi 
+// // yane kod jsni uzini ketmaketligida ishlab boraversa yane birinma ketin kodlarni chiqaraversa sinxron hisoblanadi 
+// // asinxron esa bajarilishiga qanchadir vaht ketganligi uchun snxron kodlar buni kutib utirmasdan utib ketadi 
+// // bu esa hammasi ishlab bulgandan kiyin chiqadi
 
 
 //#########################
@@ -134,6 +138,18 @@ let id = setInterval(() => {
   )
   
 }, 1000);// terminalda hunuk jurinishi mumkun lekn chromeda bulganda soat yurayorgandek buladi
+
+//-=-=-=-=-= Event loop
+// malumot asinxron bulib ishlashiga kup vah ketadigan bulsa va Call Stack ga chiqsa qolgan codlarni tuxtatib quymaslik uchun 
+// asinxron bulgan (WEB AP) malumot birdan Wep Ap ga yuboriladi va uyirda berilgan vaht (ish) Bajarilgandan sungham birdan
+// Call Stack ga chiqolmaydi chiqsa ketma ketlik buziladi shuning uchun kutishga queue ga yuboruladi u yirda hamma sinxron bulgan kodlar 
+// chiqib bulishini kutadi va ular chiqqandan sung asinxron bulgan malumotlar (setInterval, setTimeout, fech, dom) vaht berilmaganlari 
+// joylashish tartibi vah berilganlari vahtga qarab chiqadi 
+
+// malumot (qanchadir vahtdan kiyin eng ohirida chiqishi) da bulgan malumotning aylanishiga Evenet Loop deyiladi
+// a -> call Stack
+// setTimeout -> Web AP -> Callback Queue -> Call Stack - Event loop deyiladi shu jarayonga 
+// 
 
 
 // Garbage Collaction

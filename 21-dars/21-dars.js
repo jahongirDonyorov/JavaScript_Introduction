@@ -109,4 +109,4 @@ getFull.bind(user)() // value: Webbrain Academy
 let mt = getFull.bind(user) // mt functionga teng bulyapdi biz endi mt ni fnc sifatida chaqirsak kiyin bind qiymati chiqadi 
 mt() // Webbrain Academy
 
-// bind farqi shunda bu birinchi fnc ni copy qilib oladi va uni verablega qaytaradi va verable chaqirilganda ishlaydi 
+// bind farqi shunda bu birinchi fnc ni copy qilib oladi va uni verablega qaytaradi va verable chaqirilganda ishlaydi   
