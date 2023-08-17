@@ -135,7 +135,7 @@ let id = setInterval(() => {
   let date = new Date()
   console.log(
     `Today: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
-  )
+  ) 
   
 }, 1000);// terminalda hunuk jurinishi mumkun lekn chromeda bulganda soat yurayorgandek buladi
 
