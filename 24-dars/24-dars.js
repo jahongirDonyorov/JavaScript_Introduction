@@ -42,7 +42,7 @@ Object.values(users) // bizga valuelarni chiqarib beradi
 
 
 Object.prototype.fullName = function(){// prototype yordamida functionni eng katta obj (Object) ga yozyapmiz endi bu fnc hamma objlarda ishlaydi 
- // prototype ddan kiyin yozilyotgan suz fnc name buladi uyirga hohlagan suzimizni yozishimiz mumkun faqat avval bulgan suzdan tashqari 
+ // prototype dan kiyin yozilyotgan suz fnc name buladi uyirga hohlagan suzimizni yozishimiz mumkun faqat avval bulgan suzdan tashqari 
   console.log(this.name, this.last)
 }
 users.fullName();// Jahon Doniyarov
@@ -81,3 +81,33 @@ Array.prototype.AlphabeteFilter = function(){
 arr.AlphabeteFilter()// [ 'ananas', 'Anor', 'behi', 'Hurmo', 'olcha', 'Olma' ]
 // bizga chiqarib  beryapdi biz buni hohlagan arr da ishlatishimiz mumkun
 
+
+
+// Homework 
+
+// Obj uchun deleteKey degan fnc yarating obj ichidagi uzimiz hohlagan keyni uchirsin
+// obj.deleteKey('name') name degan key ni uchirishi kerak 
+
+let obj = {
+  name:'hi',
+  age:17
+}
+Object.prototype.deleteKey = function(key){
+  let res =  delete this[key]
+  return res
+}
+console.log(obj) // { name: 'hi', age: 17 }
+obj.deleteKey('name') // biz yozgan name keyini uchirib tashlaydi 
+console.log(obj) // { age: 17 }
+
+// SUCCES
+
+// obj.set('name','writable','false,) // obj ichidagi name ni writable ni false qilsin
+// setter getter yozrdamida qiling  
+
+Object.prototype.set = function(key,status,sitting){
+  let res = Object.defineProperties(this,key,{[status]:sitting})
+}
+obj.set('age','writable',false)
+
+// ERROR 
