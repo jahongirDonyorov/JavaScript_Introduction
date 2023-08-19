@@ -142,82 +142,281 @@ let database = {
   }
 }
 
-// Login qilishimiz kerak agar user kiritgan login va passawrd database dagiga tug'ri kelsa bizga usha malumotning fullName ni chiqarishi kerak buladi 
-console.log('started...')
+// // Login qilishimiz kerak agar user kiritgan login va passawrd database dagiga tug'ri kelsa bizga usha malumotning fullName ni chiqarishi kerak buladi 
+// console.log('started...')
 
-const login = (lg, pw, call) => {
-  // agar code haqiqiy backEnd dan malumot olganida html da kurganingizdek kutish jarayoni bular edi 
-  // biz buni suniy ravishda qilishimiz mumkun setTimeout orqali 
-  setTimeout(() => {
-    if(database.John.login === lg && database.John.passawrd === pw){
-      // call (logindagi callback) nibu yirda SetTimeut ishlab bulgandan kiyin chaqiramiz if ishlasa bu chiqadi
-      return call(`${database.John.fullName}, Welcome to Facebook`,
+// const login = (lg, pw, call) => {
+//   // agar code haqiqiy backEnd dan malumot olganida html da kurganingizdek kutish jarayoni bular edi 
+//   // biz buni suniy ravishda qilishimiz mumkun setTimeout orqali 
+//   setTimeout(() => {
+//     if(database.John.login === lg && database.John.passawrd === pw){
+//       // call (logindagi callback) nibu yirda SetTimeut ishlab bulgandan kiyin chaqiramiz if ishlasa bu chiqadi
+//       return call(`${database.John.fullName}, Welcome to Facebook`,
 
-      // Callback hell - callback ichidagi callback ga aytiladi
-      // biz uzimiz hohlagan userda age ni olishimiz kerak lekn hammasida age chiqmasligi kerak bulsa yana bitta callback dan foydalanamiz
-      // kiyin biz hohlagan odamimizning callback fnc sining ichida buni chaqirsak age chiqadi chaqirmasak chiqmaydi 
+//       // Callback hell - callback ichidagi callback ga aytiladi
+//       // biz uzimiz hohlagan userda age ni olishimiz kerak lekn hammasida age chiqmasligi kerak bulsa yana bitta callback dan foydalanamiz
+//       // kiyin biz hohlagan odamimizning callback fnc sining ichida buni chaqirsak age chiqadi chaqirmasak chiqmaydi 
 
-      ()=>{
-        // callback ga parametr sifatida yana bitta callback boryapdi bu fnc da age buladi biz ageni qachon hohlasak ushanda chaqirib chiqaramiz 
-        return `${database.John.age}`
-      }) // bularning hammasi fnc ga argument sifatida ketyapdi
+//       ()=>{
+//         // callback ga parametr sifatida yana bitta callback boryapdi bu fnc da age buladi biz ageni qachon hohlasak ushanda chaqirib chiqaramiz 
+//         return `${database.John.age}`
+//       }) // bularning hammasi fnc ga argument sifatida ketyapdi
 
-    }else{ // biz elsadaham chaqirishimiz kerak agar else ishlasa call parametiriga bu qiymat boradi
-      return call(`passawrd da xatolik bor`)
-    }
-  }, 1000) // 1 secund kutsin
+//     }else{ // biz elsadaham chaqirishimiz kerak agar else ishlasa call parametiriga bu qiymat boradi
+//       return call(`passawrd da xatolik bor`)
+//     }
+//   }, 1000) // 1 secund kutsin
 
+// }
+
+// // const user = login('John', 2004) // -code
+// // login qachonke setTimeout ishlab bulgandan kiyin qiymatga ega buladi u esa 1 secund dan kiyin ishlaydi hozir login undefined ga teng 
+// // lekn user sinxron bulganligi uchun birdan ishlaydi va loginning hozirgi qiymatini oladi (undefined) ni
+
+// // console.log(user) // undefined // -code
+// // console.log('...fenished') // -code
+
+// // bu tug'ri ishlashi uchun setTimeout ishlab bulgandan dan kiyin (login qiymatga ego bulganda) bu kodimiz ishlashi kerak 
+// // buning uchun Callback dan foydalanamiz 
+
+// // biz 3- params callback qushamiz va pastdagi consollarni uni ichiga yozamiz bu loginga params sifatida boradi 
+// // (callback ni chaqirmasak ishlamaydi) biz aytamizke usha params callback qachonke setInterval ishlab bulgandan sung chaqirilsin deb 
+// login('John', 2004,(usr)=>{ // params ga qiymat bu chaqirilganda return dagi qiymat bulyapdi
+//   console.log(usr)
+//   console.log('...fenished')
+// } ) 
+// // value: 
+// // started...
+// // Jahongir Doniyarov, Welcome to Facebook
+// // ...fenished
+
+// // hammasi tug'ri ihslayapdi
+
+// // Code tahlili 
+// {
+//   // biz login degan fnc ochyapmiz va unga 3 ta parametr kelyapdi 
+//   // 1 - si userning logini
+//   // 2 - si userning passawrdi
+//   // 3 - si Callback function 
+//   // va login ichida setTimeout 1 secuntdan kiyin ishlayapdi bu ishlagandan kiyingina if else ishlaydi va ture sining qiymati return bulib login ga teng buladi 
+//   // lekn biz if else ishlaganda return bulgan malumot callback bulsin va uning parametiri sifatida chiqishi kerak bulgan malumot berilyapdi 
+//   // biz tashqarida callback fnc ichiga bu chaqirilganda console da buning parametiri va ...fenished chiqsin deyapmiz 
+//   // bu calback qachonke setTimeout ishlab bulgandan sung if else da malumot rekshirilib bulgandan kiyin chaqirilganda ishlaydi 
+
+//   // agar callback dan foydalanmaganimizda setTimeout ohiri ishlas edi hammasidan kiyin
+// }
+
+// //-=-=-=-=-=- Callback hell 
+// // callback ichidagi callback ga callback hell deb aytiladi 
+
+// // bu callvack ni biz tashqarida yozib paramertga berib olsakham buladi 
+// const callback = (usr, getAge) => { //  getAge parametri ichki callback fnc ga teng callback hell 
+//   console.log(usr)
+//   // agar bizga age ham kerak bub qolsa bunga kelgan ikkinchi param callback fnc ni cahqirishimiz kerak buladi 
+//   console.log(getAge()) // callback ichidagi callback ni chaqiryapmiz
+//   console.log('...finished')
+// } // mana uzimizga kerakli userning age niham olamiz faqat uzimiz hoholasak hohlamasak fnc ni chaqirmaymiz
+
+// login('John',2004, callback) // shu holatda yoziladi callback() qilib quysak fnc ishlab ketadi shuning uchun nomini uzi yoziladi 
+// // hozir callback degan veriable izlayapdi va uning qiymati fnc ni parametr qilib loginga beryapdi 
+// // -=-=-  Callback bizga kutish jarayonini qilib berdi
+
+
+
+// #########################
+
+
+
+// // -=-=-=-=-=-=- new Promise()
+// // bu bizga callback urniga chiqarilgan 
+
+// // new Promise((resolve, reject)=>{}) - bu uc ichiga callback fnc oladi 
+// // va callback 2 ta parametr oladi 
+// // 1 - si doim malumot true bulganda ishlaydi 
+// // 2 - si doim malumot false bulganda ishlaydi 
+
+// console.log('started...')
+
+//  let user = new Promise((resolve, reject) => {
+//   if(database.John.login === 'John' && database.John.passawrd === 2004){
+//     return resolve(`${database.John.fullName}, Welcome to Facebook`,) 
+//   }else{ 
+//     return reject(`passawrd da xatolik bor`)
+//   }
+  
+//   // 3 va 4 - usullarda setTimeout ichida bulsaham ishlaydi
+
+//   // setTimeout(() => {
+//   //   if(database.John.login === 'John' && database.John.passawrd === 204){
+//   //     return resolve(`${database.John.fullName}, Welcome to Facebook`,) 
+//   //   }else{ 
+//   //     return reject(`passawrd da xatolik bor`)
+//   //   }
+//   // }, 1000);
+//  })
+
+//  // Promise kutish ihslarini qilib berolmaydi bu faqat resolve reject qiladi 
+
+//  //-=-==-=- then
+//  // bundan faqat kelyotgan resolve malumotni tutush uchun then dan foydalanamiz 
+//  // then qanday ketma ketlikda yozilsa usha holatda chiqaradi 
+
+// // 1 - usul
+// // user.then(res => console.log(res)) // kelyotgan malumot callback parametiri (res) ga teng buladi   
+// // shart tug'ri bulib resolve qaytaganligi uchun malumot chiqadi
+
+// // agar login yoke password xato bulib else ishlasa va reject qaytganda bizga malumot chiqarmas edi chunke reject dan kelyotgan malumotni the tutib olmaydi 
+// // reject ning malumotini catch tutib oladi 
+ 
+// // -=-=- catch
+
+// // 2 - usul
+// //  user
+// //  .then(res => console.log(res))
+// //  .catch(err => console.log(err)) // bunda try catch dagidek xatolikni boshqa kodlar ishlashiga xalaqit bermagan holda chiqaradi 
+
+
+// // console.log('...fenished') bu holatda yozganimiz shu value bunday chiqyapdi 
+// // value:
+// {
+//   // started...
+//   // ...fenished
+//   // Jahongir Doniyarov, Welcome to Facebook
+//   // bu holatda Promise kutmayotgan bulsaham ohirida chiqyapdi 
+// }
+
+// // 3 - usul
+// // biz finished Promise dan kiyin chiqishi uchun finished ni ohirgi thenga yozishimiz kerak ohirgi then har doim ohiri chiqadi 
+// // user
+// // .then(res => console.log(res))
+// // .then(() => console.log('...fenished'))
+// // .catch(err => console.log(err))
+
+// // value:
+// {
+//   // started...
+//   // Jahongir Doniyarov, Welcome to Facebook
+//   // ...fenished
+// }
+
+// // lekn bu holatda else ishlab reject kelsa fenished chiqmaydi chunke reject keladi va .catch ishlab ketadi 
+// // value:
+// {
+//   // started...
+//   // passawrd da xatolik bor
+// }
+
+// // biz buni resolve kelsaham reject kelsaham fenished ohirida chiqsin demoqchi bulsak .finally methodidan foydalanamiz 
+
+// // -=-=-=-=- .finally
+// // bu bizga hamma then catch methodelari ishlab bulgandan kiyin ishlaydi 
+
+// // 4 - usul 
+// user
+// .then(res => console.log(res))
+// .catch(err => console.log(err))
+// .finally(() => console.log('...fenished')) // Promes ichidagi malumot setTimeout ning ichida bulsaham bu setTimeout kutib 
+// // turadi va kiyin ishlaydi thenham shunday faqat unda reject kelsa ishlamaydi
+
+// //  else ishlab reject kelsaham finally eng ohirida chiqadi 
+// // value: 
+// {
+//   // started...
+//   // passawrd da xatolik bor
+//   // ...fenished
+// }
+
+
+// // -=-=-=-=-=-=-=-=- Promise.all 
+// // Birdan bir nechta Promise malumotlarini oladi 
+// // bu array qabul qiladi va bundan qaytyotgan malumotlarham array kurinishida buladi 
+
+// let all = Promise.all([ // ichidagi hamma promise ishlab bulishini kutadi 
+// new Promise((resolve, reject) => {
+//   if(database.John.login === 'John' && database.John.passawrd === 2004){
+//     return resolve(`${database.John.fullName}, Welcome to Facebook`,) 
+//   }else{ 
+//     return reject(`passawrd da xatolik bor`)
+//   }
+//  }),
+//  new Promise((resolve, reject) => {
+//   if(database.John.login === 'John' && database.John.passawrd === 2004){
+//     return resolve(`${database.John.fullName}, Welcome to Facebook`,) 
+//   }else{ 
+//     return reject(`passawrd da xatolik bor`)
+//   }
+//  })
+// ])
+// // bundan kelyotgan malumotni olsak then blan 
+// all.then(res => console.log(res)).catch(err => console.log(err))
+
+// // value:
+// {
+// // started...
+// // Jahongir Doniyarov, Welcome to Facebook
+
+// // [
+// //   'Jahongir Doniyarov, Welcome to Facebook',
+// //   'Jahongir Doniyarov, Welcome to Facebook'
+// // ] 
+// // bu value promise.all dan kelyotgan value  array holatda kelyapdi 2 ta chunke promise.all ning 2 ta promesi bor 
+// // 1 - value 1 - promesi niki 
+// // 2 - value 2 - promesi niki 
+
+// // ...fenished - bu bundan oldingi kodning .finally si bulganligi uchun bundanham kiyin chiqyapdi 
+
+// }
+
+
+// #########################
+
+
+// =-=-=-=-=-=-=-=-=- async await
+// async (malumotni asinxron qilib beradi) await(malumot kelishini kutadi)
+
+// functionlarni asinxron qilish 
+// buning uchun async await dan foydalanamiz 
+
+// function get(){} // bu oddiy fnc biz buni asinxron qilishimiz uchun buning oldiga async qushib quyishimiz kerak buladi 
+// async function get(){} // bu asinxron fnc buldi 
+
+// callback bulganda boshqacha quyiladi 
+// let getAs = () => {} // oddiy callback fnc asinxron qilish uchun = dan kiyin () dan oldin async quyiladi 
+// let getAs = async () => {} // asinxron callback fnc buldi 
+
+
+// bu promesi blan ishlaydi 
+
+console.log('started')
+
+let user = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if(database.John.login === 'John' && database.John.passawrd === 2004){
+        return resolve(`${database.John.fullName}, Welcome to Facebook`,) 
+      }else{ 
+        return reject(`passawrd da xatolik bor`)
+      }
+    }, 1000);
+  })
+
+// user.then((res) => console.log(res)) // biz shu malumot ishlashini kutishimiz kerak bu ishlagandan kiyingina finished chiqsin 
+// birinchi asinxron fnc ochib olamiz 
+
+let get = async () => {
+  let res = await user // await bizga userdan malumot kelishini kutadi va kelgandan sung ishga tushadi
+  // bu faqat promesi ni kutadi 
+
+  // agar await ni yozmasdan user qilib ketsak bu promesi qaytaradi
+  // let res = user // Promise { <pending> }
+
+  console.log(res) // bu chiqqandan kiyin finish chiqsin deymiz
+  console.log('finished')
 }
 
-// const user = login('John', 2004) // -code
-// login qachonke setTimeout ishlab bulgandan kiyin qiymatga ega buladi u esa 1 secund dan kiyin ishlaydi hozir login undefined ga teng 
-// lekn user sinxron bulganligi uchun birdan ishlaydi va loginning hozirgi qiymatini oladi (undefined) ni
+get() // get fnc ni chaqiryapmiz
 
-// console.log(user) // undefined // -code
-// console.log('...fenished') // -code
+// console.log('finished')
 
-// bu tug'ri ishlashi uchun setTimeout ishlab bulgandan dan kiyin (login qiymatga ego bulganda) bu kodimiz ishlashi kerak 
-// buning uchun Callback dan foydalanamiz 
+// async await Promise ning sntacsis shugasi (yani ishlatilishi oson varianti) deyiladi
 
-// biz 3- params callback qushamiz va pastdagi consollarni uni ichiga yozamiz bu loginga params sifatida boradi 
-// (callback ni chaqirmasak ishlamaydi) biz aytamizke usha params callback qachonke setInterval ishlab bulgandan sung chaqirilsin deb 
-login('John', 2004,(usr)=>{ // params ga qiymat bu chaqirilganda return dagi qiymat bulyapdi
-  console.log(usr)
-  console.log('...fenished')
-} ) 
-// value: 
-// started...
-// Jahongir Doniyarov, Welcome to Facebook
-// ...fenished
-
-// hammasi tug'ri ihslayapdi
-
-// Code tahlili 
-{
-  // biz login degan fnc ochyapmiz va unga 3 ta parametr kelyapdi 
-  // 1 - si userning logini
-  // 2 - si userning passawrdi
-  // 3 - si Callback function 
-  // va login ichida setTimeout 1 secuntdan kiyin ishlayapdi bu ishlagandan kiyingina if else ishlaydi va ture sining qiymati return bulib login ga teng buladi 
-  // lekn biz if else ishlaganda return bulgan malumot callback bulsin va uning parametiri sifatida chiqishi kerak bulgan malumot berilyapdi 
-  // biz tashqarida callback fnc ichiga bu chaqirilganda console da buning parametiri va ...fenished chiqsin deyapmiz 
-  // bu calback qachonke setTimeout ishlab bulgandan sung if else da malumot rekshirilib bulgandan kiyin chaqirilganda ishlaydi 
-
-  // agar callback dan foydalanmaganimizda setTimeout ohiri ishlas edi hammasidan kiyin
-}
-
-//-=-=-=-=-=- Callback hell 
-// callback ichidagi callback ga callback hell deb aytiladi 
-
-// bu callvack ni biz tashqarida yozib paramertga berib olsakham buladi 
-const callback = (usr, getAge) => { //  getAge parametri ichki callback fnc ga teng callback hell 
-  console.log(usr)
-  // agar bizga age ham kerak bub qolsa bunga kelgan ikkinchi param callback fnc ni cahqirishimiz kerak buladi 
-  console.log(getAge()) // callback ichidagi callback ni chaqiryapmiz
-  console.log('...finished')
-} // mana uzimizga kerakli userning age niham olamiz faqat uzimiz hoholasak hohlamasak fnc ni chaqirmaymiz
-
-login('John',2004, callback) // shu holatda yoziladi callback() qilib quysak fnc ishlab ketadi shuning uchun nomini uzi yoziladi 
-// hozir callback degan veriable izlayapdi va uning qiymati fnc ni parametr qilib loginga beryapdi 
-
-
+// Callback, Promise, Async Await hammasini maqsadi bitta codeni kelishini kutib turish va undan kiyin boshqa bir ishni bajarish 
