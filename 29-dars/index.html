@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Module</h1>
+  <script type="module" > // src="./29-dars.js" buni ulab quysak kiyin import kodlar shu file ichida ishlaydi bu file module ga uralgan hisob;anadi
+    // mock.js dan kelyotgan malumotlarni olishimiz kerak 
+    // buning uchun importdan foydalanamiz import tuzilishini asosiy js fileda kurishingiz mumkun
+    // import {users} from './mock.js' // malumot qanday nomda export qilingan bulsa usha nomda import qilish kerak 
+
+    // import {users as newUsers} from './mock.js'
+
+    // ikkita 3 ta malumot export bulib kelyotgan bulsa ularni hammasini , quyib import qilib ketaversak buladi 
+
+    import {users as newUsers, list} from './mock.js'
+    // import qilish malumotlarni deskrakche qilishdek yane unda malumotlarni global qilib chiqarib olsak bunda boshqa file dagi malumotlarni chiqarib olamiz 
+
+
+    newUsers.map((value, index) => {
+      console.log(index + 1, ' - ', value.name)
+    }) 
+
+    // bu ishlayapdi mmack.js ichidagi users ning malumotlarini chiqaryapdi 
+    // bularni termenalda kurolmaymiz buni brawser da kurishimiz mumkun Go Live qilib 
+
+    // Agar bizdaham kelyotgan malumot blan birhil veriale bulsa 
+    let users = {info: 2004}
+    console.log(users) // bu holatda 2 ta users bulib qolganligi uchun error beradi
+    //Uncaught SyntaxError: Identifier 'users' has already been declared 
+
+    // buni tug'irlash uchun import {} dagi users ga yangi nom bersak buladi as yordamida
+    // import {users as newusers} from './mock.js'
+    console.log(newUsers)
+
+    // -=-=-=-= export default
+    // bitta file da fqat bitta yoziladi buham huddi exportdek malumotni yuboradi 
+    // lekn bundan kelyotgan malumotni import qilishda {} siz va uzimiz hohlagan nom blan qobul qilibolsak buladi 
+    
+    // bunday kelyotgan malumotlarni olamiz student degan malumot kelyapdi 
+
+    import abc from './mock.js' // student emas hohlagan nomimizni quyayapmiz 
+
+    import line, {users as newUs} from './mock.js' // student emas hohlagan nomimizni quyayapmiz 
+    // ikklasidaham users malumoti chiqadi chunke brinchi nom {} dan tashqari bulganligi uchun defule bulib kelyotgan malumotni oladi
+    // unga qanday nom berishni ahamiyati yu edi ikkinchisda yana users ni uzni chariyapmiz 
+    // ikkala qiymatdaham users kelyapdi
+
+    // agar export defulte bulsa har doim import qilishda birinchi chaqiriladi kiyin {} ichida oddiy exportlar chaqiriladi
+    
+    // -=-=-=-=-=-=  Dynamic import 
+
+    import './prototyp.js' // bu holatda u file da gi hamma kod ishga tushib ketadi 
+    // buni shu usulda chaqirsak bulad bu chaqirilganda chaqirilgan file ichidagi kodlar birdan ishlab ketadi (hozirham consolning eng tepasida shu fileni kodi chiqqan)
+    // automatik eng birinchi bulib ishlab ketgan 
+    list.remove(3) // biz prototyp file dagi fnc ni bu yirda ishlatyapmiz tug'ridan tug'ri 
+    // hohlagan  joyimizda arraylarga nisbatan ishlatsak buladi 
+
+  </script>
+</body>
+</html>  
