@@ -40,7 +40,8 @@ Object.values(users) // bizga valuelarni chiqarib beradi
 // biz fullName ni prototype orqali Objectga property qilib qushsak buladi 
 // biz uzimiz hohlagan obj fulName mini olmoqchi bulsak objName.fullName() qilsak  chiqaradigan qilishimiz mumkun 
 
-
+// Har doim prototyp fnc yaratishda  = dan kiyin function (){} qilib yaratish ()=>{} bunday qisangiz hatolik buladi
+// chunke callback da this ishlamaydi
 Object.prototype.fullName = function(){// prototype yordamida functionni eng katta obj (Object) ga yozyapmiz endi bu fnc hamma objlarda ishlaydi 
  // prototype dan kiyin yozilyotgan suz fnc name buladi uyirga hohlagan suzimizni yozishimiz mumkun faqat avval bulgan suzdan tashqari 
   console.log(this.name, this.last)
