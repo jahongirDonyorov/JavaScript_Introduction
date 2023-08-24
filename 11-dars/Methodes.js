@@ -72,7 +72,7 @@
 // Ushbu metod berilgan matnlar o'rtasidagi tarjima tartibini solishtiradi.
 
 // -=-=-=-=-=-=- 23. split()
-// Bu metod matni belgilangan nuqta bo'yicha bo'lib massivga aylantiradi.
+// Bu metod matni () ichida belgilangan malumot asosida bo'lib massivga aylantiradi.
 
 // -=-=-=-=-=-=- 24. search()
 // uzimizga kerakli harf stringda nechinchi indexdaligini qaytaradi 

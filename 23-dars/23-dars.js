@@ -65,7 +65,7 @@
 // console.log(user) // { name: 'webbrain', title: 'IT Center' }
 // // name webbrain bulib turibdi uzgarmagan 
 
-// // -=-=- 3 - params configurable 
+// // -=-=- 4 - params configurable 
 // // delete qilishni nazarot qiladi 
 // Object.defineProperty(user, 'title', {configurable:false})
 // delete user.title
@@ -73,7 +73,7 @@
 // console.log(user) // { title: 'IT Center' }
 // // title configurable false bulganligi uchun uchib ketmadi nameda u uzgartirilmagan defoult true turadi 
 
-// // -=-=- 3 - params enumerable 
+// // -=-=- 5 - params enumerable 
 // // loop qilganimizda bizga kerakli key ni chiqish chiqmasligi uchun ishlatiladi 
 // for (vl in user){
 //   console.log(vl) // name, title, getName chiqyapdi

@@ -233,7 +233,7 @@ console.log(id.style.background = 'blue') // chaqirilgan id chiqarib uni ustida 
 let quer = document.querySelector('.parent')
 console.log(quer) // bizga birinchi chiqqan paret tagini chiqarib beryapdi 
 // tag chaqirsakham shu holatda buladi faqat . tasiz 
-console.log(document.querySelector('li')); // birinchi chiqqan li tagini chiqarib beryapdi 
+let li = document.querySelector('li'); // birinchi chiqqan li tagini chiqarib beryapdi 
 // id chaqirsak # blan chaqiramiz 
 
 // -=-=-=-=-=-= querySlectorAll
@@ -245,18 +245,25 @@ console.log(document.querySelectorAll('li')) // NodeList(4) [li, li, li, li]
 
 // -=-=-=-=-=- innerHTML 
 // bu bizga html tag qushib beradi 
-quer.innerHTML = '<h1>Hey</h1>'
+li.innerHTML = '<h1>Hey</h1>'
 
 // -=-=-=-=-=- innerTEXT
-//bu text qushib beradi
-
-quer.innerText = '<h1>Hey</h1>' // bu tag emas text holadida chiqyapdi 
+// bu text qushib beradi
+li.innerText = '<h1>Hey</h1>' // bu tag emas text holadida chiqyapdi 
+// yane li urniga <h1>Hey</h1> shu holatda shuni chiqarib quyadi 
 
 // -=-=-=-=-=- textContent
-// innetText blan birlih buham text qishib beradi
-quer.textContent = '<h1>Hey</h1>' // bu tag emas text holadida chiqyapdi 
+// innetText blan birlih buham text qushib beradi
+li.textContent = '<h1>Hey</h1>' // bu tag emas text holadida chiqyapdi 
 
-
+// bu yana id dagi malumotni chiqarib beradi 
+let ulId = document.querySelector('#ul')
+console.log(ulId.textContent) // ul id li elementni valularini (ichidagi malumotlar) ni chiqarib beradi
+// bu koddagi bush joylari blan qanday yozilgan bulsa shu holatda chiqarib beradi
+// innerText esa bush joylarsiz chiqaradi 
 
 //-=-=-=-=-=- hidden 
 // bu true false blan ishlaydi true bulsa malumot kurinmaydi hidden buladi false bulsa kurinadi
+
+// ulId.hidden = true // true qilsak yuqolib qoladi 
+ulId.hidden = false // false bulsa yuqolmaydi

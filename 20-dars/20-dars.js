@@ -176,6 +176,23 @@ clearInterval(id)
 // sum(5)(-1)(2) == 6;
 // sum(6)(-1)(-2)(-3) == 0;
 // sum(0)(1)(2)(3)(4)(5) == 15
+function sum(a){
+  let currentSum = a;
+
+  function innerSum(b){
+    currentSum += b;
+    return innerSum
+  }
+  innerSum.toString = function() {
+    return currentSum
+  }
+  return innerSum
+}
+console.log(sum(1)(2))
+
+
+
+
 
 // -=--=- setInterval 10 martta ishlasin 1 secuntdan va tuxtasin
 

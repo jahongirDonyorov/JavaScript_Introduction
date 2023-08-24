@@ -105,5 +105,23 @@ console.log(math(1)(2)(3));
 math("plus", 1, 2, 3, 4); // buham infinite bulishi mumkun
 
 // 3.
-mergeWords("There")("is")("no")("spoon.")();
+// mergeWords("There")("is")("no")("spoon.")();
 // value: 'There is no spoon.'
+
+
+// let getCurry = (a) => {
+//   return (b) => (c) => (d) => (f) => {
+//   return a + b + c + d + f 
+// }}
+
+// console.log(getCurry(1)(2)(3)(4)(5)); // 15
+
+const curryN = (fn, arity, args = []) => {
+  return arity === 0
+    ? fn(...args)
+    : newArg => curryN(fn, arity - 1, [...args, newArg]);
+};
+
+const sumCurryN = curryN((...args) => args.reduce((sum, arg) => sum + arg, 0), 5);
+
+console.log(sumCurryN(1)(4)(6)()); // 11
