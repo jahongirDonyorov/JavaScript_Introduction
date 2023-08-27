@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>DOM 3</h1>
+  <hr>
+
+  <!-- -=-=-=-=-=-=-=- Mouse Event -=-=-=-=-=-=-=-= -->
+  <h2> _________ Mouse Event _________ </h2>
+
+  <!-- onclick -->
+  <button onclick="getClick(event)">onclick</button>
+  <!-- event parametr sifatida berilyotganda tuliq nomi yozilishi kerak  -->
+
+  <!-- contextmenu ? -->
+  <button contextmenu="aler">contextmenu</button>
+
+  <!-- mouseover -->
+  <button onmouseover="move()">mouseover </button>
+
+  <!-- onmousecout ? -->
+  <button onmousecout="cout()">onmousecout</button>
+
+  <!-- onmousedown -->
+  <button onmousedown="down()">dawn</button>
+
+  <!-- onmousedown -->
+  <button onmouseup="seup()">seup</button>
+
+  <!-- onmousemove -->
+  <div class="box" onmousemove="semove(event)">onmousemove</div>
+  <!--  parmetr sifatida eventni berib oldik -->
+  <!-- eventda juda kup malumotlar keladi masalan target target bu elementni uzini chiqarib beradi  -->
+  <!-- <div class="box" onmousemove="semove(this)">onmousemove</div> --> 
+  <!-- (this) qilib param yuborganimiz (event.target1) qilib yuborganimiz blan teng -->
+
+  <hr>
+
+  <!-- -=-=-=-=-=-=-=- onclick -=-=-=-=-=-=-=-= -->
+
+  <h2> _________ onclick _________ </h2>
+
+  <button id="btn">click me</button>
+  <!-- biz berilgan btn id sini JavaScript daveriable sifatida ishlatsak buladi -->
+  <div id="container">
+
+  </div>
+
+  <button id="ad">add</button>
+  
+  <div id="content">
+
+  </div>
+  <script src="./34-dars.js" type="module" ></script> 
+  <!-- type module qilmasak data dan eport bulgan malumotlarni 34-dars.js ololmaydi  -->
+</body>
+</html>
