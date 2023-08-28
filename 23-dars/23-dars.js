@@ -10,6 +10,7 @@
 
 // -=-=-=-=-=-=-=-=-  Flag 
 
+
 // let user = {name:'webbrain', title:'IT Center', getName(){}}
 
 // // biz bu malumotni 
