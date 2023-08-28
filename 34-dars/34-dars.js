@@ -23,6 +23,8 @@
 //    - onClick / onMouseup / onMousedown
 
 
+// #-#-#-#-#-#-#-#-#-#-#-#-#-#
+
 
 // -=-=-=-=-=-=-=-=-=-=- Mouse Event 
 // event (ection) bu tugma bosilganda qandaydur harakat sodir qiladi 
@@ -190,6 +192,106 @@ ad.addEventListener('click', ()=>{
   console.log(ad)
 }) // ad id li buttonga hodisa qushyapmiz yane click bulganda fnc ishlab ad ni uzini chiqarsin deyapmiz 
 
+// -=-=- Class Event 
+// biz bitta buttonga bir nechta amal biriktirmoqchimiz bosilganda,bosib turilganda va quyib yuborilganda har hil malumot chiqsin demoqchimiz 
+
+// birinchi 3ta fnc ochib olamiz 
+
+// click bulganda (bosilganda) ishlashi uchun function  
+function onclick() {
+  console.log('button clicked')
+}
+
+// mousedown bulganda (bosib yurilganda) ihslashi uchun function  
+function onmousedown() {
+  console.log('button onmousedown')
+}
+
+// mouseup bulganda (quyib yuborilganda) ishlashi uchun function 
+function onmouseup() {
+  console.log('button onmouseup')
+}
+function onmouseover() {
+  console.log('button onmouseover')
+}
+
+// endi bularni qanday hodisa bulganda ishlashini aytishimiz kerak addEventListener da 
+// bizda button degan id li button bor ushanga nisbatan ishlatamiz 
+
+// button.addEventListener('click', onclick) // click bulganda onclick fnc ishlasin deyapmiz 
+// button.addEventListener('mousedown', onmousedown) // mousedown bulganda onclick fnc ishlasin deyapmiz 
+// button.addEventListener('mouseup', onmouseup) // mouseup bulganda onclick fnc ishlasin deyapmiz 
+// bunda tug'ri ishlaydi value quyidagi tartibda chiqadi 
+
+// value:
+// button onmousedown
+// button onmouseup
+// button clicked
+
+// bosildi (mls) busaham ushlab turilib quyib yuborildi va click buldi 
+// shu ketnma ketlikda chiqadi chunke mousedown boskanimizda (ushlab turilgan soniyalarda) ishlaydi mouseup olganimizda ishlaydi click esa tuliq bosib olganimizda (click qilganimizda) ishlaydi 
+
+// bu usulniham qilsak buladi lekn buning optemal yuliham mavjud 
+// biz bularning hammasini bitta class (class Event) ning uzida qilsak buladi
+
+// -=-=-=-=-=-=-=- handleEvent(){}
+
+// birinchi class ochib olishimiz kerak 
+
+class Event {
+  // handleEvent() {} // bu class ning uzini fnc si huddi constructor(){} dek 
+  // handleEvent har doim bir hil yozilishi kerak bu function 
+
+  handleEvent(event) { // btta parametr olyapdi 
+    // console.log(event); // ishlaganda eventni console log qilyapmiz 
+    // valueda bizga 3 ta event malumotlarini chiqaradi eventning type da qanday hodisada ishlaganligi chiqadi 
+    // biz faqat type larni uzini chiqarsak buladi 
+    // console.log(event.type) // bu holatda type larni uzi chiqadi 
+
+    // biz endi bundan foydalanim malumotnibiror amal bajarsak buladi 
+    switch (event.type){ // event.typeni olvoldik shunga qarab tekshiradi 
+      case 'click':
+        onclick();
+        break;
+      case 'mousedown':
+        onmousedown();
+        break;
+      case 'mouseup':
+        onmouseup()
+        break;
+      case 'mouseover':
+        onmouseover()
+        break
+    }
+    // agar event.type click bulsa onclick ishlaydi mausedown bulsa onmousedown va mouseup bulsa onmouseup, mouseover bulsa onmouseover fnclar ishlaydi 
+  }
+}
+
+// class ni ishlatishimiz kerak 
+const evn = new Event // evn ni new Evemt ga tennglab olyapmiz 
+
+button.addEventListener('click', evn) 
+button.addEventListener('mousedown', evn) 
+button.addEventListener('mouseup', evn)
+// biz bitta event ni uzida hammasini ishlatyapmiz 
+// event.type qilganda 
+// valueda: mousedown, mouseup, click ketmaketlikda chiqadi  
+
+// switch ga solganimizdan kiyingi holatda
+//  agar event.type click bulsa onclick ishlaydi mausedown bulsa onmousedown va mouseup bulsa onmouseup ishlaydi 
+// addEventListener da (click,mousedown,mouseup) larni ishlatganimiz uchun shu javob chiqadi agar faqat bittasi ishlasa bittasi chiqadi 
+
+// buning yxshi tomoni tepada yaratgan hamma fncni bittalab yozib chiqmaymiz nomini eslab qolisham kerak emas 
+// hammasini bitta classga yozib olamiz va ishlataveramiz 
+// masalan: mouseover fnc ni ishlatmoqchi bulsam 
+// button.addEventListener('mouseover', fnc nomi yozishim kerak edi ) buni yozish uchun tepadan fnclarni nomini kurishim kerak qanday nom quyganligimni bilish uchun 
+// lekn bu usulda har safar evn qilib ketaveramiz 
+button.addEventListener('mouseover', env) // qilib quysam buldi qolgani class ni uzida qilingan event.type mouseover bulganda shu fnc ishlaydi 
+
+// bu usulni hamma ection (hodisada) ishlatsak buladi 
+
+
+// #-#-#-#-#-#-#-#-#-#-#-#-#
 
 // endi biz shunday qilishimiz kerakke yana yuqoridagidek date dan kelyotgan malumotlarni yozib 
 // btn bosilganda usha elemnt uchib ketishi kerak 
