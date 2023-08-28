@@ -216,8 +216,10 @@ let id = document.getElementById('ul')
 console.log(id.style.background = 'blue') // chaqirilgan id chiqarib uni ustida amal bajarsak buladi
 // id dagi malumotni orqa fondini kuk qilib beryapdi 
 
+// -=-=-=-=-=-=- biz id ni verable sifatidaham htmlda ishlatishimiz mumkun 
+// ul.style.color = 'red'  biz id ni chaqirmasdanham tug'ridan tug'ri veriable sifatida ishlatsak buladi 
 
-// malumot olishda bularning alternative (ishlatishga oson bulgan) varianti mavjud
+// malumot olishning alternative (ishlatishga oson bulgan) varianti mavjud
 
 // -=-=-=-=-=-=- querySlector and querySlectorAll
 // bu ikkalasi bizga malumotlarni olish uchun ishlatiladi bularda id class tag lar uchun alohida alohida fnc yozishimiz kerak emas 
