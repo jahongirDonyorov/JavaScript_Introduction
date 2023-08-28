@@ -109,26 +109,26 @@
 
 // tablega onclick biriktirib undan eventni olamiz 
 
-let target; // bu bizga fnc ichidagi target malumotini scope dan tashqaridagi shu veriablega tenglashtirihs uchun kerak 
+// let target; // bu bizga fnc ichidagi target malumotini scope dan tashqaridagi shu veriablega tenglashtirihs uchun kerak 
 
-table.onclick = function(event){ // oncklick shu holatda () siz yozilgani uchun automatik birinchi paramitr event buladi 
-  // console.log(event) // hamma malumot chiqadi 
-  // console.log(target) // event.target qilsak bizga nechinchi chindi bosilganini kursatadi 
-  // value: <td>...</td>
-  // agar target da malumot bulsa (malumot bulsa bosilgan buladi) usha targetdan highlite class ni uchirib tashlasin deymiz 
-  if(target) target.classList.remove('highlite') // bu tekshiryapdi agar targetda malumot bulsa (table bosilib malumoti targetga tenglashgan bulsa)
-  // unga highlite degan class qushilgan buladi usha class ni uchirib tashlasin deyapmiz 
+// table.onclick = function(event){ // oncklick shu holatda () siz yozilgani uchun automatik birinchi paramitr event buladi 
+//   // console.log(event) // hamma malumot chiqadi 
+//   // console.log(target) // event.target qilsak bizga nechinchi chindi bosilganini kursatadi 
+//   // value: <td>...</td>
+//   // agar target da malumot bulsa (malumot bulsa bosilgan buladi) usha targetdan highlite class ni uchirib tashlasin deymiz 
+//   if(target) target.classList.remove('highlite') // bu tekshiryapdi agar targetda malumot bulsa (table bosilib malumoti targetga tenglashgan bulsa)
+//   // unga highlite degan class qushilgan buladi usha class ni uchirib tashlasin deyapmiz 
   
-  // va targetga event.target dan kelyotgan yangi malumotni biriktiryapmiz 
-  // (usha yangi malumotga yana pastagi amal bajarilib class qushadi yana boshqasi bosilganda uni uchirib yana yangi qiymatni tenglashtiraveradi)
+//   // va targetga event.target dan kelyotgan yangi malumotni biriktiryapmiz 
+//   // (usha yangi malumotga yana pastagi amal bajarilib class qushadi yana boshqasi bosilganda uni uchirib yana yangi qiymatni tenglashtiraveradi)
   
-  target = event.target // har doim click bulganda usha element malumoti keladi va targetga tenglashadi 
+//   target = event.target // har doim click bulganda usha element malumoti keladi va targetga tenglashadi 
   
-  // table childlari click bulgan bulsa evnet.targetga malumot kelib targetga trenglashgan bulsa
-  // yane click bosilgan bulsa usha bosilgan katak (element) malumoti keladi  
-  target.classList.add('highlite') // kelyotgan malumotga highlite degan class qushyapdi
+//   // table childlari click bulgan bulsa evnet.targetga malumot kelib targetga trenglashgan bulsa
+//   // yane click bosilgan bulsa usha bosilgan katak (element) malumoti keladi  
+//   target.classList.add('highlite') // kelyotgan malumotga highlite degan class qushyapdi
 
-}
+// }
 
 // code sharhi 
 {
@@ -193,5 +193,29 @@ function clk(e) {
 }
 
 // homework 
+
 // tepadagi table click fnc sini uzgartiring avval bitta katakni bir martta bossak class qushardi shu katakni yan bir martta bossa class ni olmas edi 
 // siz shunday qilishingiz kerak bitta katakni 1 martta  bossa klass qushilsin yana shu katakni bossa classni olib tashlashimiz kerak
+
+
+
+let target; // bu bizga fnc ichidagi target malumotini scope dan tashqaridagi shu veriablega tenglashtirihs uchun kerak 
+
+table.onclick = function(event){  
+ 
+  // if(target) target.classList.remove('highlite') 
+  // bu holatda boshqa knopkani bossakham eventda malumot buladi va uchirib tashlasa biz class qusholmaymi
+
+  // if(target !== event.target) target.classList.remove('highlite') 
+  // bu holatda esa boshqa knopkani bossak eski targetga evet.target teng bulmaydi va clas ni olib tashlaydi 
+
+  // biz ikkala holatgaham tekshirishimiz kerak  
+
+  if (target && target !== event.target) {
+    target.classList.remove('highlite');
+  }
+  // buyirda agar target bulsa va targetning qiymati yangi kelyotgan event.targetga teng bulmasa eski targetdan class ni olib tashla deyapmiz  
+  
+  target = event.target 
+  target.classList.toggle('highlite')
+}
