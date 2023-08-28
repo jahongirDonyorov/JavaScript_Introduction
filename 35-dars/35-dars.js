@@ -207,11 +207,11 @@ table.onclick = function(event){
   // bu holatda boshqa knopkani bossakham eventda malumot buladi va uchirib tashlasa biz class qusholmaymi
 
   // if(target !== event.target) target.classList.remove('highlite') 
-  // bu holatda esa boshqa knopkani bossak eski targetga evet.target teng bulmaydi va clas ni olib tashlaydi 
-
+  // target undifinedi bu event.targetga teng emas if ishlaydi lekn undifinedi ga classList qilib bulmaydi error buladi kode tuxtaydi 
+  
   // biz ikkala holatgaham tekshirishimiz kerak  
 
-  if (target && target !== event.target) {
+  if (target !== event.target) {
     target.classList.remove('highlite');
   }
   // buyirda agar target bulsa va targetning qiymati yangi kelyotgan event.targetga teng bulmasa eski targetdan class ni olib tashla deyapmiz  
