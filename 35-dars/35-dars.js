@@ -208,14 +208,18 @@ table.onclick = function(event){
 
   // if(target !== event.target) target.classList.remove('highlite') 
   // target undifinedi bu event.targetga teng emas if ishlaydi lekn undifinedi ga classList qilib bulmaydi error buladi kode tuxtaydi 
-  
+  // bu hechqachon teng bulmaydi targetda malumot bulsaham chunke targetda malumot bulgani blan u class qushilgan malumot buladi event dan kelrotgan malot esa class siz buladi 
   // biz ikkala holatgaham tekshirishimiz kerak  
 
-  if (target !== event.target) {
-    target.classList.remove('highlite');
+  if (target && target !== event.target) {
+    // 2 martta bittasini boskanimizda target blan event.target bir biriga teng bulib qolyapdi va false bulganligi uchunutkazib yuboryapdi bu amalni
+    target.classList.remove('highlite'); 
   }
+ 
   // buyirda agar target bulsa va targetning qiymati yangi kelyotgan event.targetga teng bulmasa eski targetdan class ni olib tashla deyapmiz  
   
   target = event.target 
   target.classList.toggle('highlite')
+  // toggle class qushilsa htmldagi togglega kelgan td ga class qushiladi
+  // event.target qilganimizda class qushilgan holatda chiqadi (agar shu tugmani qayta bossak)
 }
