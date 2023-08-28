@@ -17,8 +17,7 @@
 //      - returns timerId
 //      - try with new Date sec 
 //  - Garbage Collection - avtomatic garbage collected bo'lmaydi. 
-//      - 
-//      - 
+//      - clearTimeout(timerId) - garbage collectorga tushadi.
 
 
 // // -=-=-=-=-=-=-=- SetTimeut()
