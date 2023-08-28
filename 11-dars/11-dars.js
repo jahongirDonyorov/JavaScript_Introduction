@@ -9,6 +9,7 @@
 // eval, trim, split, concat, new String, search, find, valueOf, replace, mathc, search,localeCompare, charAt vs boshqalar
 
 
+
 // // Stringlar 3 xil buladi
 
 // let str1 = "John";
