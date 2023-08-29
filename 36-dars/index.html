@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+<body>
+  <h1>DOM 5</h1>
+  <h2 id="title">UI Event</h2>
+  <h2 id="copy">Copy Element</h2>
+  
+  <!-- onchange -->
+  <h3>input value: <span id="changeValue" ></span> </h3>
+  <input onchange="change(event)" type="text">
+
+  <!-- onkeypress -->
+  <h3>input value: <span id="pressValue"></span> </h3>
+  <input onkeypress="press(event)" type="text">
+
+  <!-- oninput -->
+  <h3>input value: <span id="inpValue"></span> </h3>
+  <input oninput="inp(event)" type="text">
+
+  <!-- onmouseove -->
+  <div class="box"></div>
+
+  <!-- keyboard actions -->
+  <input onkeypress="keyboard(event)" type="text">
+
+  <div class="box scroll">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla unde dolore provident ad possimus dolorem aperiam pariatur perspiciatis beatae laboriosam ut, reiciendis voluptatem, facere mollitia ducimus deserunt aliquam nemo a doloremque at esse eaque similique nostrum? Asperiores aut assumenda molestiae repellendus repudiandae! Mollitia suscipit quas officiis, porro molestias hic rerum ipsam non voluptatum esse, dolore inventore amet recusandae. Sequi reiciendis illum sunt. Iste ex perspiciatis nisi fugiat, voluptates saepe a explicabo beatae expedita praesentium facilis corporis natus! Quia nobis sed nemo necessitatibus dicta earum culpa, modi quaerat laborum officiis neque deleniti commodi, explicabo tempora quam quos minima incidunt aliquam quo.
+  </div>
+  <script src="./36-dars.js"></script>
+</body>
+</html>
