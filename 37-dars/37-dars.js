@@ -85,9 +85,9 @@ console.log(form.password) // bizga password name li form ni chiqaryapdi
 
  // uzimizga keraklisini olishimiz uchun [index] yozishimiz kerak 
  
- console.log(form.select.options[1]) // 1 - indexdagi 2 - option Russia ni chiqaryapdi 
+//  console.log(form.select.options[1]) // 1 - indexdagi 2 - option Russia ni chiqaryapdi 
  // bizda selecy degan id ham bulganligi uchun from.select demasdan select (id) ni uzini yozibham ishlatib ketsak buladi 
- console.log(select.options[2]) // Korea ni chiqarib beryapdi 
+//  console.log(select.options[2]) // Korea ni chiqarib beryapdi 
 
  // -=-=-=-=-=- Hozir defulte holatda birinchisida uz turibdi JS dan biz buni uzgartirsak buladi uzimiz hohlagan option ni birinchiga quyishimiz mumkun 
  // Buni 3 ta yul blan bajarsak buladi .options, .value, selectedIndex 
@@ -150,3 +150,47 @@ login.onfocus = (event) => {
 // bu holatda inputga kirganimizdan loginError da bror narsa chiqqanbulsa uchirib yuboradi 
 
 // password qisminiham huddi shunday qilsangiz buladi 
+
+
+// #-#-#-#-#-#-#-#-#-#-#-#-
+
+
+// -=-=-=-=-=-=-=-=- Submit - from
+//    - action - url 
+//    - method - method
+//    - onsubmit = (event) =>
+let formInput = document.forms.formInput
+
+console.log(formInput.action) // bu input request ni qayarga yuboryotganini chiqaradi (link holatida)
+// value: http://127.0.0.1:5500/37-dars/index.html?login=&password= action ga hechqanday bacend link quymaganligimiz uchun 
+// 37-dars ga requst yuboryapmi biz action ga htmlda link biriktirsak shu link chiqadi va shu linkga request yuboradi 
+
+// actiona link bersak buladi snow uchun jsonplaceholderdan 
+formInput.action = `https://jsonplaceholder.typicode.com/users`
+// networkda kursak user shu linkga users ga request yuborib usha maluot ustiga bossak kelyotgan malumotlarni kuramiz
+// uning yozida payload bor unga kirsak password va login ga yozgan valuelarimiz chiqyapdi bular shu linkka ketgan malumotlar 
+
+// bizda select bor undan 1,2,3 optrionlar bor biz 1 ni tanlasak action dagi link users ,alumotlarida 1 - malumotni chiqarsin 2 ni tanlasak 2ni 
+// `https://jsonplaceholder.typicode.com/users/1` // shu yirga nechchi quysak shu malumotni chiqaradi 
+// endi biz selectdan kelyotgan valularni shuyirga quyishimiz kerak 
+
+formInput.onsubmit = (event) => {
+  console.log(formInput.selected.value) // option valuelari keladi qaysi bosilsa shu
+  // biz buni user/dan kiyin shu yerga quyishimiz kerak user/...
+  formInput.action = `https://jsonplaceholder.typicode.com/todos/${formInput.selected.value}`
+  // birni tanlasak nechinchi optionni tanlasak usha malumot kelyapdi
+  // buni real projectda kup tilli sayt bulsa uzb ni tanlaganda bacenddan uzbekcha malumotlar eng ni tanlasa english malumotlar keladi 
+
+  // bizda method ham bor uni network heanders da kursak buladi request Method:'GET' bub turadi defoult qiymati GET 
+  // method shunga qiymatini uzgartiradi 
+
+  // formInput.method = 'PUT'
+  // uzgartirish kerak lekn hozir ishlamayapdi 
+}
+
+
+
+// Homework 
+
+// vazifa bitta js ni uzda test uchun backend malumotlar bazasini yarating va unda bitta textning uzb rus eng cha variantlari bulsin 
+// biz selectda qaysini tanlasak usha tildagi malumotlar chiqasin
