@@ -104,3 +104,49 @@ console.log(select.selectedIndex = '2') // Korea defoult holda birinchida chiqya
 // #-#-#-#-#-#-#-#-#-#-#-# 
 
 
+// -=-=-=-=-=-=- input - blur / focus
+// inputlarni tekshirish uzimizga moslash uchun ishlatiladi
+// masalan input email bor unga @ yozilmasa error @ yozilmagan deb chiqishi kerak va input borderi red bulishi kerak  
+
+// Buning uchun onblur va onfocus lardan foydalanamiz 
+
+// -=-=-=-=-=-=- onblur
+// bu bizga inputga yozib bulib boshqa inputga utganda ishlaydi 
+
+login.onblur = (event) => { // event ni olvolyapmiz  
+  // console.log(event) // onblur ishlayapdi biz inputdan chiqishimiz blan event chiqaryapdi 
+  // event dan hamm malumot kelyapdi uning target bulimidagi value da inputga kiritgan valuelarimiz bor 
+  // console.log(event.target.value) // inputga kiritgan valuelarimizni hiqaryapdi 
+  
+  // biz endi aytamizke inputdan kelyotgan malumotda @ bulsa input pasidagi loginerror ga @ yozilmagan deb text qushamiz
+  // agar @ bulsa tug'ri email deb txet qushamiz 
+  
+  if(event.target.value.includes('@')){
+    loginError.innerHTML = "tug'ri email kiritildi"
+    loginError.style.color = 'green'
+  }else{
+    loginError.innerHTML = '@ yozilmagan'
+    loginError.style.color = 'red'
+  }
+  // code tug'ri ishlayapdi lekn error payda bulgandan kiyin inputni uzgartirayotganimizda 
+  // error uchib ketmayapdi biz aytishimiz kerakke xato chiqqandan kiyin boshqatdan yozishni boshlashimizdan error yuq bulishi kerak 
+
+}
+// buning uchun oninputdan foydalanamiz 
+login.oninput = (event) => {
+  loginError.innerHTML = null
+}
+// aytayapmizke login oninput bu;ganda yani inputda uzgarish bulsa yozilsa yoke uchirilsa (kechagi darsda kurgandik 3 xil turini)
+// loginError null bulsin deyapmiz
+
+// lekn bundanham optimal yuli mavjud
+
+// -=-=-=-=-=-= onfocus 
+// bu input focus bulganda (kirganimizdan)  ishga tushadi yozishham uchirishham kerak emas 
+
+login.onfocus = (event) => {
+  loginError.innerHTML = null
+}
+// bu holatda inputga kirganimizdan loginError da bror narsa chiqqanbulsa uchirib yuboradi 
+
+// password qisminiham huddi shunday qilsangiz buladi 
