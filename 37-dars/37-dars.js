@@ -76,3 +76,31 @@ console.log(form.password) // bizga password name li form ni chiqaryapdi
 
 
  // -=-=-=-=-=-=-=- Select 
+ // biz html dan selectniham olsak buladi 
+ console.log(form.select) // select malumotlarini chiqarib beradi 
+
+ // -=-=-=- options 
+ // bu bizga select ichidagi option larni chiqaradi 
+ console.log(form.select.options) // ichidagi hamma optionlarni chiqaryapdi 
+
+ // uzimizga keraklisini olishimiz uchun [index] yozishimiz kerak 
+ 
+ console.log(form.select.options[1]) // 1 - indexdagi 2 - option Russia ni chiqaryapdi 
+ // bizda selecy degan id ham bulganligi uchun from.select demasdan select (id) ni uzini yozibham ishlatib ketsak buladi 
+ console.log(select.options[2]) // Korea ni chiqarib beryapdi 
+
+ // -=-=-=-=-=- Hozir defulte holatda birinchisida uz turibdi JS dan biz buni uzgartirsak buladi uzimiz hohlagan option ni birinchiga quyishimiz mumkun 
+ // Buni 3 ta yul blan bajarsak buladi .options, .value, selectedIndex 
+
+ // -=-=-=-=- value 
+ // qaysi valuedagi option birinchida chiqishini belgilasak buladi 
+  console.log(select.value = 'ru') // endi saytga kirganimizd Russia defoult holatda birinchida turadi 
+
+// -=-=-=-=- selectedIndex
+// qaysi index option birinchida chiqishini belgilasak buladi 
+console.log(select.selectedIndex = '2') // Korea defoult holda birinchida chiqyapdi 
+
+
+// #-#-#-#-#-#-#-#-#-#-#-# 
+
+
