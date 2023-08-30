@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+<body>
+  <h1>DOM 6</h1>
+  <!-- form - bu bizga input malumotlarini backend ga yuboradi -->
+
+  <!-- bizda submit degan form bor  -->
+  <input type="submit">
+  <!-- hozirgi holatda buni bossak hechqanday uzgarish bulmaydi lekn bu form ichida bulsa
+  submit bosganimizda reques (surov yuboriladi) action dagi manzilga va sayt yangilanib oladi-->
+
+  <form action="" name="bunkerForm"> <!--actionga bacend linki yozilishi kerak-->
+    <input name="login" type="text" placeholder="login" >
+    <input name="password" type="password" placeholder="parol" >
+    <input type="submit">
+  </form>
+
+  <!-- network da kursak har boskanimizda 37-dars ga surov yuborilyapdi  action bush bulganligi uchun -->
+  <!-- actionga backend ulanishi kerak lekn bizda ho bacend bulmaganligi uchun 
+  jsonplaceholder dan test uchun yaratilgan backend ulab turamiz -->
+
+  <form action="https://jsonplaceholder.typicode.com/users" name="formBunker">
+    <input name="login" type="text" placeholder="login" >
+    <input name="password" type="password" placeholder="parol" >
+    <input type="submit">
+  </form>
+  <!-- submit bosilganda linkga request (surov) yuboryapdi va linkdagi malumotlarni obkeb beryapdi 
+  (real projectlarda bacend dan malumotni obkeb beradi yangi user malumotini qushib quyishimiz mumkun buladi)
+   -->
+
+   <!-- buni JS ni uzidaham qilsak buladi JS varianti uchun -->
+   <form name="JsForm" >
+    <input name="login" type="text" placeholder="login" value="hey" >
+    <!-- <input name="login" type="text" placeholder="login" value="hey" > -->
+    <input name="password" type="password" placeholder="parol" >
+    <input type="submit">
+   </form>
+
+   <script src="./37-dars.js"></script>
+</body>
+</html>
