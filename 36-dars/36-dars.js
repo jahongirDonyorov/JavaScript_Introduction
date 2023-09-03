@@ -21,13 +21,8 @@
 //    - event.type 
 //    - event.keys - can't be triggered by default.
 //  - Scroll event
-//    - 
-//    - 
-//    - 
-//    - 
-//    - 
-//    - 
-//    - 
+//    - show / hide 
+//    - load more data - page Yoffset is current scroll
 
 
 
@@ -230,7 +225,7 @@ function keyboard(e) {
 // oddiy holatda scroll dagi hamma malumot birdan yuklanadi bu saytning asata ishlashiga olib keladi 
 // malumot kupligidan yuklashga qiynalib qoladi 
 
-// biz Scroll Event yozdamida buni oldini olishimiz mumkun ekan 
+// biz Scroll Event yordamida buni oldini olishimiz mumkun ekan 
 // scrollga birdan hamma malumot kelmaydi faqat ekranga siqadigani keladi qolganlari yuklanmay turadi 
 // scroll yurganda scroll ga qaram yangilanib qushilib boradi bu bizga sytda katta malumotli scrol mavjud bulganda tezroq ishlashini taminlaydi
 
@@ -256,11 +251,7 @@ scroll.addEventListener('scroll', (e) => {
 
   // endi biz ohiriga 50px qolganda scrollning qolgan malumotlarini qushsin desak buladi 
   // lekn birinchi 50px qolganligini bildirishimiz kerak qandaydur usulda 
-
-  console.log(
-    e.target.scrollTop + e.target.clientHeight + 50 >
-    e.target.scrollHeight
-  )
+  
   // scrollTop + clientHeight ga 50px qushayapmiz 1366 bu scrollHeight 1316 dan 50px katta (scroll kupaymaydi son ortadi holos)
   // bu ohiriga 50px qolganda scrollHeight 1316 ga teng buladi 
 
@@ -287,6 +278,7 @@ scroll.addEventListener('scroll', (e) => {
 // https://infinite-scroll.com/ shu saytdagi scrollarni qilish kerak 
 
 // 2
-// Navbar yasash kerak window scroll bulganda mavbarga soya qushish kerak 
+// Navbar yasash kerak window scroll bulganda navbarga soya qushish kerak 
 
 
+// 3 Reklaman saytidagi animationni qulda qilish 
