@@ -41,11 +41,11 @@
 // uzimizga kerkli indexda matnni kesib chiqarib beradi
 
 // -=-=-=-=-=-=- 13. substring(start,end)
-// Ushbu metod matndagi berilgan kesma ni qaytaradi. `slice()` bilan bir xil ishlaydi,
+// Ushbu metod uzimizga kerakli indexdagi malumotlarni kesadi va kesmani qaytaradi. `slice()` bilan bir xil ishlaydi,
 // ammo manfiy indekslar bilan ham ishlayadi.
 
 // -=-=-=-=-=-=- 14. substr(start, length)
-// Ushbu metod berilgan indeksdan boshlab, berilgan uzunlikda kesmani qaytaradi.
+// Ushbu metod berilgan indeksdan boshlab, berilgan uzunlikda stringni kesib va kesmani qaytaradi.
 
 // -=-=-=-=-=-=- 15. eval(str)
 // string ichidagi arifmetk amallarni bajaradi / let x = 3; eval('x + 2'); 5
@@ -63,7 +63,7 @@
 // Bu metod bir nechta matnlarni bir-biriga qo'shadi.
 
 // -=-=-=-=-=-=- 20. String.row
-// Ushbu metod string litarallarni belgilagan yo'llar bilan chiqarib beradi.
+// Ushbu metod string litarallarni (n/, /) belgilagan yo'llar bilan chiqarib beradi.
 
 // -=-=-=-=-=-=- 21. charAt()
 // Bu metod berilgan indekstagi qiymatni qaytaradi.
@@ -72,13 +72,13 @@
 // Ushbu metod berilgan matnlar o'rtasidagi tarjima tartibini solishtiradi.
 
 // -=-=-=-=-=-=- 23. split()
-// Bu metod matni () ichida belgilangan malumot asosida bo'lib massivga aylantiradi.
+// Bu metod matni () ichida belgilangan malumot asosida bo'lib massivga aylantiradi. / ager berilgan malumot array bulsa uni sitringa aylantiradi 
 
 // -=-=-=-=-=-=- 24. search()
 // uzimizga kerakli harf stringda nechinchi indexdaligini qaytaradi 
 
 // -=-=-=-=-=-=- 25. valueOf()
-// Ushbu metod obyektni boshqa ma'lumot turlariga o'girib qaytaradi (masalan, matnning asliy qiymatini).
+// Ushbu metod obyektni boshqa ma'lumot turlariga o'girib qaytaradi (masalan, matnning asl qiymatini).
 
 // -=-=-=-=-=-=- 26. replace()
 // Ushbu metod berilgan matndagi bir qismni boshqa bir qism bilan almashtiradi.
