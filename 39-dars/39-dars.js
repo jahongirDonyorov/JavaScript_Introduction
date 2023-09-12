@@ -1,3 +1,4 @@
+
 // -=-=-=-=-=- Lifecycle of HTML Page
 
 // agar biz bush p ga text qushsak va js htmlning eng pastgi qismida chaqirilgan bulsa bu holatda bush 
@@ -30,16 +31,29 @@
 //   test.innerText = 'lorem3'
 // }
 
+// -=-=-=-=-=-=-=-=- DOMContentLoaded vs load
 // DOMContentLoaded load ga qaraganda tezroq ishlaydi chunke u faqat htmlni uzi yurgandan kiyin oshga tishadi load esa hamma narsa ishlab bulishini kutadi 
+// ishlash vahtini kurish uchun performance.now() dan foydalanamiz 
 
+// -=-=-=-=-=-=-=- performance.now()
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log(performance.now()) // 83.699... ms
+})
+
+window.onload = () => { // bu har doim window ga birikishi kerak 
+  console.log(performance.now()) // 193.5 ms
+}
+// ikkalasi shu vah oralig'ida ishlaydi 
 
 // -=-=-=-=-=-=-=- biz bularni ishlatmasdanham htmlning uzida buni chiqadigan qilishimiz mumkun 
 // buning uchun biz js ulanyotganda unga async defer atrebute larini berib uni async yoke defer qilishimiz mumkun 
 
 // -=-=-=- async - DOMContentLoaded  blan birhil ishlaydi 
+// html va js ni birdan yuklaydi 
 
 // -=-=-=- defer - load blan bir hil ishlaydi 
-
+//  hamma narsani yuklab bulgandan sung ishlaydi 
 
 
 // -=-=-=-=-=- onbeforeunload
@@ -53,6 +67,7 @@
 
 
 // -=-=-=-=-=-=-=- Mutation Observer
+
 // bu bizga htmlda bror tag uzgarishini tekshiradi 
 
 // -=-=-=-=-=- observer
