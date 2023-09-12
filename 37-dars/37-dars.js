@@ -188,9 +188,3 @@ formInput.onsubmit = (event) => {
   // uzgartirish kerak lekn hozir ishlamayapdi 
 }
 
-
-
-// Homework 
-
-// vazifa bitta js ni uzda test uchun backend malumotlar bazasini yarating va unda bitta textning uzb rus eng cha variantlari bulsin 
-// biz selectda qaysini tanlasak usha tildagi malumotlar chiqasin
