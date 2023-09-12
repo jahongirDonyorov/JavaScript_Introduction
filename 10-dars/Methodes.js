@@ -40,7 +40,7 @@
 // Bu ham yaxlitlaydi lekn kasr nechchi bulishiga qaramasdan uzidan kyingi (katta) sonni chiqaradi 4.1 = 5
 
 // -=-=-=-=-=-=- 14. Math.trunc()
-// bu haxlitlamasdan kasr qismini kesib tashlaydi (. dan kiyinni olib tashlaydi)
+// bu yaxlitlamasdan kasr qismini kesib tashlaydi (. dan kiyinni olib tashlaydi)
 
 // -=-=-=-=-=-=- 15. Math.random()
 // 0 dan 1 gacha bulgan tasodifiy sonlarni chiqaradi son oralig'ini uzi miz uzgartirishimiz mumkun 
