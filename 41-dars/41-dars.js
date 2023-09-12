@@ -185,5 +185,10 @@ const getFile = (e) =>{
   // biz tanlagan file resultatda chiqyapdi 
 }
 
+
+// -=-=-=-=-=-=-=- File 
+// new File([ArrayBuffer / str], 'file name', {type:'txet/plain'})
+// bu Blob blan bir hil  
+
 // Homework
 // blob yordamida rasm yuklab oladigan qil 
