@@ -1,0 +1,10 @@
+.victom{
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+  opacity: 0;
+}
+#mony{
+  position: absolute;
+  top: 50px;
+}
