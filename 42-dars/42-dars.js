@@ -58,7 +58,7 @@
 
 // Masalan: /users - bunda 10 ta malumot bor ekan kamligi uchun shuni yozib olsak buladi url ga 
 
-fetch(`https://jsonplaceholder.typicode.com/users`) // bu holatda bizga malumot JSOn formatda keladi 
+fetch(`https://jsonplaceholder.typicode.com/users`) // bu holatda bizga malumot JSON formatda keladi 
 
 // biz backend blan aloqa qilganimizda console ham ishlaydi lekn Network bulimini ishlatganimiz yaxshi (browserda)
 // Network bulimida hamma malumotni tutib ishlatsak buladi 
@@ -84,3 +84,73 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
   console.log(err)
 })
 // ReactJS da fetch urniga axios ishlatilishining sababi catch errorlarni tutib olishi qiyin axiosda esa bu oson buladi 
+
+
+// malumotni tutib olishni ikkinchi yuli
+// -=-=-=- promise - fetch har doim promise ga qaytadi degan edik shuni kurib chiqamiz 
+let response = fetch(`https://jsonplaceholder.typicode.com/users`)
+// console.log(response) // promes chiqyapdi biz bu b;an bemalol ishlasak buladi
+response.then((res)=>res.json()).then((res) => console.log(res));
+
+
+// malumot tutib olishni uchunchi yuli 
+// malumotni async function blan tutib olish
+//  const getData = async() => {
+//   let res = await fetch(`https://jsonplaceholder.typicode.com/users`) // await malumot kelshini promise ni kutadi 
+//   let data = await res.json() // data res ni jsondan chiqarib olgan qiymatimizga teng bulyapdi await esa malumot kelishini kutadi kiyin ishlaydi 
+//  }
+
+
+// biz shunday qilishimiz kerak button bosilganda malumotlar browserga chiqsin
+// bunda malumotni then blan tutib olishni ishlatamiz shu usul yaxshiroq 
+const getData = () => {
+  // click bulganda malumot kelguncha dataList da Loading... chiqsin 
+  dataList.innerText = 'Loading...' // bosilganda Loading chiqadi
+  fetch(`https://jsonplaceholder.typicode.com/users`)
+  .then((res) => res.json())
+  .then((res) => {
+    // bizda click bulganda loading chiqyotgan edi endi malumot chiqqandan sung Loading uzgarsin null ga
+    dataList.innerHTML = `<h1>All Data</h1>` 
+    // endi biz backend dan kelyotgan malumotni browserda chiqarishimiz kerak 
+    
+    // // birinchi div yaratib olamiz 
+    // let div = document.createElement('div')
+    // // ochilgan div ichiga res (array) cihidagi malumotlarni yozsak buladi 
+    // div.innerHTML = res[0]?.name // res ichidagi [0] indexdagi malumot ? bulsa chiqsin deyapmiz 
+    // // endi tayyor bulgan divni body ichiga yozib olishimiz kerak 
+    // dataList.append(div)
+    
+    // lekn biz hamma malumotni chiqarmoqchi bulsak har birini bittadan indexsini yozib chiqolmaymiz 
+    // buning uchun forEach dan foydalanamiz 
+    res.forEach((element) => {
+       let div = document.createElement('div')
+       div.style.display = 'flex'
+       div.innerHTML = `<b>${element.id}</b> - <span>${element.name}</span> <button onclick='onSelect(${element.id})' >Selected</button>` // element id sini onSelect ga param qilib beryapmiz 
+       dataList.append(div)
+       // endi buning Selected buttonni bosilganda usha malumot Selected bulimiga utishi kerak 
+       // click bulganda pasdagi onSelect fnc ishga tushadi 
+
+    })
+
+  })
+}
+
+function onSelect(id){ // id ga qiymat onSelect chaqirilgan joyda berilyapdi qiymat element ning id si bulyapdi 
+  console.log(id) // bizga bosilgan element id sini chiqarib beryapdi endi biz 
+  // usha id ga asoslangan malumotni tutib olishimiz kerak url dan 
+  // url oxirida users/1,2,3 nechchi qilsak usersdagi usha malumotni chiqarib beradi 
+  // fetch(`https://jsonplaceholder.typicode.com/users/1`) // bizga users dagi 1-malumotni chiqarib beryapdi 
+  // endi biz buni qaysini bossak ushani chiqarsin deyishimiz uchun id ni yozib quyamiz 
+  fetch(`https://jsonplaceholder.typicode.com/users/${id}`) // qaysi knopka bosilganda ushaning soni id urniga keladi 
+  // endi biz 1-2- malumotni chiqarish uchun frontendda felter sort qilishimiz kerak emas bu ishlarni backend uzi qilib beryapdi 
+  // endi kelyotgan malumotni jsondan chiqarib Selected bulimiga yozishimiz kerak 
+  .then((res) => res.json())
+  .then((res) => {
+    console.log(res)
+    single.innerHTML = `<h1>Selected</h1> <b>${res.name}</b> - <span>${res.phone}</span> `
+    // <h1>Slected</h1> db qushib quyishimizning sababi bu qushilganda avvalgi h1 uchib ketadi 
+    // click bulgan elementni Slected da tuliq malumotlarini chiqarib beryapdi
+  })
+
+
+}
