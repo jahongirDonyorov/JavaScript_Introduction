@@ -151,6 +151,93 @@ function onSelect(id){ // id ga qiymat onSelect chaqirilgan joyda berilyapdi qiy
     // <h1>Slected</h1> db qushib quyishimizning sababi bu qushilganda avvalgi h1 uchib ketadi 
     // click bulgan elementni Slected da tuliq malumotlarini chiqarib beryapdi
   })
+}
+
+// -=-=-=-=- Shun joygacha Faqat fetchni 1-parametirini kurdik url ni
+// fetch(url, config) - hali configni kurganimiz yuq 
+
+// -=-=-=-=-=-=-= 2 - parametr config 
+// ikkinchi parametr object kurinishida yoziladi 
+
+fetch(`https://jsonplaceholder.typicode.com/users`, {
+  // bunda 3 ta muhum parametrlar bor 
+  // 1 - method:
+  // 2 - headers: 
+  // 3 - body:
+  
+  // -=-=- 1 - method
+  // bunga qilyotgan ishimizga qarab methodelar ( GET, PUT, DELETE, POST) yoziladi
+  // agar biz malumotni olib kelmoqchi bulsak GET yozamiz 
+  // method:'GET', // endi bu GET buldi 
+  // Biz hechqanday method yozmasakham automatik ravishda bu GET buladi 
+  // Network da users (shu malumot) ustiga bossak bulimlar chiqadi ushalar ichida Headers bor ushanda buning methodeni kursak buldi 
+  
+  // biz buni PUT qilib quysakham buladi  malumotni yangilash uchun ishlatiladi
+  // method: 'PUT' // Bu holatda error 404 bulyapti Request methode PUT bulib qolganligi uchun 
+  // backend blan ishlayotganingizda uzi yozilgan buladi qaysi url GET qaysisi PUT DELETE POST bulishi
+
+  // POST qilsak bu backend ga makumot yuboradi
+  method:'POST',
+  // POST malumot yuboradi biz qanday malumot yuboryptganimizni aytishimiz uchun headers dan foydalanamiz 
+
+  // -=-=- 2 - headers
+  // bu obj kurinishida buladi 
+  headers:{
+    // 'Content-Type' bu bizga qanday type dagi malumotni backend ga yuboryotganimizni bildiradi 
+    'Content-Type': 'application/json', // json kurinishida malumot yuboryapmiz dedik 
+
+    // 'Authorization': 'Bearer' backend shu malumotg asoslanib ruyhattan utgan utmaganligimizni tekshiradi 
+    'Authorization': 'Bearer'
+    // bu malumolar method GET qilsak Network da shu malumot ustiga bosilgandagi Headers bulimida kursak buladi 
+    // malumot shu holatda chiqadi 'Authorization': 'Bearer' nma yozsa: dan kiyin usha chiqadi Bearer esa ruyhatdan utganimizni bildiradi
+  },
+
+  // Shu holatda method ni DELETE qilsak backend dan malumotlar uchib ketadi biz buni tepada click bulganda malumot 
+  // Selected ga utyotgandi ushani uchiradigan qilsak buladi method headers blan 
+  // lekn biz snov uchun backend jsonplaceholder dan foydalanyotganimiz uchun DELETE ishlamaydi chunke jsonplaceholder ni kuplab odamlar ishlatadi 
+  // biz malumotni uchirib yuborsak hammadan uchib ketadi 
 
 
+  // Misol uchun biz ruyhattan utishda amail code larni inputga yozib yuboramiz usha malumotlarni backend ga yuborish uchun 
+  // body dan foydalanamiz 
+
+  // -=-=- 3 - body 
+  // body doim JSON.stringify({}) kurinishida backendga malumot yuboradi 
+  body: JSON.stringify({
+    // yuborilyotgan malumotlar (email va password)
+    email:'John',
+    password: 12345,
+  })
+  // backend yuborilyotgan malumotlar Network ning paylout bulimida chiqadi 
+  // Paylout bulimi faqat biz malumot yuborganimizda qushiladi 
+
+})
+
+// -=-=-=-= endi biz shunday qilishimiz kerak inpitga email va password kiritib login ni bosganimizda
+// usha malumotlarni backend ruyhatdan utkazsin kiyin yana kirganimizda shu malumot tug'ri bulsa kirsin 
+
+// buninguchun biz API kerak buldi bizda hozircha u yuq shuning uchun fqat strukturasini qilamiz 
+
+const login = () => {
+  fetch('https://jsonplaceholder.typicode.com/users', {
+    // malumot yuborishimiz uchun methode POST qilamiz 
+    method:'POST',
+    // malumotni qanday type da yuboryotganimizni yozishimiz kerak 
+    headers:{
+      'Content-Type': 'application/json',
+    },
+    // malumotni backend ga body yordamida yuboramiz 
+    body: JSON.stringify({
+      email: email.value, // email ga html input email valuesi teng bulsin deyapomiz
+      password: password.value ,  
+    }),
+    // biz kiritgan malumot shu url ga boryapdi va uyirda saqlanib turadi 
+    // endi qaytyotgan malumotni olishimiz kerak 
+  })
+  // qaytyotgan malumotni then orqale olamiz bu malumot bizga json holatda buladi buni array qilib olishimiz kerak
+  .then((res) => res.json())
+  .then((res) => {
+    // agar malumotlar tug'ri (avval ruyhattan utgan ) bulsa authenticationToken keladi biz aytamizke agar u kelsa Welcom to fecabook db chiqsin 
+    if(res?.authenticationToken) log.innerText = 'Welcome to Facebook'
+  })
 }
