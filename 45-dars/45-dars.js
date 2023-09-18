@@ -144,8 +144,132 @@ for (let k of Object.values(localStorage)) {
   console.log(k) // valuelarni chiqarib beradi 
 }
 
+// #####################
 
-// shularga localStorage deyiladi buni hamma joydaham ishlataverish kerak emas
-// masalan ruyhatdan utishda adim bubkirish mumkun va users bulib kirish mumkun deyaylik 
-// userning malumoti users key bub saqlansa adminniki admen bulib saqlanadi va ularning valuelari mavjud deyaylik admin va users degan 
-// admin kirganda admin users kirganda users bub kuradi biz buni aplication dan uzgartirib quysak buladi shuning uchun bu holatlarda localStorage dan foydalanmaslik kerak 
+window.onload = () => {
+  let roleID = localStorage.getItem('roleID')
+
+  if(roleID === 'admin') {
+    user.innerText = 'Admin'
+  }else if(roleID === 'driver') {
+    user.innerText = 'Driver'
+  }
+}
+save.onclick = () => {
+  if(login.value === 'John' && pw.value == 2004){
+    user.innerText = 'Admin'
+    localStorage.setItem('roleID', 'admin')
+  } else if(login.value === 'Elshod' && pw.value == 2002){
+    user.innerText = 'Driver'
+    localStorage.setItem('roleID', 'driver')
+  }
+}
+
+// bu holatda biz inputlarga John va psga 2004 qilsak bizga adin deb chiqaradi 
+// Elshod 2002 qilsak drever deb chiqaradi bu holatda ikkala admin va driver qiymatlarni localStorage ga saqlayapdi 
+// biz bu qiymatlarni localStorage dan uzgartirib quysak buladi browser ni uzidan agar 
+// inspect ning application bulimidan localStorage ga kirsak va uyirda roleID veriable qiymati sifatida adim kirgan bulsa admin driver kirgan bulsa driver yozilgan buladi 
+// usha qiymat admin bulsa driver qilib quyishimiz mumkun ekan bu holatda bizrdan wriverga utib ketadi 
+// shuning uchun hamma ishdaham localStorage dan foydalanmaslik kerak bu holatlarda localStorageni oson buzib kirsa bularkan 
+
+
+// ##################### 
+
+// -=-=- biz shuyirgacha localStorage ga faqat string set qildik malumot obj ham bulishi mumkun 
+// objlarni localStorage ga tug'ridan tug'ri set qilolmaymiz 
+
+let server = [
+  {id: 1, name:'webbrin 1'},
+  {id: 2, name:'webbrin 2'},
+  {id: 3, name:'webbrin 3'},
+  {id: 4, name:'webbrin 4'},
+  {id: 5, name:'webbrin 5'},
+] // buni backend deb turamiz 
+
+// let users = server
+
+// const getData = () => {
+//   // biz buning ichidagi har bir malumotni olib div yaratib uning ichiga yozishimiz kerak 
+//   users.forEach((item) => {
+//     let div = document.createElement('div')
+//     div.innerHTML = `${item.name}`
+//     // bizda hamma element browser da chiqyapdi 
+//     // endi ularning qaysini ustiga bossak usha uchib ketishi kerak 
+//     div.addEventListener('click', () => {
+//       // filter qilib olamiz click bulgan elemet id siga teng bulmaganlarini bizga qaytarsin teng bulganini uchirib yuborsin deymiz 
+//       let res = users.filter((v) => v.id !== item.id);// click bulgan div id siga teng bulmagan hamma divlar resga teng bulyapdi 
+//       // endi list ichidan users ni eski qiymatlarini uchirib tashlashimiz kerak 
+//       list.innerHTML = null // list ichida malumot qolmayapdi 
+//       // endi yangi malumotni usersga tenglab quyamiz 
+//       users = res; // filter bulgan yangi malumot usersga teng bulyapdi 
+//       // endi yangi users qiymati blan ishlashi uchun getData ni yana yurgizib yuborishimz kerak
+//       getData() // fnc qaytadan ishlaydi users ni yangi malumotini forEach qilib listga joylab chiqadi
+//       // har click qilganimizda fnc qaytatdan ishlab yangi qiymatni kurib chiqadi
+//     })
+//     list.append(div)
+//   })
+
+// }
+// getData()
+
+// -=- Bu fnc tug'ri ishlayapdi bosgan malumotimizni uchirib yuboryapdi 
+// lekn browser ni yangilasak uchgan qiymatlar yana qishilib qolyapdi biz shunday qilishimiz kerakke browserni yangilasakham 
+// uchirgan qiymatlarimiz yana oldingi holatiga qaytib qushilib qolmasin / Buning uchun localStorage dan foydalanamiz 
+
+// let users = server
+
+// yuqorida bu holatda edi endi biz buni agar localStorage users da malumot bulsa (yane bitta element uchirilib qolganlari localStorage ga qushi;gan bulsa) usha 
+// malumot blan usersga teng bulsin agar unda malumot bulmasa server malumoti usersga teng bulsin deyishimiz kerak 
+
+let users = JSON.parse(localStorage.getItem('users')) || server;
+// localStorage dagi malumotni json holatdan chiqarib olyapmiz birdan 
+
+const getData = () => {
+  users.forEach((item) => {
+    let div = document.createElement('div')
+    div.innerHTML = `${item.name}`
+    div.addEventListener('click', () => {
+      let res = users.filter((v) => v.id !== item.id);
+      list.innerHTML = null 
+      users = res; 
+      // uchirilgan malumotni localStorage ga qushib quyamiz 
+      // localStorage.setItem('users', res) // users nomi blan res qilmati qushilishi kerak 
+      // lekn bu holatda hatolik buladi chunke localStorage ga OBJ larni tug'ridan tug'ri qushib bulmaydi 
+      
+      // biz obj malumotini localStorage ga qushmoqchi bulsak uni json qilib qushib olishimiz  kerak buladi 
+      localStorage.setItem('users', JSON.stringify(res)) // biz res malumotlarini json holatda localStorage ga qushib oldik 
+      // lekn bu endi localStorage dagi malumotni html ga qushmoqchi bulsak buni yana jsondan chiqarib olishimiz klerak buladi 
+      getData() 
+    })
+    list.append(div)
+  })
+
+}
+getData()
+
+
+// -=-=-=-=-=-=- sissionStorage 
+
+// bu localStorage blan bir hil faqat bitta farqi bor 
+// localStorage ga saqlanganda biz browser oynasini uchirib huddi shu linkni boshqa browser da ochsakham 
+// localStorage dagi malumotlar turaverar edi bunda esa faqat bitta browser oynasida saqlanib turadi 
+// sissionStorage da esa shu link blan yangi browser oynasiga utganimizda hamma saqlangan malumotlar uchib yangidan birinchi holatidan boshlanadi 
+
+// -=-=-=-=- Usege 
+// ishlatilishiham method lariham localStorage blan birhil 
+// faqat localStorage.setItem(key, value) emas 
+// sissionStorage.setItem(key, value) qilishimiz kerak 
+
+
+// -=-=-=-=-=-=- sissionStorage methode 
+
+// -=- sessionStorage - API 
+//      - setItem(key value) - veriable va unga qiymat yasab oladi 
+//      - getItem(key) - ochilgan veriableni chiqaradi ishlatish uchun 
+//      - removeItem(key) - aynan bitta veriabline uchiradi
+//      - clear() - hamma veriable larni uchiradi 
+//      - key(index) - indexsi
+//      - legth  - uzunligini chiqaradi 
+//      - Object.keys - obj qilib uni ustida ishalydi 
+
+// buing method lariham localStorage blan birhil hisoblanadi faqat sessionStorage. qilib yoziladi 
