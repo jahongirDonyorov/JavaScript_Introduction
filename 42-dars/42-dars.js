@@ -232,6 +232,8 @@ const login = () => {
       password: password.value ,  
     }),
     // biz kiritgan malumot shu url ga boryapdi va uyirda saqlanib turadi 
+    // malumot authenticationToken shu holatda boradi bu malumotni biz saxranet qib quyishimiz kerak yana shi email code ni kititganimizda authenticationToken bulsa ruyhatdan utganimizni bildiradi 
+    
     // endi qaytyotgan malumotni olishimiz kerak 
   })
   // qaytyotgan malumotni then orqale olamiz bu malumot bizga json holatda buladi buni array qilib olishimiz kerak
