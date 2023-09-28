@@ -271,7 +271,7 @@
 
 
 // // !_!_! clean code nima ? -> naming function 
-// // function kurgan odam ichida nima yozilganligiga qaramasfdan nomidan nima qilishini tushinishi kerak
+// // function kurgan odam ichida nima yozilganligiga qaramasdan nomidan nima qilishini tushinishi kerak
 // //  -> 'get...' - return a value
 // //  -> 'calc...' - calculate smth 
 // //  -> 'check...' - check smth n return boolen 
@@ -281,7 +281,7 @@
 
 // // GPA hisoblash misol 
 // // gpa hamma olingan fanlarning bali fanlar soniga bulinadi 
-// // 5 ta fan uchu  5 ta paramert olib olishimiz kerak 
+// // 5 ta fan uchun  5 ta paramert olib olishimiz kerak 
 // const getGpa = (a = 0,b = 0,c = 0,d = 0,f = 0) => { // bu defolt holda qiymat 0 berib ketyapmiz 
 //   let res = (a + b + c + d + f) / 5;  x
 //   console.log(res)
